@@ -400,7 +400,6 @@ padding:26px 30px;
 display:grid;
 grid-template-columns:300px 1fr 220px;
 gap:28px;
-align-items:start;
 box-shadow:0 0 40px rgba(0,0,0,.8);
 position:relative;
 transform:translateY(60px) scale(.95);
@@ -423,13 +422,13 @@ box-shadow:
 0 0 40px rgba(255,255,255,.05);
 }
 
-/* MIDDLE */
+/* MIDDLE COLUMN STRUCTURE */
 
 .info-middle{
+display:grid;
+grid-template-rows:auto auto;
+gap:18px;
 text-align:left;
-display:flex;
-flex-direction:column;
-gap:10px;
 }
 
 .info-title{
@@ -448,10 +447,9 @@ gap:10px;
 color:#aaa;
 }
 
-/* OVERLAY DIFFICULTIES */
+/* DIFFICULTY GRID */
 
 .song-info-modal .difficulty-grid{
-margin-top:18px;
 display:grid;
 grid-template-columns:auto auto;
 gap:8px 18px;
@@ -479,7 +477,7 @@ width:18px;
 height:9px;
 }
 
-/* RIGHT PANEL */
+/* RIGHT PANEL (ALIGNED WITH DIFFICULTY GRID) */
 
 .info-right{
 display:flex;
@@ -487,6 +485,7 @@ flex-direction:column;
 gap:10px;
 text-align:left;
 width:220px;
+grid-row:2;
 }
 
 .info-section{
