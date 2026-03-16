@@ -124,5 +124,23 @@
       "drums": 4, 
       "vocals": 6 
     }
-    }   
+    },   
+    {
+    "title": "King for a Day (ft. Kellin Quinn)",
+    "artist": "Pierce the Veil",
+    "album": "Collide with the Sky",
+    "cover": "covers/piercetheveilcollidewiththesky.png",
+    "year": 2012,
+    "genre": "Emo",
+    "category": "rb4dlc",
+    "release": "10-6-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 4,
+      "guitar": 3,
+      "bass": 4,
+      "drums": 6, 
+      "vocals": 3 
+    }
+    }
     ]
