@@ -142,5 +142,77 @@
       "drums": 6, 
       "vocals": 3 
     }
+    },
+    {
+    "title": "The Mephistopheles of Los Angeles",
+    "artist": "Marilyn Manson",
+    "album": "The Pale Emperor",
+    "cover": "covers/marilynmansonthepaleemperor.png",
+    "year": 2015,
+    "genre": "Metal",
+    "category": "rb4dlc",
+    "release": "10-6-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 3,
+      "guitar": 2,
+      "bass": 2,
+      "drums": 3, 
+      "vocals": 4 
     }
+    },
+    {
+    "title": "Mona Lisa",
+    "artist": "Dead Sara",
+    "album": "Pleasure to Meet You",
+    "cover": "covers/deadsarapleasuretomeetyou.png",
+    "year": 2015,
+    "genre": "Alternative",
+    "category": "rb4dlc",
+    "release": "10-6-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 3,
+      "guitar": 2,
+      "bass": 2,
+      "drums": 4, 
+      "vocals": 4 
+    }
+    },
+    {
+    "title": "Move Over",
+    "artist": "Janis Joplin",
+    "album": "Pearl",
+    "cover": "covers/.png",
+    "year": 1971,
+    "genre": "Classic Rock",
+    "category": "rb4dlc",
+    "release": "10-6-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 4,
+      "guitar": 5,
+      "bass": 3,
+      "drums": 3, 
+      "vocals": 5 
+    }
+    },
+    {
+    "title": "My Own Eyes",
+    "artist": "Weird Al Yankovic",
+    "album": "Mandatory Fun",
+    "cover": "covers/.png",
+    "year": 2014,
+    "genre": "Novelty",
+    "category": "rb4dlc",
+    "release": "10-6-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 3,
+      "guitar": 2,
+      "bass": 2,
+      "drums": 4, 
+      "vocals": 3 
+    }
+    },    
     ]
