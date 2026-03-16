@@ -482,12 +482,12 @@ height:9px;
 /* RIGHT PANEL */
 
 .info-right{
-display:flex;
-flex-direction:column;
+display:grid;
+grid-template-rows:repeat(5, auto);
 gap:10px;
 text-align:left;
 width:220px;
-margin-top:120px;
+margin-top:138px;
 }
 
 .info-section{
