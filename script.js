@@ -208,27 +208,10 @@ function createDifficulty(level){
 
 function openSongInfo(song){
 
+    const overlay = document.getElementById("song-info-overlay");
+    const modal = document.querySelector(".song-info-modal");
     const favToggle = document.getElementById("favorite-toggle");
 
-favToggle.checked = song.favorite === true;
-
-favToggle.onchange = () => {
-
-song.favorite = favToggle.checked;
-
-const modal = document.querySelector(".song-info-modal");
-
-if(song.favorite){
-modal.classList.add("favorite");
-}else{
-modal.classList.remove("favorite");
-}
-
-displaySongs(songs);
-
-};
-
-    const overlay = document.getElementById("song-info-overlay");
     const rating = song.rating || "NR";
 
     document.getElementById("info-cover").src = song.cover;
@@ -264,11 +247,11 @@ displaySongs(songs);
 
     const sourceName = sourceNames[song.category] || "";
 
-document.getElementById("info-source").innerHTML =
-`<span class="source-row">
-${song.category ? `<img class="source-icon" src="./assets/${song.category}.png">` : ""}
-<span>${sourceName}</span>
-</span>`;
+    document.getElementById("info-source").innerHTML =
+    `<span class="source-row">
+    ${song.category ? `<img class="source-icon" src="./assets/${song.category}.png">` : ""}
+    <span>${sourceName}</span>
+    </span>`;
 
     let ratingText = rating;
 
@@ -299,20 +282,9 @@ ${song.category ? `<img class="source-icon" src="./assets/${song.category}.png">
     document.getElementById("info-keys").innerHTML = createDifficulty(song.difficulty?.keys);
     document.getElementById("info-prokeys").innerHTML = createDifficulty(song.difficulty?.prokeys);
 
-   const favToggle = document.getElementById("favorite-toggle");
-const modal = document.querySelector(".song-info-modal");
+    /* FAVORITE SYSTEM */
 
-favToggle.checked = song.favorite === true;
-
-if(song.favorite){
-    modal.classList.add("favorite");
-}else{
-    modal.classList.remove("favorite");
-}
-
-favToggle.onchange = () => {
-
-    song.favorite = favToggle.checked;
+    favToggle.checked = song.favorite === true;
 
     if(song.favorite){
         modal.classList.add("favorite");
@@ -320,11 +292,20 @@ favToggle.onchange = () => {
         modal.classList.remove("favorite");
     }
 
-    displaySongs(songs);
-};
+    favToggle.onchange = () => {
+
+        song.favorite = favToggle.checked;
+
+        if(song.favorite){
+            modal.classList.add("favorite");
+        }else{
+            modal.classList.remove("favorite");
+        }
+
+        displaySongs(songs);
+    };
 
     overlay.classList.add("open");
-
 }
 
 function closeSongInfo(){
