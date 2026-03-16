@@ -2,17 +2,18 @@
   {
     "title": "All the Rage Back Home",
     "artist": "Interpol",
-    "album": "",
+    "album": "El Pintor",
     "year": 2014,
-    "genre": "",
+    "genre": "Indie Rock",
     "category": "rb4dlc",
     "release": "10-6-2015",
     "rating": "SR",
     "difficulty": {
-      "guitar": -1,
-      "bass": -1,
-      "drums": -1, 
-      "vocals": -1 
+      "band": 2,
+      "guitar": 1,
+      "bass": 2,
+      "drums": 4, 
+      "vocals": 3 
     }
     }
     ]
