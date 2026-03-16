@@ -286,5 +286,113 @@
       "drums": 4, 
       "vocals": 3 
     }
+    },
+    {
+    "title": "September",
+    "artist": "Earth, Wind & Fire",
+    "album": "The Best of Earth, Wind & Fire, Vol. 1",
+    "cover": "covers/earthwind&firethebestofearthwind&firevol1.png",
+    "year": 1978,
+    "genre": "R&B/Soul/Funk",
+    "category": "rb4dlc",
+    "release": "10-6-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 3,
+      "guitar": 3,
+      "bass": 3,
+      "drums": 1, 
+      "vocals": 4 
+    }
+    },
+    {
+    "title": "Sugar, You",
+    "artist": "Oh Honey",
+    "album": "Wish You Were Here",
+    "cover": "covers/ohhoneywishyouwerehere.png",
+    "year": 2015,
+    "genre": "Indie Rock",
+    "category": "rb4dlc",
+    "release": "10-6-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 3,
+      "guitar": 2,
+      "bass": 2,
+      "drums": 3, 
+      "vocals": 3 
+    }
+    },
+    {
+    "title": "Summertime Boy",
+    "artist": "Seasick Steve",
+    "album": "Sonic Soul Surfer",
+    "cover": "covers/seasickstevesonicsoulsurfer.png",
+    "year": 2015,
+    "genre": "Blues",
+    "category": "rb4dlc",
+    "release": "10-6-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 2,
+      "guitar": 2,
+      "bass": 2,
+      "drums": 1, 
+      "vocals": 5 
+    }
+    },
+    {
+    "title": "Throne",
+    "artist": "Bring Me the Horizon",
+    "album": "That's the Spirit",
+    "cover": "covers/bringmethehorizonthatsthespirit.png",
+    "year": 2015,
+    "genre": "Nu-Metal",
+    "category": "rb4dlc",
+    "release": "10-6-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 3,
+      "guitar": 3,
+      "bass": 1,
+      "drums": 5, 
+      "vocals": 2 
+    }
+    },
+    {
+    "title": "What If I Was Nothing?",
+    "artist": "All That Remains",
+    "album": "A War You Cannot Win",
+    "cover": "covers/allthatremainsawaryoucannotwin.png",
+    "year": 2012,
+    "genre": "Metal",
+    "category": "rb4dlc",
+    "release": "10-6-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 1,
+      "guitar": 3,
+      "bass": 1,
+      "drums": 1, 
+      "vocals": 1 
+    }
+    },
+    {
+    "title": "Would You Still Be There",
+    "artist": "Of Mice & Men",
+    "album": "Restoring Force",
+    "cover": "covers/ofmice&menrestoringforce.png",
+    "year": 2014,
+    "genre": "Nu-Metal",
+    "category": "rb4dlc",
+    "release": "10-6-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 3,
+      "guitar": 2,
+      "bass": 2,
+      "drums": 5, 
+      "vocals": 2 
+    }
     }    
     ]
