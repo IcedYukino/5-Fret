@@ -216,26 +216,7 @@ box-shadow:0 3px 8px rgba(0,0,0,.6);
 pointer-events:none;
 }
 
-/* Guitar Hero glow */
-
-.song.gh:hover,
-.song.gh2:hover,
-.song.ghwor:hover,
-.song.ghwordlc:hover{
-box-shadow:0 0 18px #ff8c00;
-}
-
-/* Rock Band glow */
-
-.song.rb1dlc:hover{
-box-shadow:0 0 18px #2b8fff;
-}
-
-/* Fortnite Festival glow */
-
-.song.fnf:hover{
-box-shadow:0 0 18px #ff2bf3;
-}
+/* Song text */
 
 .song h3{
 margin:10px 0 5px;
@@ -263,19 +244,7 @@ margin-top:6px;
 width:18px;
 height:18px;
 object-fit:contain;
-justify-self:end;
 opacity:.95;
-}
-
-.source-display{
-display:flex;
-align-items:center;
-gap:8px;
-}
-
-.overlay-source-icon{
-width:22px;
-height:22px;
 }
 
 .source-row{
@@ -287,11 +256,6 @@ gap:8px;
 .source-row .source-icon{
 width:20px;
 height:20px;
-}
-
-.harmonix-charter{
-color:#0078ff;
-font-weight:600;
 }
 
 /* Song rating */
@@ -309,13 +273,6 @@ font-size:13px;
 
 .genre-tag{
 display:inline-block;
-padding:4px 10px;
-border-radius:12px;
-font-size:11px;
-font-weight:bold;
-}
-
-.genre-tag{
 padding:3px 8px;
 border-radius:6px;
 font-size:12px;
@@ -365,8 +322,6 @@ padding-top:10px;
 max-height:1000px;
 }
 
-/* Instruments (dropdown only) */
-
 .instrument{
 display:grid;
 grid-template-columns:34px 1fr;
@@ -379,11 +334,7 @@ margin-bottom:10px;
 width:26px;
 height:26px;
 object-fit:contain;
-display:block;
-opacity:.95;
 }
-
-/* Difficulty bars (dropdown only) */
 
 .diff-row{
 display:flex;
@@ -403,7 +354,7 @@ background:#ddd;
 }
 
 .diff.red{
-background:#ff2d2d !important;
+background:#ff2d2d;
 box-shadow:0 0 6px #ff2d2d;
 }
 
@@ -430,7 +381,7 @@ opacity:0;
 pointer-events:none;
 transition:opacity .25s;
 z-index:9999;
-backdrop-filter: blur(6px);
+backdrop-filter:blur(6px);
 }
 
 .song-info-overlay.open{
@@ -438,28 +389,17 @@ opacity:1;
 pointer-events:auto;
 }
 
-.charter{
-margin-top:6px;
-font-weight:600;
-font-size:14px;
-}
-
-.harmonix-charter{
-color:#0078ff;
-font-weight:600;
-}
-
 /* MODAL */
 
 .song-info-modal{
 background:#1a1a1a;
 border-radius:14px;
-width:1200px;
-max-width:95%;
-padding:30px;
+width:auto;
+max-width:1000px;
+padding:26px 30px;
 display:grid;
-grid-template-columns:320px 1fr 260px;
-gap:40px;
+grid-template-columns:300px 1fr 220px;
+gap:28px;
 align-items:start;
 box-shadow:0 0 40px rgba(0,0,0,.8);
 position:relative;
@@ -476,7 +416,7 @@ opacity:1;
 /* LEFT */
 
 .song-info-cover{
-width:320px;
+width:300px;
 border-radius:12px;
 box-shadow:
 0 0 25px rgba(0,0,0,.6),
@@ -490,7 +430,6 @@ text-align:left;
 display:flex;
 flex-direction:column;
 gap:10px;
-margin-left:10px;
 }
 
 .info-title{
@@ -535,56 +474,45 @@ height:24px;
 object-fit:contain;
 }
 
-.song-info-modal .diff-row{
-gap:4px;
-}
-
 .song-info-modal .diff{
 width:18px;
 height:9px;
-border-radius:2px;
 }
 
-/* RIGHT PANEL INFO */
+/* RIGHT PANEL */
 
 .info-right{
 display:flex;
 flex-direction:column;
-gap:12px;
+gap:10px;
 text-align:left;
+width:220px;
 }
 
 .info-section{
 background:#222;
-padding:10px 14px;
+padding:8px 12px;
 border-radius:8px;
-font-size:14px;
+font-size:13px;
 }
 
 .info-label{
-font-size:11px;
+font-size:10px;
 color:#aaa;
 letter-spacing:1px;
-margin-bottom:4px;
+margin-bottom:3px;
 }
 
 .info-value{
 font-weight:bold;
 }
 
-.info-icon{
-width:16px;
-height:16px;
-margin-right:6px;
-vertical-align:middle;
-}
-
 /* CLOSE BUTTON */
 
 .close-info{
 position:absolute;
-top:12px;
-right:16px;
+top:18px;
+right:22px;
 background:none;
 border:none;
 color:white;
