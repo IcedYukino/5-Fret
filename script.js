@@ -279,6 +279,26 @@ ${song.category ? `<img class="source-icon" src="./assets/${song.category}.png">
     document.getElementById("info-keys").innerHTML = createDifficulty(song.difficulty?.keys);
     document.getElementById("info-prokeys").innerHTML = createDifficulty(song.difficulty?.prokeys);
 
+    const favToggle = document.getElementById("favorite-toggle");
+
+favToggle.checked = song.favorite === true;
+
+favToggle.onchange = () => {
+
+song.favorite = favToggle.checked;
+
+const modal = document.querySelector(".song-info-modal");
+
+if(song.favorite){
+modal.classList.add("favorite");
+}else{
+modal.classList.remove("favorite");
+}
+
+displaySongs(songs);
+
+};
+
     overlay.classList.add("open");
 
 }
