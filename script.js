@@ -208,6 +208,26 @@ function createDifficulty(level){
 
 function openSongInfo(song){
 
+    const favToggle = document.getElementById("favorite-toggle");
+
+favToggle.checked = song.favorite === true;
+
+favToggle.onchange = () => {
+
+song.favorite = favToggle.checked;
+
+const modal = document.querySelector(".song-info-modal");
+
+if(song.favorite){
+modal.classList.add("favorite");
+}else{
+modal.classList.remove("favorite");
+}
+
+displaySongs(songs);
+
+};
+
     const overlay = document.getElementById("song-info-overlay");
     const rating = song.rating || "NR";
 
