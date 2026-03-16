@@ -1,1 +1,1 @@
-# 5-Fret
+# Five-Fret HD
