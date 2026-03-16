@@ -545,6 +545,39 @@ transform:scale(1.2);
 z-index:-1;
 }
 
+/* Favorite highlight */
+
+.song.favorite{
+background:linear-gradient(145deg,#3a2b00,#1a1400);
+box-shadow:0 0 20px #ffd700;
+border:1px solid #ffd70055;
+}
+
+.song.favorite:hover{
+box-shadow:0 0 25px #ffd700;
+}
+
+/* Modal gold state */
+
+.song-info-modal.favorite{
+box-shadow:0 0 30px #ffd700;
+border:1px solid #ffd70055;
+}
+
+/* Favorite checkbox */
+
+.favorite-toggle{
+display:flex;
+align-items:center;
+gap:8px;
+font-size:13px;
+cursor:pointer;
+}
+
+.favorite-toggle input{
+cursor:pointer;
+}
+
 /* Footer */
 
 footer{
