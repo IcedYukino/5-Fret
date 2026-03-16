@@ -161,7 +161,6 @@ body {
 
 .song-download:hover {
     color: #0aa3ff;
-    text-decoration: underline;
 }
 
 /* Cover container */
@@ -257,32 +256,6 @@ body {
     font-weight: 600;
     color: white;
 }
-
-/* Example genre colors */
-.genre-tag.rock { background: #e74c3c; }
-.genre-tag.metal { background: #9b59b6; }
-.genre-tag.alternative { background: #1abc9c; }
-.genre-tag.indierock { background: #3498db; }
-.genre-tag.classicrock { background: #e67e22; }
-.genre-tag.punk { background: #f1c40f; }
-.genre-tag.newwave { background: #2ecc71; }
-.genre-tag.grunge { background: #34495e; }
-.genre-tag.emo { background: #ff66cc; }
-.genre-tag.country { background: #d4ac0d; }
-.genre-tag.blues { background: #2980b9; }
-.genre-tag.jrock { background: #ff3366; }
-.genre-tag.prog { background: #8e44ad; }
-.genre-tag.glam { background: #ff1493; }
-.genre-tag.reggae-ska { background: #27ae60; }
-.genre-tag.hiphoprap { background: #2c3e50; }
-.genre-tag.r&bsoulfunk { background: #16a085; }
-.genre-tag.poprock { background: #ff7675; }
-.genre-tag.popdanceelectronic { background: #00cec9; }
-.genre-tag.southernrock { background: #d35400; }
-.genre-tag.numetal { background: #6c5ce7; }
-.genre-tag.classical { background: #7f8c8d; }
-.genre-tag.novelty { background: #f39c12; }
-.genre-tag.other { background: #95a5a6; }
 
 /* Difficulty dropdown */
 .difficulty-dropdown {
@@ -520,94 +493,48 @@ body {
     --gold-border: #9c7c00;
 }
 
-.song.favorite {
+/* Gradient shimmer for favorites */
+.song.favorite, .song-info-modal.favorite {
     background: linear-gradient(145deg, var(--gold-start), var(--gold-end));
     color: #111;
     border: 1px solid var(--gold-border);
     position: relative;
     overflow: hidden;
-    box-shadow: 0 0 15px var(--gold-start);
-    transition: transform 0.25s, box-shadow 0.25s;
+    box-shadow: 0 0 20px var(--gold-start);
 }
 
-.song.favorite::after {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(
-        120deg,
-        rgba(255, 255, 255, 0.25) 0%,
-        rgba(255, 255, 255, 0.05) 50%,
-        rgba(255, 255, 255, 0.25) 100%
-    );
-    transform: rotate(25deg);
-    pointer-events: none;
-    animation: shine 3s infinite;
-}
-
-.song.favorite h3,
-.song.favorite p {
+.song.favorite h3, .song.favorite p,
+.song.favorite .song-download,
+.song-info-modal.favorite .info-value,
+.song-info-modal.favorite .info-label {
     color: #111;
-}
-
-.song.favorite .song-download {
-    color: #111;
-}
-
-.song.favorite .song-download:hover {
-    color: #000;
 }
 
 .song.favorite .cover-container img {
     border: 3px solid var(--gold-border);
 }
 
-.song-info-modal.favorite {
-    background: linear-gradient(145deg, var(--gold-start), var(--gold-end));
-    color: #111;
-    border: 1px solid var(--gold-border);
-    box-shadow: 0 0 40px var(--gold-start)99;
-    position: relative;
-    overflow: hidden;
-}
-
-.song-info-modal.favorite::after {
+/* Gradient shine overlay */
+.song.favorite::before, .song-info-modal.favorite::before {
     content: "";
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
+    top: 0; left: -150%;
+    width: 150%;
+    height: 100%;
     background: linear-gradient(
         120deg,
-        rgba(255, 255, 255, 0.25) 0%,
-        rgba(255, 255, 255, 0.05) 50%,
-        rgba(255, 255, 255, 0.25) 100%
+        rgba(255,255,255,0.05) 0%,
+        rgba(255,255,255,0.25) 50%,
+        rgba(255,255,255,0.05) 100%
     );
-    transform: rotate(25deg);
+    transform: skewX(-25deg);
+    animation: gradientShine 3s infinite;
     pointer-events: none;
-    animation: shine 3s infinite;
 }
 
-.song-info-modal.favorite .info-section {
-    background: rgba(0, 0, 0, 0.15);
-}
-
-.song-info-modal.favorite .info-label {
-    color: #333;
-}
-
-.song-info-modal.favorite .info-value {
-    color: #111;
-}
-
-@keyframes shine {
-    0% { transform: rotate(25deg) translate(-100%, -100%); }
-    50% { transform: rotate(25deg) translate(100%, 100%); }
-    100% { transform: rotate(25deg) translate(-100%, -100%); }
+@keyframes gradientShine {
+    0% { left: -150%; }
+    100% { left: 150%; }
 }
 
 /* Favorite checkbox */
