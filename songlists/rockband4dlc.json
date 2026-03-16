@@ -394,5 +394,77 @@
       "drums": 5, 
       "vocals": 2 
     }
+    },
+    {
+    "title": "Don't Wanna Fight",
+    "artist": "Alabama Shakes",
+    "album": "Sound & Color",
+    "cover": "covers/alabamashakessound&color.png",
+    "year": 2015,
+    "genre": "Southern Rock",
+    "category": "rb4dlc",
+    "release": "10-13-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 2,
+      "guitar": 2,
+      "bass": 1,
+      "drums": 1, 
+      "vocals": 6 
+    }
+    },
+    {
+    "title": "Failure",
+    "artist": "Breaking Benjamin",
+    "album": "Dark Before Dawn",
+    "cover": "covers/breakingbenjamindarkbeforedawn.png",
+    "year": 2015,
+    "genre": "Rock",
+    "category": "rb4dlc",
+    "release": "10-13-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 3,
+      "guitar": 3,
+      "bass": 3,
+      "drums": 3, 
+      "vocals": 2 
+    }
+    },
+    {
+    "title": "Follow Me Down",
+    "artist": "The Pretty Reckless",
+    "album": "Going to Hell",
+    "cover": "covers/theprettyrecklessgoingtohell.png",
+    "year": 2014,
+    "genre": "Rock",
+    "category": "rb4dlc",
+    "release": "10-13-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 3,
+      "guitar": 2,
+      "bass": 2,
+      "drums": 4, 
+      "vocals": 3 
+    }
+    },
+    {
+    "title": "Trainwreck 1979",
+    "artist": "Death from Above 1979",
+    "album": "The Physical World",
+    "cover": "covers/deathfromabove1979thephysicalworld.png",
+    "year": 2014,
+    "genre": "Rock",
+    "category": "rb4dlc",
+    "release": "10-13-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 3,
+      "guitar": 3,
+      "bass": 2,
+      "drums": 3, 
+      "vocals": 2 
+    }
     }    
     ]
