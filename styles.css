@@ -448,7 +448,7 @@ gap:10px;
 color:#aaa;
 }
 
-/* OVERLAY DIFFICULTIES */
+/* DIFFICULTY GRID */
 
 .song-info-modal .difficulty-grid{
 margin-top:18px;
@@ -483,11 +483,9 @@ height:9px;
 
 .info-right{
 display:grid;
-grid-template-rows:repeat(5, auto);
 gap:10px;
 text-align:left;
 width:220px;
-margin-top:138px;
 }
 
 .info-section{
