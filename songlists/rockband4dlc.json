@@ -214,5 +214,77 @@
       "drums": 4, 
       "vocals": 3 
     }
-    }   
+    },
+    {
+    "title": "One Big Holiday",
+    "artist": "My Morning Jacket",
+    "album": "It Still Moves",
+    "cover": "covers/mymorningjacketitstillmoves.png",
+    "year": 2003,
+    "genre": "Southern Rock",
+    "category": "rb4dlc",
+    "release": "10-6-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 4,
+      "guitar": 4,
+      "bass": 1,
+      "drums": 6, 
+      "vocals": 1 
+    }
+    }, 
+    {
+    "title": "Rebellion (ft. Daron Malakian)",
+    "artist": "Linkin Park",
+    "album": "The Hunting Party",
+    "cover": "covers/linkinparkthehuntingparty.png",
+    "year": 2014,
+    "genre": "Nu-Metal",
+    "category": "rb4dlc",
+    "release": "10-6-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 5,
+      "guitar": 5,
+      "bass": 6,
+      "drums": 6, 
+      "vocals": 2 
+    }
+    },
+    {
+    "title": "The Reflex",
+    "artist": "Duran Duran",
+    "album": "Seven and the Ragged Tiger",
+    "cover": "covers/duranduransevenandtheraggedtiger.png",
+    "year": 1983,
+    "genre": "New Wave",
+    "category": "rb4dlc",
+    "release": "10-6-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 4,
+      "guitar": 3,
+      "bass": 3,
+      "drums": 5, 
+      "vocals": 4 
+    }
+    },
+    {
+    "title": "Run for Cover",
+    "artist": "Blitz Kids",
+    "album": "The Good Youth",
+    "cover": "covers/blitzkidsthegoodyouth.png",
+    "year": 2014,
+    "genre": "Pop-Rock",
+    "category": "rb4dlc",
+    "release": "10-6-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 3,
+      "guitar": 4,
+      "bass": 2,
+      "drums": 4, 
+      "vocals": 3 
+    }
+    }    
     ]
