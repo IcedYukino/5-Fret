@@ -88,5 +88,41 @@
       "drums": 6, 
       "vocals": 3 
     }
+    },
+    {
+    "title": "High Road",
+    "artist": "Mastodon",
+    "album": "Once More 'Round the Sun",
+    "cover": "covers/mastodononcemoreroundthesun.png",
+    "year": 2014,
+    "genre": "Metal",
+    "category": "rb4dlc",
+    "release": "10-6-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 5,
+      "guitar": 4,
+      "bass": 4,
+      "drums": 6, 
+      "vocals": 1 
     }
+    }, 
+    {
+    "title": "Jane",
+    "artist": "Jefferson Starship",
+    "album": "Freedom at Point Zero",
+    "cover": "covers/jeffersonstarshipfreedomatpointzero.png",
+    "year": 1979,
+    "genre": "Classic Rock",
+    "category": "rb4dlc",
+    "release": "10-6-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 4,
+      "guitar": 3,
+      "bass": 1,
+      "drums": 4, 
+      "vocals": 6 
+    }
+    }   
     ]
