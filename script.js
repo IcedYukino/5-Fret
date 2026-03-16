@@ -299,24 +299,28 @@ ${song.category ? `<img class="source-icon" src="./assets/${song.category}.png">
     document.getElementById("info-keys").innerHTML = createDifficulty(song.difficulty?.keys);
     document.getElementById("info-prokeys").innerHTML = createDifficulty(song.difficulty?.prokeys);
 
-    const favToggle = document.getElementById("favorite-toggle");
+   const favToggle = document.getElementById("favorite-toggle");
+const modal = document.querySelector(".song-info-modal");
 
 favToggle.checked = song.favorite === true;
 
-favToggle.onchange = () => {
-
-song.favorite = favToggle.checked;
-
-const modal = document.querySelector(".song-info-modal");
-
 if(song.favorite){
-modal.classList.add("favorite");
+    modal.classList.add("favorite");
 }else{
-modal.classList.remove("favorite");
+    modal.classList.remove("favorite");
 }
 
-displaySongs(songs);
+favToggle.onchange = () => {
 
+    song.favorite = favToggle.checked;
+
+    if(song.favorite){
+        modal.classList.add("favorite");
+    }else{
+        modal.classList.remove("favorite");
+    }
+
+    displaySongs(songs);
 };
 
     overlay.classList.add("open");
