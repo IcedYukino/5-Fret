@@ -263,7 +263,7 @@ ${song.category ? `<img class="source-icon" src="./assets/${song.category}.png">
 
     let charter = song.charter || "";
 
-    if(["gh","gh2","rb1dlc","fnf"].includes(song.category)){
+    if(["gh","gh2","rb1dlc","fnf","rb4dlc"].includes(song.category)){
         charter = `<span style="color:#0078ff">Harmonix</span>`;
     }
 
