@@ -548,13 +548,62 @@ z-index:-1;
 /* Favorite highlight */
 
 .song.favorite{
-background:linear-gradient(145deg,#3a2b00,#1a1400);
-box-shadow:0 0 20px #ffd700;
-border:1px solid #ffd70055;
+background:linear-gradient(145deg,#ffd700,#b89600);
+color:#111;
+border:1px solid #9c7c00;
 }
 
-.song.favorite:hover{
-box-shadow:0 0 25px #ffd700;
+.song.favorite h3,
+.song.favorite p{
+color:#111;
+}
+
+.song.favorite .song-download{
+color:#111;
+}
+
+.song.favorite .song-download:hover{
+color:#000;
+}
+
+/* Gold album cover border */
+
+.song.favorite .cover-container img{
+border:3px solid #b89600;
+}
+
+/* Modal gold version */
+
+.song-info-modal.favorite{
+background:linear-gradient(145deg,#ffd700,#b89600);
+color:#111;
+border:1px solid #9c7c00;
+}
+
+.song-info-modal.favorite .info-section{
+background:rgba(0,0,0,.15);
+}
+
+.song-info-modal.favorite .info-label{
+color:#333;
+}
+
+.song-info-modal.favorite .info-value{
+color:#111;
+}
+
+/* Favorite checkbox */
+
+.favorite-toggle{
+display:flex;
+align-items:center;
+gap:8px;
+font-size:13px;
+cursor:pointer;
+}
+
+.favorite-toggle input{
+cursor:pointer;
 }
 
 /* Modal gold state */
