@@ -15,9 +15,9 @@
       "bass": 2,
       "drums": 4, 
       "vocals": 3 
-    }
-    },
-    {
+  }
+  },
+  {
     "title": "Backwoods Company",
     "artist": "The Wild Feathers",
     "album": "The Wild Feathers",
@@ -33,9 +33,9 @@
       "bass": 3,
       "drums": 3, 
       "vocals": 4 
-    }
-    },
-    {
+   }
+   },
+   {
     "title": "Cowboys From Hell (Live)",
     "artist": "Pantera",
     "album": "Cowboys From Hell",
@@ -51,6 +51,24 @@
       "bass": 6,
       "drums": 4, 
       "vocals": 2 
+   }
+   },
+   {
+    "title": "Divide ",
+    "artist": "All That Remains",
+    "album": "The Order of Things",
+    "cover": "covers/allthatremainstheorderofthing.png",
+    "year": 2015,
+    "genre": "Metal",
+    "category": "rb4dlc",
+    "release": "10-6-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 4,
+      "guitar": 4,
+      "bass": 3,
+      "drums": 4, 
+      "vocals": 3 
     }
     }
     ]
