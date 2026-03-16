@@ -9,10 +9,10 @@
     "release": "10-6-2015",
     "rating": "SR",
     "difficulty": {
-      "guitar": ,
-      "bass": ,
-      "drums": , 
-      "vocals": , 
+      "guitar": -1,
+      "bass": -1,
+      "drums": -1, 
+      "vocals": -1 
     }
     }
     ]
