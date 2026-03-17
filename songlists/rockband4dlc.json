@@ -574,5 +574,59 @@
       "drums": 0, 
       "vocals": 2 
     }
-    }       
+    },
+    {
+    "title": "Always Something There to Remind Me",
+    "artist": "Naked Eyes",
+    "album": "Burning Bridges",
+    "cover": "covers/nakedeyesburningbridges.png",
+    "year": 1983,
+    "genre": "New Wave",
+    "category": "rb4dlc",
+    "release": "10-27-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 2,
+      "guitar": 0,
+      "bass": 1,
+      "drums": 4, 
+      "vocals": 3 
+    }
+    },
+    {
+    "title": "People Are People",
+    "artist": "Depeche Mode",
+    "album": "Some Great Reward",
+    "cover": "covers/depechemodesomegreatreward.png",
+    "year": 1984,
+    "genre": "Pop/Dance/Electronic",
+    "category": "rb4dlc",
+    "release": "10-27-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 2,
+      "guitar": 0,
+      "bass": 1,
+      "drums": 3, 
+      "vocals": 3 
+    }
+    },
+    {
+    "title": "What You Need",
+    "artist": "INXS",
+    "album": "Listen Like Thieves",
+    "cover": "covers/inxslistenlikethieves.png",
+    "year": 1985,
+    "genre": "Pop-Rock",
+    "category": "rb4dlc",
+    "release": "10-27-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 2,
+      "guitar": 1,
+      "bass": 0,
+      "drums": 2, 
+      "vocals": 5 
+    }
+    }    
     ]
