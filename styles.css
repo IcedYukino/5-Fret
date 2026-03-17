@@ -173,11 +173,10 @@ body {
 .song.favorite h3, .song.favorite p, .song.favorite .song-download { color: #111; }
 .song.favorite .cover-container img { border:3px solid var(--gold-border); }
 
-/* Modal gold with proper shine */
+/* Modal gold with proper shimmer */
 .song-info-modal.favorite {
-    background: linear-gradient(145deg, var(--gold-start), var(--gold-end));
-    border: 1px solid var(--gold-border);
     position: relative;
+    border-radius: 14px;
     overflow: hidden;
     display: grid;
     grid-template-columns: 300px 1fr 220px;
@@ -187,19 +186,15 @@ body {
 .song-info-modal.favorite::before {
     content: "";
     position: absolute;
-    top:0; left:-150%;
-    width:150%; height:100%;
+    inset: 0;
     background: linear-gradient(120deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.25) 50%, rgba(255,255,255,0.05) 100%);
     transform: skewX(-25deg);
     animation: gradientShine 8s linear infinite;
-    pointer-events:none;
-    z-index:0;
+    pointer-events: none;
+    z-index: 0;
+    border-radius: 14px;
 }
 .song-info-modal.favorite > * { position: relative; z-index: 1; }
-.song-info-modal.favorite .info-left,
-.song-info-modal.favorite .info-middle,
-.song-info-modal.favorite .info-right { position: relative; z-index:1; }
-.song-info-modal.favorite .info-section { background: rgba(0,0,0,.15); }
 
 /* Shimmer animation */
 @keyframes gradientShine { 0% { left:-150%; } 100% { left:150%; } }
