@@ -19,10 +19,12 @@
   <div class="header-center">
     <input type="text" id="search" placeholder="Search songs or artists..." onkeyup="searchSongs()">
     <button id="randomSong" class="tab">🎲 Random Song</button>
+
     <div class="sort-buttons">
       <button onclick="sortSongs('title')">Sort by Song</button>
       <button onclick="sortSongs('artist')">Sort by Artist</button>
     </div>
+
     <div class="tabs">
       <button class="tab active" onclick="switchTab('all', this)">All</button>
       <button class="tab" onclick="switchTab('rb4dlc', this)">
@@ -46,8 +48,11 @@
 
 <!-- Modal Overlay -->
 <div id="song-info-overlay" class="song-info-overlay">
+
   <div class="overlay-bg"></div>
+
   <div class="song-info-modal">
+
     <button class="close-info" onclick="closeSongInfo()">✕</button>
 
     <div class="info-left">
@@ -57,6 +62,7 @@
     <div class="info-middle">
       <div id="info-title" class="info-title"></div>
       <div id="info-artist" class="info-artist"></div>
+
       <div class="info-meta">
         <div id="info-album"></div>
         <div id="info-year"></div>
@@ -79,23 +85,33 @@
         <div class="info-label">GENRE</div>
         <div id="info-genre" class="info-value"></div>
       </div>
+
       <div class="info-section">
         <div class="info-label">SOURCE</div>
         <div id="info-source" class="info-value"></div>
       </div>
+
       <div class="info-section">
         <div class="info-label">SONG RATING</div>
         <div id="info-rating" class="info-value"></div>
       </div>
+
       <div class="info-section">
         <div class="info-label">RELEASE</div>
         <div id="info-release" class="info-value"></div>
       </div>
+
       <div class="info-section">
         <div class="info-label">CHARTER</div>
         <div id="info-charter" class="info-value"></div>
       </div>
+    </div>
+
+  </div>
+
+</div>
 
 <script src="script.js"></script>
+
 </body>
 </html>
