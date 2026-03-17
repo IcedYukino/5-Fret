@@ -646,5 +646,59 @@
       "drums": 2, 
       "vocals": 3 
     }
-    }    
+    },
+    {
+    "title": "Long Cool Woman in a Black Dress",
+    "artist": "The Hollies",
+    "album": "Distant Light",
+    "cover": "covers/theholliesdistantlight.png",
+    "year": 1971,
+    "genre": "Classic Rock",
+    "category": "rb4dlc",
+    "release": "11-4-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 2,
+      "guitar": 2,
+      "bass": 0,
+      "drums": 0, 
+      "vocals": 3 
+    }
+    },
+    {
+    "title": "Lust for Life",
+    "artist": "Iggy Pop",
+    "album": "Lust for Life",
+    "cover": "covers/iggypoplustforlife.png",
+    "year": 1977,
+    "genre": "Rock",
+    "category": "rb4dlc",
+    "release": "11-4-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 4,
+      "guitar": 4,
+      "bass": 4,
+      "drums": 4, 
+      "vocals": 2 
+    }
+    },
+    {
+    "title": "Awake",
+    "artist": "Godsmack",
+    "album": "Awake",
+    "cover": "covers/godsmackawake.png",
+    "year": 2000,
+    "genre": "Nu-Metal",
+    "category": "rb4dlc",
+    "release": "11-9-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 3,
+      "guitar": 3,
+      "bass": 1,
+      "drums": 4, 
+      "vocals": 3 
+    }
+    }       
     ]
