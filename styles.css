@@ -223,8 +223,43 @@ body {
 }
 
 /* Favorite checkbox */
-.favorite-toggle { display:flex; align-items:center; gap:8px; font-size:13px; cursor:pointer; }
-.favorite-toggle input { cursor:pointer; }
+.checkbox-container{
+display:flex;
+align-items:center;
+justify-content:center;
+margin-top:10px;
+gap:8px;
+}
+
+input[type="checkbox"]{
+appearance:none;
+width:18px;
+height:18px;
+border:2px solid #000;
+border-radius:4px;
+cursor:pointer;
+position:relative;
+background:#fff;
+}
+
+input[type="checkbox"]:checked{
+background:#000;
+}
+
+input[type="checkbox"]:checked::after{
+content:"✔";
+color:#fff;
+font-size:12px;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-55%);
+}
+
+.checkbox-container label{
+cursor:pointer;
+font-size:14px;
+}
 
 /* Footer */
 footer { margin-top:40px; color:#666; padding:20px; }
