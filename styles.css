@@ -454,13 +454,17 @@ font-weight:600;
 .song-info-modal{
 background:#1a1a1a;
 border-radius:14px;
-width:1200px;
+width:1100px;
 max-width:95%;
 padding:30px;
 display:grid;
-grid-template-columns:320px 1fr 260px;
-gap:40px;
+
+/* FIXED LAYOUT */
+grid-template-columns:320px auto 240px;
+
+gap:24px;
 align-items:start;
+
 box-shadow:0 0 40px rgba(0,0,0,.8);
 position:relative;
 transform:translateY(60px) scale(.95);
