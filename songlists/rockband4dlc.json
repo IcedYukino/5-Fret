@@ -466,5 +466,113 @@
       "drums": 3, 
       "vocals": 2 
     }
-    }    
+    },
+    {
+    "title": "Cryin'",
+    "artist": "Aerosmith",
+    "album": "Get a Grip",
+    "cover": "covers/aerosmithgetagrip.png",
+    "year": 1993,
+    "genre": "Rock",
+    "category": "rb4dlc",
+    "release": "10-19-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 3,
+      "guitar": 3,
+      "bass": 1,
+      "drums": 3, 
+      "vocals": 4 
+    }
+    },
+    {
+    "title": "Dude (Looks Like a Lady)",
+    "artist": "Aerosmith",
+    "album": "Permanent Vacation",
+    "cover": "covers/aerosmithpermanentvacation.png",
+    "year": 1987,
+    "genre": "Rock",
+    "category": "rb4dlc",
+    "release": "10-19-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 3,
+      "guitar": 3,
+      "bass": 1,
+      "drums": 2, 
+      "vocals": 3 
+    }
+    },
+    {
+    "title": "Eat the Rich",
+    "artist": "Aerosmith",
+    "album": "Get a Grip",
+    "cover": "covers/aerosmithgetagrip.png",
+    "year": 1993,
+    "genre": "Rock",
+    "category": "rb4dlc",
+    "release": "10-19-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 4,
+      "guitar": 5,
+      "bass": 4,
+      "drums": 2, 
+      "vocals": 4 
+    }
+    },
+    {
+    "title": "Love in an Elevator",
+    "artist": "Aerosmith",
+    "album": "Pump",
+    "cover": "covers/aerosmithpump.png",
+    "year": 1989,
+    "genre": "Rock",
+    "category": "rb4dlc",
+    "release": "10-19-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 4,
+      "guitar": 4,
+      "bass": 3,
+      "drums": 4, 
+      "vocals": 4 
+    }
+    },
+    {
+    "title": "Rats in the Cellar",
+    "artist": "Aerosmith",
+    "album": "Rocks",
+    "cover": "covers/aerosmithrocks.png",
+    "year": 1976,
+    "genre": "Rock",
+    "category": "rb4dlc",
+    "release": "10-19-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 5,
+      "guitar": 5,
+      "bass": 6,
+      "drums": 5, 
+      "vocals": 3 
+    }
+    },
+    {
+    "title": "Seasons of Wither",
+    "artist": "Aerosmith",
+    "album": "Get Your Wings",
+    "cover": "covers/aerosmithgetyourwings.png",
+    "year": 1974,
+    "genre": "Rock",
+    "category": "rb4dlc",
+    "release": "10-19-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 1,
+      "guitar": 1,
+      "bass": 0,
+      "drums": 0, 
+      "vocals": 2 
+    }
+    }       
     ]
