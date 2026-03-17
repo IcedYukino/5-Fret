@@ -628,5 +628,23 @@
       "drums": 2, 
       "vocals": 5 
     }
+    },
+    {
+    "title": "Bad Case of Loving You (Doctor, Doctor)",
+    "artist": "Robert Palmer",
+    "album": "Secrets",
+    "cover": "covers/robertpalmersecrets.png",
+    "year": 1979,
+    "genre": "Pop-Rock",
+    "category": "rb4dlc",
+    "release": "11-4-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 2,
+      "guitar": 2,
+      "bass": 3,
+      "drums": 2, 
+      "vocals": 3 
+    }
     }    
     ]
