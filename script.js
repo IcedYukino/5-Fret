@@ -3,7 +3,7 @@ let currentTab = "all";
 let sortDirection = 1;
 
 // ==========================
-// DOMContentLoaded - initialize everything
+// DOMContentLoaded
 // ==========================
 window.addEventListener("DOMContentLoaded", async () => {
   await loadSongs(currentTab);
@@ -80,7 +80,7 @@ function displaySongs(songList) {
       </div>
 
       <h3>
-        <a class="song-download" ${file ? `href="${file}" download` : "disabled"} onclick="event.stopPropagation()">
+        <a class="song-download" ${file ? `href="${file}" download` : "disabled"}>
           ${song.title}
         </a>
       </h3>
@@ -106,20 +106,25 @@ function displaySongs(songList) {
 
     grid.appendChild(card);
 
-    // Toggle difficulty dropdown on card click
     const dropdown = card.querySelector(".difficulty-dropdown");
+    const moreInfoBtn = card.querySelector(".more-info-btn");
+    const downloadLink = card.querySelector(".song-download");
+
+    // Toggle dropdown only when clicking the card itself, not More Info or download link
     card.addEventListener("click", (e) => {
-      if (!e.target.classList.contains("more-info-btn") && !e.target.classList.contains("song-download")) {
+      if (!moreInfoBtn.contains(e.target) && !downloadLink.contains(e.target)) {
         dropdown.classList.toggle("open");
       }
     });
 
-    // More Info button
-    const infoBtn = card.querySelector(".more-info-btn");
-    infoBtn.addEventListener("click", (e) => {
+    // More Info button opens overlay
+    moreInfoBtn.addEventListener("click", (e) => {
       e.stopPropagation();
       openSongInfo(song);
     });
+
+    // Prevent download link click from toggling dropdown
+    downloadLink.addEventListener("click", (e) => e.stopPropagation());
   });
 }
 
@@ -138,7 +143,7 @@ function createDifficulty(level) {
 }
 
 // ==========================
-// Open / Close Song Info
+// Open Song Info Overlay
 // ==========================
 function openSongInfo(song) {
   const overlay = document.getElementById("song-info-overlay");
@@ -170,7 +175,6 @@ function openSongInfo(song) {
     charter = `<span class="harmonix-charter">Harmonix</span>`;
   document.getElementById("info-charter").innerHTML = charter;
 
-  // Difficulty in overlay
   ["guitar","proguitar","bass","probass","keys","prokeys","drums","vocals"].forEach(inst => {
     const elem = document.getElementById(`info-${inst}`);
     if (elem) elem.innerHTML = createDifficulty(song.difficulty?.[inst]);
@@ -178,17 +182,18 @@ function openSongInfo(song) {
 
   overlay.classList.add("open");
 
-  // Reset Gold checkbox
   const goldCheckbox = document.getElementById("markGoldCheckbox");
   if (goldCheckbox) {
     goldCheckbox.checked = !!song.gold;
     applyGoldStyles(song.gold);
   }
 
-  // Save the current song for gold toggle
   overlay.currentSong = song;
 }
 
+// ==========================
+// Close Overlay
+// ==========================
 function closeSongInfo() {
   document.getElementById("song-info-overlay").classList.remove("open");
 }
@@ -203,7 +208,7 @@ function setupOverlayClose() {
 }
 
 // ==========================
-// Search songs
+// Search
 // ==========================
 function searchSongs() {
   const input = document.getElementById("search").value.toLowerCase();
@@ -214,7 +219,7 @@ function searchSongs() {
 }
 
 // ==========================
-// Sort songs
+// Sort
 // ==========================
 function sortSongs(type) {
   songs.sort((a,b) => {
@@ -229,7 +234,7 @@ function sortSongs(type) {
 }
 
 // ==========================
-// Switch Tabs
+// Tabs
 // ==========================
 async function switchTab(tab, button) {
   currentTab = tab;
@@ -249,7 +254,6 @@ function setupRandomButton() {
     if (songs.length === 0) return;
     const random = songs[Math.floor(Math.random()*songs.length)];
     displaySongs(songs);
-
     setTimeout(() => {
       const cards = document.querySelectorAll(".song");
       for (const card of cards) {
@@ -266,7 +270,7 @@ function setupRandomButton() {
 }
 
 // ==========================
-// Gold Feature
+// Gold Toggle
 // ==========================
 function setupGoldToggle() {
   const goldCheckbox = document.getElementById("markGoldCheckbox");
@@ -296,7 +300,7 @@ function applyGoldStyles(enable) {
 }
 
 // ==========================
-// Format release date
+// Format Release Date
 // ==========================
 function formatReleaseDate(date) {
   if (!date) return "";
