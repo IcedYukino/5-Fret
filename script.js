@@ -3,7 +3,7 @@ let currentTab = "all";
 let sortDirection = 1;
 
 // ==========================
-// DOMContentLoaded - initialize everything
+// DOMContentLoaded
 // ==========================
 window.addEventListener("DOMContentLoaded", async () => {
   await loadSongs(currentTab);
@@ -92,31 +92,29 @@ function displaySongs(songList) {
     `;
 
     grid.appendChild(card);
+  });
 
-    const dropdown = card.querySelector(".difficulty-dropdown");
-    const moreInfoBtn = card.querySelector(".more-info-btn");
-    const downloadLink = card.querySelector(".song-download");
+  // Set up event delegation for dynamic elements
+  grid.addEventListener("click", function(e) {
+    const target = e.target;
 
-    // Toggle dropdown only if card background is clicked
-    card.addEventListener("click", e => {
-      if (!moreInfoBtn.contains(e.target) && !downloadLink.contains(e.target)) {
-        dropdown.classList.toggle("open");
-      }
-    });
+    // Dropdown toggle
+    const songCard = target.closest(".song");
+    if (!songCard) return;
+    const dropdown = songCard.querySelector(".difficulty-dropdown");
 
-    // Open More Info overlay
-    moreInfoBtn.addEventListener("click", e => {
-      e.stopPropagation();
-      openSongInfo(song);
-    });
-
-    // Prevent download link from toggling dropdown
-    downloadLink.addEventListener("click", e => e.stopPropagation());
+    if (target.classList.contains("more-info-btn")) {
+      const title = songCard.querySelector("h3")?.innerText;
+      const song = songs.find(s => s.title === title);
+      if (song) openSongInfo(song);
+    } else if (!target.classList.contains("song-download")) {
+      dropdown.classList.toggle("open");
+    }
   });
 }
 
 // ==========================
-// Create difficulty bars
+// Difficulty
 // ==========================
 function createDifficulty(level) {
   if (level == null || level === -1) return `<div class="no-part">NO PART</div>`;
@@ -130,7 +128,7 @@ function createDifficulty(level) {
 }
 
 // ==========================
-// Open / Close Song Info
+// Open / Close Overlay
 // ==========================
 function openSongInfo(song) {
   const overlay = document.getElementById("song-info-overlay");
@@ -162,7 +160,6 @@ function openSongInfo(song) {
     charter = `<span style="color:#0078ff">Harmonix</span>`;
   document.getElementById("info-charter").innerHTML = charter;
 
-  // Difficulty
   ["guitar","proguitar","bass","probass","keys","prokeys","drums","vocals"].forEach(inst => {
     const elem = document.getElementById(`info-${inst}`);
     if (elem) elem.innerHTML = createDifficulty(song.difficulty?.[inst]);
@@ -170,7 +167,7 @@ function openSongInfo(song) {
 
   overlay.classList.add("open");
 
-  // Reset Gold checkbox
+  // Reset Gold
   const goldCheckbox = document.getElementById("markGoldCheckbox");
   if (goldCheckbox) {
     goldCheckbox.checked = false;
@@ -193,7 +190,7 @@ function setupOverlayClose() {
 }
 
 // ==========================
-// Search songs
+// Search
 // ==========================
 function searchSongs() {
   const input = document.getElementById("search").value.toLowerCase();
@@ -204,7 +201,7 @@ function searchSongs() {
 }
 
 // ==========================
-// Sort songs
+// Sort
 // ==========================
 function sortSongs(type) {
   songs.sort((a,b) => {
