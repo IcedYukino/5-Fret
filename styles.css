@@ -438,17 +438,6 @@ opacity:1;
 pointer-events:auto;
 }
 
-.charter{
-margin-top:6px;
-font-weight:600;
-font-size:14px;
-}
-
-.harmonix-charter{
-color:#0078ff;
-font-weight:600;
-}
-
 /* MODAL */
 
 .song-info-modal{
@@ -458,13 +447,9 @@ width:1100px;
 max-width:95%;
 padding:30px;
 display:grid;
-
-/* FIXED LAYOUT */
 grid-template-columns:320px auto 240px;
-
 gap:24px;
 align-items:start;
-
 box-shadow:0 0 40px rgba(0,0,0,.8);
 position:relative;
 transform:translateY(60px) scale(.95);
@@ -576,13 +561,6 @@ margin-bottom:4px;
 font-weight:bold;
 }
 
-.info-icon{
-width:16px;
-height:16px;
-margin-right:6px;
-vertical-align:middle;
-}
-
 /* CLOSE BUTTON */
 
 .close-info{
@@ -617,4 +595,47 @@ footer{
 margin-top:40px;
 color:#666;
 padding:20px;
+}
+
+/* ========================= */
+/* GOLD FEATURE (NEW) */
+/* ========================= */
+
+/* Modal gold */
+.song-info-modal.gold{
+background:linear-gradient(135deg,#ffd700,#ffb300);
+color:#111;
+}
+
+/* Fix text inside gold modal */
+.song-info-modal.gold .info-artist,
+.song-info-modal.gold .info-meta,
+.song-info-modal.gold .info-label{
+color:#222;
+}
+
+.song-info-modal.gold .info-section{
+background:rgba(0,0,0,0.15);
+}
+
+.song-info-modal.gold .diff-box{
+background:rgba(0,0,0,0.15);
+}
+
+/* Card gold */
+.song.gold{
+background:linear-gradient(135deg,#ffd700,#ffb300);
+color:#111;
+box-shadow:0 0 20px gold;
+}
+
+/* Text readability */
+.song.gold p{
+color:#222;
+}
+
+/* Override hover */
+.song.gold:hover{
+box-shadow:0 0 25px gold;
+transform:scale(1.05);
 }
