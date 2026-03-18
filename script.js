@@ -6,7 +6,28 @@ window.addEventListener("DOMContentLoaded", async () => {
     await loadSongs("all");
     setupOverlayClose();
     displaySongs(songs);
+
+    setupGoldToggle(); // ✅ NEW
 });
+
+function setupGoldToggle(){
+    const goldToggle = document.getElementById("goldToggle");
+    const modal = document.querySelector(".song-info-modal");
+
+    goldToggle.addEventListener("change", () => {
+
+        const overlay = document.getElementById("song-info-overlay");
+        const card = overlay.currentCard;
+
+        // toggle modal
+        modal.classList.toggle("gold", goldToggle.checked);
+
+        // toggle card
+        if(card){
+            card.classList.toggle("gold", goldToggle.checked);
+        }
+    });
+}
 
 function formatReleaseDate(date) {
     if(!date) return "";
@@ -94,7 +115,6 @@ function displaySongs(songList){
         const file = song.file || "";
 
         card.innerHTML = `
-
 <div class="cover-container">
     <img src="${song.cover}">
     ${coverTag}
@@ -161,7 +181,7 @@ ${createDifficulty(song.difficulty?.vocals)}
 
         infoBtn.addEventListener("click",(e)=>{
             e.stopPropagation();
-            openSongInfo(song);
+            openSongInfo(song, card); // ✅ PASS CARD
         });
 
     });
@@ -187,9 +207,18 @@ function createDifficulty(level){
     return `<div class="diff-row">${bars}</div>`;
 }
 
-function openSongInfo(song){
+function openSongInfo(song, card){
 
     const overlay = document.getElementById("song-info-overlay");
+    const modal = document.querySelector(".song-info-modal");
+
+    // ✅ STORE CARD
+    overlay.currentCard = card;
+
+    // ✅ RESET GOLD STATE
+    const goldToggle = document.getElementById("goldToggle");
+    goldToggle.checked = false;
+    modal.classList.remove("gold");
 
     document.getElementById("info-cover").src = song.cover;
 
