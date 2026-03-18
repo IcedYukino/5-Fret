@@ -81,7 +81,7 @@ function displaySongs(songList) {
       </div>
 
       <h3>
-        <a class="song-download" ${file ? `href="${file}" download` : "disabled"} onclick="event.stopPropagation()">
+        <a class="song-download" ${file ? `href="${file}" download` : `href="#" onclick="return false;"`}>
           ${song.title}
         </a>
       </h3>
@@ -295,5 +295,11 @@ function formatReleaseDate(date) {
   const parts = date.split("-");
   if (parts.length !== 3) return date;
   const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-  return `${months[parseInt(parts[0])-1]} ${parseInt(parts[1])}, ${parts[2]}`;
+  const year = parts[0];
+  const monthIndex = parseInt(parts[1], 10) - 1;
+  const day = parseInt(parts[2], 10);
+
+  if (monthIndex < 0 || monthIndex > 11) return date;
+
+  return `${months[monthIndex]} ${day}, ${year}`;
 }
