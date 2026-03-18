@@ -2,9 +2,6 @@ let songs = [];
 let currentTab = "all";
 let sortDirection = 1;
 
-// ==========================
-// DOMContentLoaded - initialize everything
-// ==========================
 window.addEventListener("DOMContentLoaded", async () => {
   await loadSongs(currentTab);
   setupOverlayClose();
@@ -12,32 +9,18 @@ window.addEventListener("DOMContentLoaded", async () => {
   setupRandomButton();
 });
 
-// ==========================
-// Load Songs
-// ==========================
 async function loadSongs(tab) {
   let files = [];
-
-  // Map tab names to file names
-  const tabMap = {
-    gh: ["guitarhero"],
-    gh2: ["guitarhero2"],
-    ghwor: ["guitarherowarriorsofrock"],
-    ghwordlc: ["guitarherowarriorsofrockdlc"],
-    rb1dlc: ["rockbanddlc"],
-    fnf: ["fortnitefestival"]
-  };
-
   if (tab === "all") {
     try {
       const index = await fetch("./songlists/index.json");
-      files = await index.json(); // should be an array of filenames
+      files = await index.json();
     } catch (err) {
       console.error("Failed to load index.json", err);
       return;
     }
   } else {
-    files = tabMap[tab] || [];
+    files = [tab];
   }
 
   let loadedSongs = [];
@@ -54,135 +37,48 @@ async function loadSongs(tab) {
 
   songs = loadedSongs.sort((a, b) => a.title.localeCompare(b.title));
   displaySongs(songs);
-
-  const counter = document.getElementById("song-count");
-  if (counter) counter.innerText = songs.length + " songs";
+  document.getElementById("song-count").innerText = songs.length + " songs";
 }
 
-// ==========================
-// Display Songs
-// ==========================
 function displaySongs(songList) {
   const grid = document.getElementById("song-grid");
-  if (!grid) return;
-
   grid.innerHTML = "";
 
-  songList.forEach((song) => {
+  songList.forEach(song => {
     const card = document.createElement("div");
-    card.className = `song ${song.category || ""} ${song.gold ? "gold" : ""}`;
-
+    card.className = `song ${song.category || ""}`;
     const rating = song.rating || "NR";
     const coverTag = song.master === false ? `<div class="cover-tag">COVER</div>` : "";
-    const file = song.file || "";
     const cover = song.cover || "./assets/default_cover.png";
-    const difficulty = song.difficulty || {};
 
     card.innerHTML = `
       <div class="cover-container">
         <img src="${cover}">
         ${coverTag}
       </div>
-
       <h3>
-        <a class="song-download" ${file ? `href="${file}" download` : "disabled"} onclick="event.stopPropagation()">
+        <a class="song-download" ${song.file ? `href="${song.file}" download` : "disabled"} onclick="event.stopPropagation()">
           ${song.title}
         </a>
       </h3>
-
       <p>${song.artist || ""}</p>
-
-      <div class="genre-row">
-        ${song.category ? `<img class="source-icon" src="./assets/${song.category}.png">` : ""}
-        <span class="genre-tag ${song.genre?.toLowerCase().replace(/[^a-z]/g, "") || ""}">
-          ${song.genre || ""}
-        </span>
-        <span class="song-rating ${rating}">${rating}</span>
-      </div>
-
-      <div class="difficulty-dropdown">
-        ${["guitar","bass","drums","vocals","proguitar","probass","keys","prokeys"]
-          .map(inst => `<div class="instrument"><img class="instrument-icon" src="./assets/${inst}.png">${createDifficulty(difficulty[inst])}</div>`).join("")}
-        <div class="more-info-row">
-          <button class="more-info-btn">More Info</button>
-        </div>
-      </div>
     `;
 
+    card.addEventListener("click", () => openSongInfo(song));
     grid.appendChild(card);
-
-    // Toggle dropdown
-    const dropdown = card.querySelector(".difficulty-dropdown");
-    card.addEventListener("click", () => dropdown.classList.toggle("open"));
-
-    // Open modal
-    const infoBtn = card.querySelector(".more-info-btn");
-    infoBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      openSongInfo(song);
-    });
   });
 }
 
-// ==========================
-// Create difficulty bars
-// ==========================
-function createDifficulty(level) {
-  if (level == null || level === -1) return `<div class="no-part">NO PART</div>`;
-  let bars = "";
-  for (let i = 1; i <= 5; i++) {
-    if (level === 6) bars += `<div class="diff red"></div>`;
-    else if (i <= level) bars += `<div class="diff filled"></div>`;
-    else bars += `<div class="diff"></div>`;
-  }
-  return `<div class="diff-row">${bars}</div>`;
-}
-
-// ==========================
-// Open / Close Song Info
-// ==========================
 function openSongInfo(song) {
   const overlay = document.getElementById("song-info-overlay");
-  const cover = song.cover || "./assets/default_cover.png";
-
-  document.getElementById("info-cover").src = cover;
-  const bg = document.querySelector(".overlay-bg");
-  if (bg) bg.style.backgroundImage = `url(${cover})`;
-
+  overlay.classList.add("open");
   document.getElementById("info-title").innerText = song.title || "";
   document.getElementById("info-artist").innerText = song.artist || "";
-  document.getElementById("info-album").innerText = song.album || "";
-  document.getElementById("info-year").innerText = song.year || "";
-  document.getElementById("info-release").innerText = formatReleaseDate(song.release);
+  document.getElementById("info-cover").src = song.cover || "./assets/default_cover.png";
 
-  document.getElementById("info-genre").innerHTML = `<span class="genre-tag ${song.genre?.toLowerCase().replace(/[^a-z]/g, "")}">${song.genre || ""}</span>`;
-
-  const sources = { gh:"Guitar Hero", gh2:"Guitar Hero II", ghwor:"GH: Warriors of Rock", ghwordlc:"GH: W.O.R. DLC", rb1dlc:"Rock Band DLC", fnf:"Fortnite Festival" };
-  const sourceName = sources[song.category] || "";
-  document.getElementById("info-source").innerHTML = `<span class="source-row">${song.category ? `<img class="source-icon" src="./assets/${song.category}.png">` : ""}<span>${sourceName}</span></span>`;
-
-  let ratingText = song.rating || "NR";
-  if (ratingText === "FF") ratingText = "Family Friendly";
-  if (ratingText === "SR") ratingText = "Supervision Recommended";
-  document.getElementById("info-rating").innerHTML = `<span class="song-rating ${song.rating}">${ratingText}</span>`;
-
-  let charter = song.charter || "";
-  if (["gh","gh2","rb1dlc","fnf","rb4dlc"].includes(song.category))
-    charter = `<span style="color:#0078ff">Harmonix</span>`;
-  document.getElementById("info-charter").innerHTML = charter;
-
-  // Difficulty
-  ["guitar","proguitar","bass","probass","keys","prokeys","drums","vocals"].forEach(inst => {
-    const elem = document.getElementById(`info-${inst}`);
-    if (elem) elem.innerHTML = createDifficulty(song.difficulty?.[inst]);
-  });
-
-  overlay.classList.add("open");
-
-  // Reset Gold checkbox
   const goldCheckbox = document.getElementById("markGoldCheckbox");
   if (goldCheckbox) {
-    goldCheckbox.checked = song.gold || false;
+    goldCheckbox.checked = false;
     removeGoldStyles();
   }
 }
@@ -192,44 +88,43 @@ function closeSongInfo() {
   removeGoldStyles();
 }
 
-// ==========================
-// Overlay close logic
-// ==========================
 function setupOverlayClose() {
   const overlay = document.getElementById("song-info-overlay");
-  overlay.addEventListener("click", (e) => { if (e.target === overlay) closeSongInfo(); });
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeSongInfo(); });
+  overlay.addEventListener("click", e => { if (e.target === overlay) closeSongInfo(); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape") closeSongInfo(); });
 }
 
-// ==========================
-// Search songs
-// ==========================
+function setupGoldToggle() {
+  const goldCheckbox = document.getElementById("markGoldCheckbox");
+  if (!goldCheckbox) return;
+  goldCheckbox.addEventListener("change", () => {
+    const overlayModal = document.querySelector(".song-info-modal");
+    overlayModal.classList.toggle("gold", goldCheckbox.checked);
+
+    const title = document.getElementById("info-title")?.innerText;
+    document.querySelectorAll(".song").forEach(card => {
+      if (card.querySelector("h3")?.innerText === title) card.classList.toggle("gold", goldCheckbox.checked);
+    });
+  });
+}
+
+function removeGoldStyles() {
+  document.querySelector(".song-info-modal")?.classList.remove("gold");
+  document.querySelectorAll(".song.gold").forEach(card => card.classList.remove("gold"));
+}
+
 function searchSongs() {
   const input = document.getElementById("search").value.toLowerCase();
   const filtered = songs.filter(song => (song.title || "").toLowerCase().includes(input) || (song.artist || "").toLowerCase().includes(input));
   displaySongs(filtered);
-  const counter = document.getElementById("song-count");
-  if (counter) counter.innerText = filtered.length + " songs";
 }
 
-// ==========================
-// Sort songs
-// ==========================
 function sortSongs(type) {
-  songs.sort((a,b) => {
-    const A = (a[type] || "").toLowerCase();
-    const B = (b[type] || "").toLowerCase();
-    if (A < B) return -1 * sortDirection;
-    if (A > B) return 1 * sortDirection;
-    return 0;
-  });
-  displaySongs(songs);
+  songs.sort((a,b) => ((a[type]||"").toLowerCase() < (b[type]||"").toLowerCase() ? -1*sortDirection : 1*sortDirection));
   sortDirection *= -1;
+  displaySongs(songs);
 }
 
-// ==========================
-// Switch Tabs
-// ==========================
 async function switchTab(tab, button) {
   currentTab = tab;
   document.querySelectorAll(".tab").forEach(btn => btn.classList.remove("active"));
@@ -238,68 +133,11 @@ async function switchTab(tab, button) {
   await loadSongs(tab);
 }
 
-// ==========================
-// Random Song
-// ==========================
 function setupRandomButton() {
   const randomBtn = document.getElementById("randomSong");
-  if (!randomBtn) return;
-  randomBtn.addEventListener("click", () => {
-    if (songs.length === 0) return;
+  randomBtn?.addEventListener("click", () => {
+    if (!songs.length) return;
     const random = songs[Math.floor(Math.random()*songs.length)];
     displaySongs(songs);
-
-    setTimeout(() => {
-      const cards = document.querySelectorAll(".song");
-      for (const card of cards) {
-        if (card.querySelector("h3")?.innerText === random.title) {
-          card.scrollIntoView({ behavior:"smooth", block:"center" });
-          card.style.boxShadow = "0 0 25px #0aa3ff";
-          const dropdown = card.querySelector(".difficulty-dropdown");
-          if (dropdown) dropdown.classList.add("open");
-          break;
-        }
-      }
-    }, 100);
   });
-}
-
-// ==========================
-// Gold Feature
-// ==========================
-function setupGoldToggle() {
-  const goldCheckbox = document.getElementById("markGoldCheckbox");
-  if (!goldCheckbox) return;
-  goldCheckbox.addEventListener("change", () => {
-    const overlayModal = document.querySelector(".song-info-modal");
-    if (!overlayModal) return;
-    overlayModal.classList.toggle("gold", goldCheckbox.checked);
-
-    const title = document.getElementById("info-title")?.innerText;
-    if (!title) return;
-
-    const cards = document.querySelectorAll(".song");
-    cards.forEach(card => {
-      const cardTitle = card.querySelector("h3")?.innerText;
-      if (cardTitle === title) card.classList.toggle("gold", goldCheckbox.checked);
-    });
-  });
-}
-
-function removeGoldStyles() {
-  const overlayModal = document.querySelector(".song-info-modal");
-  if (overlayModal) overlayModal.classList.remove("gold");
-  const cards = document.querySelectorAll(".song.gold");
-  cards.forEach(card => card.classList.remove("gold"));
-}
-
-// ==========================
-// Format release date
-// ==========================
-function formatReleaseDate(date) {
-  if (!date) return "";
-  const parts = date.split("-");
-  if (parts.length !== 3) return date;
-  const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-  return `${months[parseInt(parts[0])-1]} ${parseInt(parts[1])}, ${parts[2]}`;
 }
