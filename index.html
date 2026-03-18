@@ -46,17 +46,14 @@
   <p>This project is not affiliated with Harmonix.</p>
 </footer>
 
+<!-- Gold checkbox -->
+<div id="gold-checkbox-container">
+  <label><input type="checkbox" id="markGoldCheckbox" /> Mark as Gold</label>
+</div>
+
 <!-- Modal Overlay -->
 <div id="song-info-overlay" class="song-info-overlay">
   <div class="overlay-bg"></div>
-
-  <!-- Gold checkbox container -->
-  <div id="gold-checkbox-container">
-    <label>
-      <input type="checkbox" id="markGoldCheckbox" /> Mark as Gold
-    </label>
-  </div>
-
   <div class="song-info-modal">
     <button class="close-info" onclick="closeSongInfo()">✕</button>
 
@@ -67,36 +64,18 @@
     <div class="info-middle">
       <div id="info-title" class="info-title"></div>
       <div id="info-artist" class="info-artist"></div>
-
       <div class="info-meta">
         <div id="info-album"></div>
         <div id="info-year"></div>
       </div>
-
       <div class="difficulty-grid">
         <div class="diff-box">
           <img src="assets/guitar.png" class="diff-icon" />
           <div id="info-guitar"></div>
         </div>
         <div class="diff-box">
-          <img src="assets/proguitar.png" class="diff-icon" />
-          <div id="info-proguitar"></div>
-        </div>
-        <div class="diff-box">
           <img src="assets/bass.png" class="diff-icon" />
           <div id="info-bass"></div>
-        </div>
-        <div class="diff-box">
-          <img src="assets/probass.png" class="diff-icon" />
-          <div id="info-probass"></div>
-        </div>
-        <div class="diff-box">
-          <img src="assets/keys.png" class="diff-icon" />
-          <div id="info-keys"></div>
-        </div>
-        <div class="diff-box">
-          <img src="assets/prokeys.png" class="diff-icon" />
-          <div id="info-prokeys"></div>
         </div>
         <div class="diff-box">
           <img src="assets/drums.png" class="diff-icon" />
@@ -114,22 +93,14 @@
         <div class="info-label">GENRE</div>
         <div id="info-genre" class="info-value"></div>
       </div>
-
       <div class="info-section">
         <div class="info-label">SOURCE</div>
         <div id="info-source" class="info-value"></div>
       </div>
-
       <div class="info-section">
         <div class="info-label">SONG RATING</div>
         <div id="info-rating" class="info-value"></div>
       </div>
-
-      <div class="info-section">
-        <div class="info-label">RELEASE</div>
-        <div id="info-release" class="info-value"></div>
-      </div>
-
       <div class="info-section">
         <div class="info-label">CHARTER</div>
         <div id="info-charter" class="info-value"></div>
