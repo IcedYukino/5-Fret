@@ -23,6 +23,8 @@ async function loadSongs(tab) {
   else if (tab === "ghwor") files = ["guitarherowarriorsofrock"];
   else if (tab === "ghwordlc") files = ["guitarherowarriorsofrockdlc"];
   else if (tab === "rb1dlc") files = ["rockbanddlc"];
+  else if (tab === "rb3dlc") files = ["rockband3dlc"];
+  else if (tab === "rb4dlc") files = ["rockband4dlc"];  
   else if (tab === "fnf") files = ["fortnitefestival"];
   else if (tab === "all") {
     try {
