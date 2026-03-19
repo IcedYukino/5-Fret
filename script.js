@@ -10,7 +10,37 @@ window.addEventListener("DOMContentLoaded", async () => {
   setupOverlayClose();
   setupGoldToggle();
   setupRandomButton();
+  setupSongClickHandler(); // ✅ FIXED: moved here
 });
+
+// ==========================
+// Song Click Handler (FIX)
+// ==========================
+function setupSongClickHandler() {
+  const grid = document.getElementById("song-grid");
+
+  grid.addEventListener("click", function(e) {
+    const target = e.target;
+    const songCard = target.closest(".song");
+    if (!songCard) return;
+
+    const dropdown = songCard.querySelector(".difficulty-dropdown");
+
+    if (target.classList.contains("more-info-btn")) {
+      const title = songCard.querySelector("h3")?.innerText;
+      const song = songs.find(s => s.title === title);
+      if (song) openSongInfo(song);
+    } 
+    else if (!target.classList.contains("song-download")) {
+
+      // ✅ OPTIONAL UX: close others first
+      document.querySelectorAll(".difficulty-dropdown.open")
+        .forEach(d => d.classList.remove("open"));
+
+      dropdown.classList.add("open");
+    }
+  });
+}
 
 // ==========================
 // Load Songs
@@ -95,24 +125,6 @@ function displaySongs(songList) {
 
     grid.appendChild(card);
   });
-
-  // Set up event delegation for dynamic elements
-  grid.addEventListener("click", function(e) {
-    const target = e.target;
-
-    // Dropdown toggle
-    const songCard = target.closest(".song");
-    if (!songCard) return;
-    const dropdown = songCard.querySelector(".difficulty-dropdown");
-
-    if (target.classList.contains("more-info-btn")) {
-      const title = songCard.querySelector("h3")?.innerText;
-      const song = songs.find(s => s.title === title);
-      if (song) openSongInfo(song);
-    } else if (!target.classList.contains("song-download")) {
-      dropdown.classList.toggle("open");
-    }
-  });
 }
 
 // ==========================
@@ -146,30 +158,45 @@ function openSongInfo(song) {
   document.getElementById("info-year").innerText = song.year || "";
   document.getElementById("info-release").innerText = formatReleaseDate(song.release);
 
-  document.getElementById("info-genre").innerHTML = `<span class="genre-tag ${song.genre?.toLowerCase().replace(/[^a-z]/g, "")}">${song.genre || ""}</span>`;
+  document.getElementById("info-genre").innerHTML =
+    `<span class="genre-tag ${song.genre?.toLowerCase().replace(/[^a-z]/g, "")}">${song.genre || ""}</span>`;
 
-  const sources = { gh:"Guitar Hero", gh2:"Guitar Hero II", ghwor:"GH: Warriors of Rock", ghwordlc:"GH: W.O.R. DLC", rb1dlc:"Rock Band DLC", fnf:"Fortnite Festival", rb4dlc:"Rock Band 4 DLC", rb3dlc:"Rock Band 3 DLC" };
+  const sources = {
+    gh:"Guitar Hero", gh2:"Guitar Hero II",
+    ghwor:"GH: Warriors of Rock", ghwordlc:"GH: W.O.R. DLC",
+    rb1dlc:"Rock Band DLC", fnf:"Fortnite Festival",
+    rb4dlc:"Rock Band 4 DLC", rb3dlc:"Rock Band 3 DLC"
+  };
+
   const sourceName = sources[song.category] || "";
-  document.getElementById("info-source").innerHTML = `<span class="source-row">${song.category ? `<img class="source-icon" src="./assets/${song.category}.png">` : ""}<span>${sourceName}</span></span>`;
+
+  document.getElementById("info-source").innerHTML =
+    `<span class="source-row">
+      ${song.category ? `<img class="source-icon" src="./assets/${song.category}.png">` : ""}
+      <span>${sourceName}</span>
+    </span>`;
 
   let ratingText = song.rating || "NR";
   if (ratingText === "FF") ratingText = "Family Friendly";
   if (ratingText === "SR") ratingText = "Supervision Recommended";
-  document.getElementById("info-rating").innerHTML = `<span class="song-rating ${song.rating}">${ratingText}</span>`;
+
+  document.getElementById("info-rating").innerHTML =
+    `<span class="song-rating ${song.rating}">${ratingText}</span>`;
 
   let charter = song.charter || "";
   if (["gh","gh2","rb1dlc","fnf","rb4dlc","rb3dlc"].includes(song.category))
     charter = `<span style="color:#0078ff">Harmonix</span>`;
+
   document.getElementById("info-charter").innerHTML = charter;
 
-  ["guitar","proguitar","bass","probass","keys","prokeys","drums","vocals"].forEach(inst => {
-    const elem = document.getElementById(`info-${inst}`);
-    if (elem) elem.innerHTML = createDifficulty(song.difficulty?.[inst]);
-  });
+  ["guitar","proguitar","bass","probass","keys","prokeys","drums","vocals"]
+    .forEach(inst => {
+      const elem = document.getElementById(`info-${inst}`);
+      if (elem) elem.innerHTML = createDifficulty(song.difficulty?.[inst]);
+    });
 
   overlay.classList.add("open");
 
-  // Reset Gold
   const goldCheckbox = document.getElementById("markGoldCheckbox");
   if (goldCheckbox) {
     goldCheckbox.checked = false;
@@ -187,8 +214,13 @@ function closeSongInfo() {
 // ==========================
 function setupOverlayClose() {
   const overlay = document.getElementById("song-info-overlay");
-  overlay.addEventListener("click", (e) => { if (e.target === overlay) closeSongInfo(); });
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeSongInfo(); });
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) closeSongInfo();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeSongInfo();
+  });
 }
 
 // ==========================
@@ -196,8 +228,14 @@ function setupOverlayClose() {
 // ==========================
 function searchSongs() {
   const input = document.getElementById("search").value.toLowerCase();
-  const filtered = songs.filter(song => (song.title || "").toLowerCase().includes(input) || (song.artist || "").toLowerCase().includes(input));
+
+  const filtered = songs.filter(song =>
+    (song.title || "").toLowerCase().includes(input) ||
+    (song.artist || "").toLowerCase().includes(input)
+  );
+
   displaySongs(filtered);
+
   const counter = document.getElementById("song-count");
   if (counter) counter.innerText = filtered.length + " songs";
 }
@@ -213,6 +251,7 @@ function sortSongs(type) {
     if (A > B) return 1 * sortDirection;
     return 0;
   });
+
   displaySongs(songs);
   sortDirection *= -1;
 }
@@ -222,8 +261,12 @@ function sortSongs(type) {
 // ==========================
 async function switchTab(tab, button) {
   currentTab = tab;
-  document.querySelectorAll(".tab").forEach(btn => btn.classList.remove("active"));
+
+  document.querySelectorAll(".tab")
+    .forEach(btn => btn.classList.remove("active"));
+
   button.classList.add("active");
+
   sortDirection = 1;
   await loadSongs(tab);
 }
@@ -234,19 +277,24 @@ async function switchTab(tab, button) {
 function setupRandomButton() {
   const randomBtn = document.getElementById("randomSong");
   if (!randomBtn) return;
+
   randomBtn.addEventListener("click", () => {
     if (songs.length === 0) return;
+
     const random = songs[Math.floor(Math.random()*songs.length)];
     displaySongs(songs);
 
     setTimeout(() => {
       const cards = document.querySelectorAll(".song");
+
       for (const card of cards) {
         if (card.querySelector("h3")?.innerText === random.title) {
           card.scrollIntoView({ behavior:"smooth", block:"center" });
           card.style.boxShadow = "0 0 25px #0aa3ff";
+
           const dropdown = card.querySelector(".difficulty-dropdown");
           if (dropdown) dropdown.classList.add("open");
+
           break;
         }
       }
@@ -260,18 +308,22 @@ function setupRandomButton() {
 function setupGoldToggle() {
   const goldCheckbox = document.getElementById("markGoldCheckbox");
   if (!goldCheckbox) return;
+
   goldCheckbox.addEventListener("change", () => {
     const overlayModal = document.querySelector(".song-info-modal");
     if (!overlayModal) return;
+
     overlayModal.classList.toggle("gold", goldCheckbox.checked);
 
     const title = document.getElementById("info-title")?.innerText;
     if (!title) return;
 
     const cards = document.querySelectorAll(".song");
+
     cards.forEach(card => {
       const cardTitle = card.querySelector("h3")?.innerText;
-      if (cardTitle === title) card.classList.toggle("gold", goldCheckbox.checked);
+      if (cardTitle === title)
+        card.classList.toggle("gold", goldCheckbox.checked);
     });
   });
 }
@@ -279,6 +331,7 @@ function setupGoldToggle() {
 function removeGoldStyles() {
   const overlayModal = document.querySelector(".song-info-modal");
   overlayModal.classList.remove("gold");
+
   const cards = document.querySelectorAll(".song.gold");
   cards.forEach(card => card.classList.remove("gold"));
 }
@@ -288,8 +341,14 @@ function removeGoldStyles() {
 // ==========================
 function formatReleaseDate(date) {
   if (!date) return "";
+
   const parts = date.split("-");
   if (parts.length !== 3) return date;
-  const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+  const months = [
+    "January","February","March","April","May","June",
+    "July","August","September","October","November","December"
+  ];
+
   return `${months[parseInt(parts[0])-1]} ${parseInt(parts[1])}, ${parts[2]}`;
 }
