@@ -1,0 +1,21 @@
+    {
+    "title": "Hello, I Love You",
+    "artist": "The Doors",
+    "album": "Waiting for the Sun",
+    "cover": "covers/thedoorswaitingforthesun.png",
+    "year": 1968,
+    "genre": "Classic Rock",
+    "category": "rb3dlc",
+    "release": "10-26-2010",
+    "rating": "",
+    "difficulty": {
+      "band": ,
+      "guitar": 1,
+      "bass": 2,
+      "drums": 4, 
+      "vocals": 3,
+      "keys": 4,
+      "prokeys": 4
+    }
+    }       
+    ]
