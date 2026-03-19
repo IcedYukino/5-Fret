@@ -2,11 +2,15 @@
 
 body{
 font-family: Arial, sans-serif;
-background:#171f36;
+background:#111;
 color:white;
 margin:0;
 text-align:center;
 }
+
+.background {
+  background-image: linear-gradient(to right, red, blue);
+}   
 
 /* Header layout */
 
