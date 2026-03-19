@@ -18,5 +18,145 @@
       "keys": 4,
       "prokeys": 4
     }
-    }       
+    },
+    {
+    "title": "L.A. Woman",
+    "artist": "The Doors",
+    "album": "",
+    "cover": "covers/.png",
+    "year": 1971,
+    "genre": "Classic Rock",
+    "category": "rb3dlc",
+    "release": "10-26-2010",
+    "rating": "",
+    "difficulty": {
+      "band": -1,
+      "guitar": -1,
+      "bass": -1,
+      "drums": -1, 
+      "vocals": -1,
+      "keys": -1,
+      "prokeys": -1
+    }
+    },
+    {
+    "title": "Light My Fire",
+    "artist": "The Doors",
+    "album": "",
+    "cover": "covers/.png",
+    "year": 1967,
+    "genre": "Classic Rock",
+    "category": "rb3dlc",
+    "release": "10-26-2010",
+    "rating": "",
+    "difficulty": {
+      "band": -1,
+      "guitar": -1,
+      "bass": -1,
+      "drums": -1, 
+      "vocals": -1,
+      "keys": -1,
+      "prokeys": -1
+    }
+    },
+    {
+    "title": "Love Her Madly",
+    "artist": "The Doors",
+    "album": "",
+    "cover": "covers/.png",
+    "year": 1971,
+    "genre": "Classic Rock",
+    "category": "rb3dlc",
+    "release": "10-26-2010",
+    "rating": "",
+    "difficulty": {
+      "band": -1,
+      "guitar": -1,
+      "bass": -1,
+      "drums": -1, 
+      "vocals": -1,
+      "keys": -1,
+      "prokeys": -1
+    }
+    },
+    {
+    "title": "Love Me Two Times",
+    "artist": "The Doors",
+    "album": "",
+    "cover": "covers/.png",
+    "year": 1967,
+    "genre": "Classic Rock",
+    "category": "rb3dlc",
+    "release": "10-26-2010",
+    "rating": "",
+    "difficulty": {
+      "band": -1,
+      "guitar": -1,
+      "bass": -1,
+      "drums": -1, 
+      "vocals": -1,
+      "keys": -1,
+      "prokeys": -1
+    }
+    },
+    {
+    "title": "Peace Frog",
+    "artist": "The Doors",
+    "album": "",
+    "cover": "covers/.png",
+    "year": 1970,
+    "genre": "Classic Rock",
+    "category": "rb3dlc",
+    "release": "10-26-2010",
+    "rating": "",
+    "difficulty": {
+      "band": -1,
+      "guitar": -1,
+      "bass": -1,
+      "drums": -1, 
+      "vocals": -1,
+      "keys": -1,
+      "prokeys": -1
+    }
+    },
+    {
+    "title": "People Are Strange",
+    "artist": "The Doors",
+    "album": "",
+    "cover": "covers/.png",
+    "year": 1967,
+    "genre": "Classic Rock",
+    "category": "rb3dlc",
+    "release": "10-26-2010",
+    "rating": "",
+    "difficulty": {
+      "band": -1,
+      "guitar": -1,
+      "bass": -1,
+      "drums": -1, 
+      "vocals": -1,
+      "keys": -1,
+      "prokeys": -1
+    }
+    },
+    {
+    "title": "Riders on the Storm",
+    "artist": "The Doors",
+    "album": "",
+    "cover": "covers/.png",
+    "year": 1971,
+    "genre": "Classic Rock",
+    "category": "rb3dlc",
+    "release": "10-26-2010",
+    "rating": "",
+    "difficulty": {
+      "band": -1,
+      "guitar": -1,
+      "bass": -1,
+      "drums": -1, 
+      "vocals": -1,
+      "keys": -1,
+      "prokeys": -1
+    }
+    }     
     ]
