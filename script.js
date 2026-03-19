@@ -10,11 +10,11 @@ window.addEventListener("DOMContentLoaded", async () => {
   setupOverlayClose();
   setupGoldToggle();
   setupRandomButton();
-  setupSongClickHandler(); // ✅ FIXED: moved here
+  setupSongClickHandler();
 });
 
 // ==========================
-// Song Click Handler (FIX)
+// Song Click Handler (FIXED)
 // ==========================
 function setupSongClickHandler() {
   const grid = document.getElementById("song-grid");
@@ -33,11 +33,16 @@ function setupSongClickHandler() {
     } 
     else if (!target.classList.contains("song-download")) {
 
-      // ✅ OPTIONAL UX: close others first
+      const isOpen = dropdown.classList.contains("open");
+
+      // Close all dropdowns
       document.querySelectorAll(".difficulty-dropdown.open")
         .forEach(d => d.classList.remove("open"));
 
-      dropdown.classList.add("open");
+      // Re-open only if it was previously closed
+      if (!isOpen) {
+        dropdown.classList.add("open");
+      }
     }
   });
 }
