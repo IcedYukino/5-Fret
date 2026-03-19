@@ -146,7 +146,7 @@ function openSongInfo(song) {
 
   document.getElementById("info-genre").innerHTML = `<span class="genre-tag ${song.genre?.toLowerCase().replace(/[^a-z]/g, "")}">${song.genre || ""}</span>`;
 
-  const sources = { gh:"Guitar Hero", gh2:"Guitar Hero II", ghwor:"GH: Warriors of Rock", ghwordlc:"GH: W.O.R. DLC", rb1dlc:"Rock Band DLC", fnf:"Fortnite Festival" };
+  const sources = { gh:"Guitar Hero", gh2:"Guitar Hero II", ghwor:"GH: Warriors of Rock", ghwordlc:"GH: W.O.R. DLC", rb1dlc:"Rock Band DLC", fnf:"Fortnite Festival", rb4dlc:"Rock Band 4 DLC", rb3dlc:"Rock Band 3 DLC" };
   const sourceName = sources[song.category] || "";
   document.getElementById("info-source").innerHTML = `<span class="source-row">${song.category ? `<img class="source-icon" src="./assets/${song.category}.png">` : ""}<span>${sourceName}</span></span>`;
 
@@ -156,7 +156,7 @@ function openSongInfo(song) {
   document.getElementById("info-rating").innerHTML = `<span class="song-rating ${song.rating}">${ratingText}</span>`;
 
   let charter = song.charter || "";
-  if (["gh","gh2","rb1dlc","fnf","rb4dlc"].includes(song.category))
+  if (["gh","gh2","rb1dlc","fnf","rb4dlc","rb3dlc"].includes(song.category))
     charter = `<span style="color:#0078ff">Harmonix</span>`;
   document.getElementById("info-charter").innerHTML = charter;
 
