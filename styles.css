@@ -149,7 +149,7 @@ padding:40px;
 /* Song card */
 
 .song{
-background:#1a1a1a;
+background: linear-gradient(to bottom, ##131313, #000000);
 padding:15px;
 border-radius:10px;
 transition:.25s;
