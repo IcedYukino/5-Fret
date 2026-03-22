@@ -390,6 +390,27 @@ body{
   letter-spacing:1px;
 }
 
+/* Center the More Info button at bottom of dropdown */
+.difficulty-dropdown .more-info-btn {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background: #0aa3ff;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.difficulty-dropdown .more-info-btn:hover {
+  background: #0078cc;
+}
+
 /* OVERLAY */
 .song-info-overlay{
   position:fixed;
@@ -416,12 +437,7 @@ body{
 .charter{
   margin-top:6px;
   font-weight:600;
-  font-size:14px;
-}
-
-.harmonix-charter{
   color:#0078ff;
-  font-weight:600;
 }
 
 /* MODAL */
@@ -541,7 +557,7 @@ body{
 .info-value{
   font-weight:bold;
   display:flex;
-  align-items:center; /* for icon + text */
+  align-items:center;
   gap:8px;
 }
 
@@ -556,6 +572,11 @@ body{
 #info-source-text{
   vertical-align:middle;
 }
+
+/* Song rating overlay colors */
+#info-rating.FF { color: #22c55e; }
+#info-rating.SR { color: #facc15; }
+#info-rating.NR { color: #999; }
 
 /* CLOSE BUTTON */
 .close-info{
