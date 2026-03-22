@@ -19,30 +19,30 @@
   </div>
 
   <div class="header-center">
-    <input type="text" id="search" placeholder="Search songs or artists..." onkeyup="searchSongs()">
+    <input type="text" id="search" placeholder="Search songs or artists...">
     <button id="randomSong" class="tab">🎲 Random Song</button>
 
     <div class="sort-buttons">
-      <button onclick="sortSongs('title')">Sort by Song</button>
-      <button onclick="sortSongs('artist')">Sort by Artist</button>
+      <button data-sort="title">Sort by Song</button>
+      <button data-sort="artist">Sort by Artist</button>
     </div>
 
     <div class="tabs">
-      <button class="tab active" onclick="switchTab('all', this)">All</button>
-      <button class="tab" onclick="switchTab('rb1', this)"><img src="assets/rb1.png"></button>
-      <button class="tab" onclick="switchTab('rb1dlc', this)"><img src="assets/rb1dlc.png"></button>
-      <button class="tab" onclick="switchTab('rb2', this)"><img src="assets/rb2.png"></button>
-      <button class="tab" onclick="switchTab('rb2dlc', this)"><img src="assets/rb2dlc.png"></button>
-      <button class="tab" onclick="switchTab('tbrb', this)"><img src="assets/tbrb.png"></button>
-      <button class="tab" onclick="switchTab('tbrbdlc', this)"><img src="assets/tbrbdlc.png"></button>
-      <button class="tab" onclick="switchTab('lrb', this)"><img src="assets/lrb.png"></button>
-      <button class="tab" onclick="switchTab('gdrb', this)"><img src="assets/gdrb.png"></button>
-      <button class="tab" onclick="switchTab('rb3', this)"><img src="assets/rb3.png"></button>
-      <button class="tab" onclick="switchTab('rb3dlc', this)"><img src="assets/rb3dlc.png"></button>
-      <button class="tab" onclick="switchTab('rb_blitz', this)"><img src="assets/rb_blitz.png"></button>
-      <button class="tab" onclick="switchTab('rb4', this)"><img src="assets/rb4.png"></button>
-      <button class="tab" onclick="switchTab('rb4dlc', this)"><img src="assets/rb4dlc.png"></button>
-      <button class="tab" onclick="switchTab('rb4rivals', this)"><img src="assets/rb4rivals.png"></button>
+      <button class="tab active" data-tab="all">All</button>
+      <button class="tab" data-tab="rb1"><img src="assets/rb1.png"></button>
+      <button class="tab" data-tab="rb1dlc"><img src="assets/rb1dlc.png"></button>
+      <button class="tab" data-tab="rb2"><img src="assets/rb2.png"></button>
+      <button class="tab" data-tab="rb2dlc"><img src="assets/rb2dlc.png"></button>
+      <button class="tab" data-tab="tbrb"><img src="assets/tbrb.png"></button>
+      <button class="tab" data-tab="tbrbdlc"><img src="assets/tbrbdlc.png"></button>
+      <button class="tab" data-tab="lrb"><img src="assets/lrb.png"></button>
+      <button class="tab" data-tab="gdrb"><img src="assets/gdrb.png"></button>
+      <button class="tab" data-tab="rb3"><img src="assets/rb3.png"></button>
+      <button class="tab" data-tab="rb3dlc"><img src="assets/rb3dlc.png"></button>
+      <button class="tab" data-tab="rb_blitz"><img src="assets/rb_blitz.png"></button>
+      <button class="tab" data-tab="rb4"><img src="assets/rb4.png"></button>
+      <button class="tab" data-tab="rb4dlc"><img src="assets/rb4dlc.png"></button>
+      <button class="tab" data-tab="rb4rivals"><img src="assets/rb4rivals.png"></button>
     </div>
   </div>
 
@@ -64,7 +64,7 @@
   <div class="overlay-bg"></div>
 
   <div class="song-info-modal">
-    <button class="close-info" onclick="closeSongInfo()">✕</button>
+    <button class="close-info" id="closeOverlay">✕</button>
 
     <div class="info-left">
       <img id="info-cover" class="song-info-cover">
@@ -73,6 +73,7 @@
     <div class="info-middle">
       <div id="info-title" class="info-title"></div>
       <div id="info-artist" class="info-artist"></div>
+
       <div class="info-meta">
         <div id="info-album"></div>
         <div id="info-year"></div>
@@ -83,26 +84,32 @@
           <img src="assets/guitar.png" class="diff-icon">
           <div id="info-guitar"></div>
         </div>
+
         <div class="diff-box">
           <img src="assets/proguitar.png" class="diff-icon">
           <div id="info-proguitar"></div>
         </div>
+
         <div class="diff-box">
           <img src="assets/bass.png" class="diff-icon">
           <div id="info-bass"></div>
         </div>
+
         <div class="diff-box">
           <img src="assets/probass.png" class="diff-icon">
           <div id="info-probass"></div>
         </div>
+
         <div class="diff-box">
           <img src="assets/keys.png" class="diff-icon">
           <div id="info-keys"></div>
         </div>
+
         <div class="diff-box">
           <img src="assets/prokeys.png" class="diff-icon">
           <div id="info-prokeys"></div>
         </div>
+
         <div class="diff-box">
           <img src="assets/drums.png" class="diff-icon">
           <div id="info-drums"></div>
@@ -116,6 +123,7 @@
     </div>
 
     <div class="info-right">
+
       <div class="info-section">
         <div class="info-label">GENRE</div>
         <div id="info-genre" class="info-value"></div>
@@ -143,10 +151,39 @@
         <div class="info-label">CHARTER</div>
         <div id="info-charter" class="info-value"></div>
       </div>
+
     </div>
   </div>
 </div>
 
 <script src="script.js"></script>
+
+<script>
+// ==========================
+// HOOK UI TO JS (NEW)
+// ==========================
+
+// SEARCH
+document.getElementById("search").addEventListener("keyup", searchSongs);
+
+// SORT BUTTONS
+document.querySelectorAll("[data-sort]").forEach(btn => {
+  btn.addEventListener("click", () => {
+    sortSongs(btn.dataset.sort);
+  });
+});
+
+// TABS
+document.querySelectorAll("[data-tab]").forEach(btn => {
+  btn.addEventListener("click", () => {
+    switchTab(btn.dataset.tab, btn);
+  });
+});
+
+// CLOSE OVERLAY BUTTON
+document.getElementById("closeOverlay").addEventListener("click", closeSongInfo);
+
+</script>
+
 </body>
 </html>
