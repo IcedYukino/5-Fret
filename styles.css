@@ -2,7 +2,7 @@
 
 body{
 font-family: Arial, sans-serif;
-background: "assets/rockband.png";
+background: linear-gradient(to right, #ff6b6b, #4ecdc4);
 color:white;
 margin:0;
 text-align:center;
