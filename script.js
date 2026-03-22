@@ -2,19 +2,16 @@ let songs = [];
 let currentTab = "all";
 let sortDirection = 1;
 
-// ==========================
-// Category Full Names Mapping
-// ==========================
+// Full names for categories
 const categoryFullNames = {
-  "all": "All Songs",
   "rb1": "Rock Band",
   "rb1dlc": "Rock Band DLC",
   "rb2": "Rock Band 2",
   "rb2dlc": "Rock Band 2 DLC",
-  "tbrb": "The Beatles: Rock Band",
-  "tbrbdlc": "The Beatles: Rock Band DLC",
-  "lrb": "LEGO Rock Band",
-  "gdrb": "Green Day: Rock Band",
+  "tbrb": "The Beatles Rock Band",
+  "tbrbdlc": "The Beatles Rock Band DLC",
+  "lrb": "Lego Rock Band",
+  "gdrb": "Green Day Rock Band",
   "rb3": "Rock Band 3",
   "rb3dlc": "Rock Band 3 DLC",
   "rb_blitz": "Rock Band Blitz",
@@ -45,19 +42,19 @@ function setupSongClickHandler() {
     const songCard = target.closest(".song");
     if (!songCard) return;
 
-    const dropdown = songCard.querySelector(".difficulty-dropdown");
-    if (!dropdown) return;
-
-    // Check if clicked on the More Info button or inside it
+    // Check for More Info button click
     const moreInfoBtn = target.closest(".more-info-btn");
     if (moreInfoBtn) {
       const title = songCard.querySelector("h3")?.innerText;
       const song = songs.find(s => s.title === title);
       if (song) openSongInfo(song);
-      return; // stop further processing
+      return; // Stop here so dropdown doesn't toggle
     }
 
-    // Toggle dropdown
+    // Handle dropdown toggling
+    const dropdown = songCard.querySelector(".difficulty-dropdown");
+    if (!dropdown) return;
+
     const isOpen = dropdown.classList.contains("open");
 
     // Close all other dropdowns
@@ -65,7 +62,7 @@ function setupSongClickHandler() {
       if (d !== dropdown) d.classList.remove("open");
     });
 
-    // Toggle only this one
+    // Toggle this dropdown
     if (!isOpen) dropdown.classList.add("open");
     else dropdown.classList.remove("open");
   });
@@ -109,7 +106,7 @@ async function loadSongs(tab) {
 }
 
 // ==========================
-// Get Instrument Icon (vocals dynamic)
+// Get Instrument Icon
 // ==========================
 function getInstrumentIcon(inst, song) {
   if (inst === "vocals") {
@@ -187,27 +184,13 @@ function openSongInfo(song) {
   const bg = document.querySelector(".overlay-bg");
   if (bg) bg.style.backgroundImage = `url(${cover})`;
 
-  // Basic song info
   document.getElementById("info-title").innerText = song.title || "";
   document.getElementById("info-artist").innerText = song.artist || "";
   document.getElementById("info-album").innerText = song.album || "";
   document.getElementById("info-year").innerText = song.year || "";
   document.getElementById("info-release").innerText = song.release || "";
+  document.getElementById("info-charter").innerText = song.charter || "";
 
-  // Source icon + full text
-  const sourceIcon = document.getElementById("info-source-icon");
-  if (sourceIcon && song.category) {
-    sourceIcon.src = `./assets/${song.category}.png`;
-  }
-  const sourceText = document.getElementById("info-source-text");
-  sourceText.innerText = categoryFullNames[song.category] || song.category || "";
-
-  // Other overlay fields
-  document.getElementById("info-charter").innerText = song.charter || song.Charter || "";
-  document.getElementById("info-genre").innerText = song.genre || "";
-  document.getElementById("info-rating").innerText = song.rating || "NR";
-
-  // Difficulty bars
   ["guitar","proguitar","bass","probass","keys","prokeys","drums","vocals"].forEach(inst => {
     const elem = document.getElementById(`info-${inst}`);
     if (elem) elem.innerHTML = createDifficulty(song.difficulty?.[inst]);
@@ -219,6 +202,20 @@ function openSongInfo(song) {
     let harm = song.Harm || song.harm || 1;
     vocalsIcon.src = `assets/vocals${harm > 1 ? harm : ""}.png`;
   }
+
+  // Genre
+  const genreElem = document.getElementById("info-genre");
+  if (genreElem) genreElem.innerText = song.genre || "";
+
+  // Source icon + full text
+  const sourceIcon = document.getElementById("info-source-icon");
+  if (sourceIcon && song.category) sourceIcon.src = `./assets/${song.category}.png`;
+  const sourceText = document.getElementById("info-source-text");
+  if (sourceText) sourceText.innerText = categoryFullNames[song.category] || song.category || "";
+
+  // Rating
+  const ratingElem = document.getElementById("info-rating");
+  if (ratingElem) ratingElem.innerText = song.rating || "NR";
 
   overlay.classList.add("open");
 }
