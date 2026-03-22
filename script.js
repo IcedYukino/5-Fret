@@ -1,7 +1,7 @@
 let songs = [];
 
 // ==========================
-// LOAD SONGS FROM JSON
+// LOAD SONGS
 // ==========================
 async function loadSongs() {
   const indexRes = await fetch("./songlists/index.json");
@@ -61,7 +61,7 @@ function renderSongs(list) {
 }
 
 // ==========================
-// INSTRUMENT RENDER
+// INSTRUMENTS
 // ==========================
 function renderInstruments(song) {
   const instruments = [
@@ -83,7 +83,7 @@ function renderInstruments(song) {
 }
 
 // ==========================
-// ICON HANDLING
+// ICONS
 // ==========================
 function getInstrumentIcon(inst, song) {
   if (inst === "vocals") {
@@ -97,7 +97,7 @@ function getInstrumentIcon(inst, song) {
 // DIFFICULTY
 // ==========================
 function createDiff(level) {
-  if (level === -1) return `<span>NO PART</span>`;
+  if (level === -1) return `<span style="color:#888;">NO PART</span>`;
 
   let out = "";
   for (let i = 1; i <= 5; i++) {
@@ -105,6 +105,17 @@ function createDiff(level) {
   }
   return `<div>${out}</div>`;
 }
+
+// ==========================
+// SOURCE MAP
+// ==========================
+const sourceMap = {
+  rb3dlc: "Rock Band 3 DLC",
+  rb2dlc: "Rock Band 2 DLC",
+  rb1: "Rock Band",
+  rb2: "Rock Band 2",
+  rb3: "Rock Band 3"
+};
 
 // ==========================
 // OVERLAY
@@ -117,9 +128,12 @@ function openOverlay(song) {
   document.getElementById("info-artist").innerText = song.artist;
   document.getElementById("info-genre").innerText = song.genre || "";
 
-  document.getElementById("info-charter").innerText = "Harmonix";
+  // Harmonix (styled)
+  const charterEl = document.getElementById("info-charter");
+  charterEl.innerText = "Harmonix";
+  charterEl.style.color = "#38bdf8";
 
-  // Release formatted
+  // Release date formatted
   if (song.release) {
     const d = new Date(song.release);
     document.getElementById("info-release").innerText =
@@ -130,20 +144,18 @@ function openOverlay(song) {
       });
   }
 
-  // Source mapping
-  const sourceMap = {
-    rb3dlc: "Rock Band 3 DLC"
-  };
-
+  // FULL SOURCE NAME (overlay only)
   document.getElementById("info-source").innerText =
     sourceMap[song.category] || song.category || "";
 
-  // Rating
+  // RATING (with color)
   const ratingEl = document.getElementById("info-rating");
-  ratingEl.innerText = song.rating || "NR";
-  ratingEl.className = "song-rating " + (song.rating || "NR");
+  const rating = song.rating || "NR";
 
-  // Difficulties in overlay
+  ratingEl.innerText = rating;
+  ratingEl.className = "song-rating " + rating;
+
+  // DIFFICULTIES
   document.getElementById("info-difficulties").innerHTML =
     renderInstruments(song);
 }
@@ -160,5 +172,7 @@ function searchSongs() {
   ));
 }
 
+// ==========================
 // INIT
+// ==========================
 loadSongs();
