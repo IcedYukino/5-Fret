@@ -82,37 +82,30 @@
           <img src="assets/guitar.png" class="diff-icon">
           <div id="info-guitar"></div>
         </div>
-
         <div class="diff-box">
           <img src="assets/proguitar.png" class="diff-icon">
           <div id="info-proguitar"></div>
         </div>
-
         <div class="diff-box">
           <img src="assets/bass.png" class="diff-icon">
           <div id="info-bass"></div>
         </div>
-
         <div class="diff-box">
           <img src="assets/probass.png" class="diff-icon">
           <div id="info-probass"></div>
         </div>
-
         <div class="diff-box">
           <img src="assets/keys.png" class="diff-icon">
           <div id="info-keys"></div>
         </div>
-
         <div class="diff-box">
           <img src="assets/prokeys.png" class="diff-icon">
           <div id="info-prokeys"></div>
         </div>
-
         <div class="diff-box">
           <img src="assets/drums.png" class="diff-icon">
           <div id="info-drums"></div>
         </div>
-
         <div class="diff-box">
           <img id="info-vocals-icon" src="assets/vocals.png" class="diff-icon">
           <div id="info-vocals"></div>
@@ -121,6 +114,7 @@
     </div>
 
     <div class="info-right">
+
       <div class="info-section">
         <div class="info-label">GENRE</div>
         <div id="info-genre" class="info-value"></div>
@@ -146,28 +140,19 @@
 
       <div class="info-section">
         <div class="info-label">CHARTER</div>
-        <div id="info-charter" class="info-value"></div>
+        <div id="info-charter" class="info-value harmonix-charter"></div>
       </div>
+
     </div>
   </div>
 </div>
 
 <script src="script.js"></script>
-
 <script>
-// Hook UI to JS
 document.getElementById("search").addEventListener("keyup", searchSongs);
-
-document.querySelectorAll("[data-sort]").forEach(btn => {
-  btn.addEventListener("click", () => sortSongs(btn.dataset.sort));
-});
-
-document.querySelectorAll("[data-tab]").forEach(btn => {
-  btn.addEventListener("click", () => switchTab(btn.dataset.tab, btn));
-});
-
+document.querySelectorAll("[data-sort]").forEach(btn => btn.addEventListener("click", () => sortSongs(btn.dataset.sort)));
+document.querySelectorAll("[data-tab]").forEach(btn => btn.addEventListener("click", () => switchTab(btn.dataset.tab, btn)));
 document.getElementById("closeOverlay").addEventListener("click", closeSongInfo);
 </script>
-
 </body>
 </html>
