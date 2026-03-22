@@ -63,7 +63,7 @@ function displaySongs(songList){
         const coverTag = song.master === false ? `<div class="cover-tag">COVER</div>` : "";
         const file = song.file || "";
 
-        // Determine the correct vocals image
+        // Determine correct vocals image
         const vocalsImg = `./assets/vocals${song.harm && song.harm > 1 ? song.harm : ''}.png`;
 
         card.innerHTML = `
@@ -218,12 +218,17 @@ ${ratingText}
     document.getElementById("info-guitar").innerHTML = createDifficulty(song.difficulty?.guitar);
     document.getElementById("info-bass").innerHTML = createDifficulty(song.difficulty?.bass);
     document.getElementById("info-drums").innerHTML = createDifficulty(song.difficulty?.drums);
-    document.getElementById("info-vocals").innerHTML = createDifficulty(song.difficulty?.vocals);
-
     document.getElementById("info-proguitar").innerHTML = createDifficulty(song.difficulty?.proguitar);
     document.getElementById("info-probass").innerHTML = createDifficulty(song.difficulty?.probass);
     document.getElementById("info-keys").innerHTML = createDifficulty(song.difficulty?.keys);
     document.getElementById("info-prokeys").innerHTML = createDifficulty(song.difficulty?.prokeys);
+
+    // --- Vocals overlay update ---
+    const vocalsImg = `./assets/vocals${song.harm && song.harm > 1 ? song.harm : ''}.png`;
+    const vocalsIcon = document.getElementById("info-vocals-icon");
+    if(vocalsIcon) vocalsIcon.src = vocalsImg;
+    const vocalsBars = document.getElementById("info-vocals-bars");
+    if(vocalsBars) vocalsBars.innerHTML = createDifficulty(song.difficulty?.vocals);
 
     overlay.classList.add("open");
 }
