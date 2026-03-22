@@ -52,11 +52,13 @@
     "difficulty": {
       "band": 5,
       "guitar": 4,
+      "proguitar": 5,  
       "bass": 1,
+      "probass": 5,  
       "drums": 4, 
       "vocals": 3,
       "keys": 5,
-      "prokeys": 6
+      "prokeys": 6,
     }
     },
     {
@@ -152,11 +154,95 @@
     "difficulty": {
       "band": 1,
       "guitar": 2,
+      "proguitar": 2,  
       "bass": 1,
+      "probass": 2,  
       "drums": 2, 
       "vocals": 1,
       "keys": 5,
       "prokeys": 5
     }
-    }     
+    },
+    {
+    "title": "Roadhouse Blues",
+    "artist": "The Doors",
+    "album": "Morrison Hotel",
+    "cover": "covers/thedoorsmorrisonhotel.png",
+    "year": 1970,
+    "genre": "Classic Rock",
+    "category": "rb3dlc",
+    "release": "10-26-2010",
+    "rating": "SR",
+    "difficulty": {
+      "band": 2,
+      "guitar": 3,
+      "bass": 2,
+      "drums": 3, 
+      "vocals": 3,
+      "keys": 4,
+      "prokeys": 4
+    }
+    },
+    {
+    "title": "Soul Kitchen",
+    "artist": "The Doors",
+    "album": "The Doors",
+    "cover": "covers/thedoorsthedoors.png",
+    "year": 1967,
+    "genre": "Classic Rock",
+    "category": "rb3dlc",
+    "release": "10-26-2010",
+    "rating": "SR",
+    "difficulty": {
+      "band": 2,
+      "guitar": 2,
+      "bass": 1,
+      "drums": 3, 
+      "vocals": 3,
+      "keys": 4,
+      "prokeys": 3
+    }
+    },
+    {
+    "title": "The Crystal Ship",
+    "artist": "The Doors",
+    "album": "The Doors",
+    "cover": "covers/thedoorsthedoors.png",
+    "year": 1967,
+    "genre": "Classic Rock",
+    "category": "rb3dlc",
+    "release": "10-26-2010",
+    "rating": "FF",
+    "difficulty": {
+      "band": 1,
+      "guitar": 1,
+      "bass": 1,
+      "drums": 1, 
+      "vocals": 2,
+      "keys": 2,
+      "prokeys": 4
+    }
+    },
+    {
+    "title": "Touch Me",
+    "artist": "The Doors",
+    "album": "The Soft Parade",
+    "cover": "covers/thedoorsthesoftparade.png",
+    "year": 1969,
+    "genre": "Classic Rock",
+    "category": "rb3dlc",
+    "release": "10-26-2010",
+    "rating": "FF",
+    "difficulty": {
+      "band": 6,
+      "guitar": 3,
+      "proguitar": 1,
+      "bass": 2,
+      "probass": 2,  
+      "drums": 5, 
+      "vocals": 2,
+      "keys": 6,
+      "prokeys": 6
+    }
+    },    
     ]
