@@ -48,7 +48,7 @@ function setupSongClickHandler() {
     const dropdown = songCard.querySelector(".difficulty-dropdown");
     if (!dropdown) return;
 
-    // ✅ Handle More Info Button clicks, even on children
+    // Check if clicked on the More Info button or inside it
     const moreInfoBtn = target.closest(".more-info-btn");
     if (moreInfoBtn) {
       const title = songCard.querySelector("h3")?.innerText;
@@ -59,8 +59,15 @@ function setupSongClickHandler() {
 
     // Toggle dropdown
     const isOpen = dropdown.classList.contains("open");
-    document.querySelectorAll(".difficulty-dropdown.open").forEach(d => d.classList.remove("open"));
+
+    // Close all other dropdowns
+    document.querySelectorAll(".difficulty-dropdown.open").forEach(d => {
+      if (d !== dropdown) d.classList.remove("open");
+    });
+
+    // Toggle only this one
     if (!isOpen) dropdown.classList.add("open");
+    else dropdown.classList.remove("open");
   });
 }
 
@@ -187,7 +194,7 @@ function openSongInfo(song) {
   document.getElementById("info-year").innerText = song.year || "";
   document.getElementById("info-release").innerText = song.release || "";
 
-  // Overlay fields with source icon
+  // Source icon + full text
   const sourceIcon = document.getElementById("info-source-icon");
   if (sourceIcon && song.category) {
     sourceIcon.src = `./assets/${song.category}.png`;
@@ -195,6 +202,7 @@ function openSongInfo(song) {
   const sourceText = document.getElementById("info-source-text");
   sourceText.innerText = categoryFullNames[song.category] || song.category || "";
 
+  // Other overlay fields
   document.getElementById("info-charter").innerText = song.charter || song.Charter || "";
   document.getElementById("info-genre").innerText = song.genre || "";
   document.getElementById("info-rating").innerText = song.rating || "NR";
