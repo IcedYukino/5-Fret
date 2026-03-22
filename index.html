@@ -3,87 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rock Band HD</title>
+<title>Rock Band Songs</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<input id="search" onkeyup="searchSongs()" placeholder="Search songs...">
-
-<div id="song-count"></div>
+<input id="search" placeholder="Search..." onkeyup="searchSongs()">
 
 <div id="song-grid"></div>
 
-<!-- ================= OVERLAY ================= -->
-<div id="song-info-overlay">
-  <div class="song-info-modal">
-
-    <div class="overlay-bg"></div>
-
+<!-- OVERLAY -->
+<div id="overlay">
+  <div class="modal">
     <img id="info-cover">
-
     <h2 id="info-title"></h2>
     <p id="info-artist"></p>
 
-    <div class="info-grid">
-      <div>Genre: <span id="info-genre"></span></div>
-      <div>Charter: <span id="info-charter" class="harmonix"></span></div>
-      <div>Release: <span id="info-release"></span></div>
+    <p><b>Genre:</b> <span id="info-genre"></span></p>
+    <p><b>Charter:</b> <span id="info-charter"></span></p>
+    <p><b>Release:</b> <span id="info-release"></span></p>
+    <p><b>Source:</b> <span id="info-source"></span></p>
+    <p><b>Rating:</b> <span id="info-rating"></span></p>
 
-      <div class="source-row">
-        <img id="info-source-icon">
-        <span id="info-source-text"></span>
-      </div>
-
-      <div>Rating: <span id="info-rating" class="song-rating"></span></div>
-    </div>
-
-    <!-- ✅ FIXED DIFFICULTIES -->
-    <div class="overlay-difficulties">
-
-      <div class="instrument">
-        <img src="./assets/guitar.png">
-        <div id="info-guitar"></div>
-      </div>
-
-      <div class="instrument">
-        <img src="./assets/bass.png">
-        <div id="info-bass"></div>
-      </div>
-
-      <div class="instrument">
-        <img src="./assets/drums.png">
-        <div id="info-drums"></div>
-      </div>
-
-      <div class="instrument">
-        <img id="info-vocals-icon" src="./assets/vocals1.png">
-        <div id="info-vocals"></div>
-      </div>
-
-      <div class="instrument">
-        <img src="./assets/proguitar.png">
-        <div id="info-proguitar"></div>
-      </div>
-
-      <div class="instrument">
-        <img src="./assets/probass.png">
-        <div id="info-probass"></div>
-      </div>
-
-      <div class="instrument">
-        <img src="./assets/keys.png">
-        <div id="info-keys"></div>
-      </div>
-
-      <div class="instrument">
-        <img src="./assets/prokeys.png">
-        <div id="info-prokeys"></div>
-      </div>
-
-    </div>
-
+    <div id="info-difficulties"></div>
   </div>
 </div>
 
