@@ -159,18 +159,26 @@ function openSongInfo(song) {
   const bg = document.querySelector(".overlay-bg");
   if (bg) bg.style.backgroundImage = `url(${cover})`;
 
+  // Basic song info
   document.getElementById("info-title").innerText = song.title || "";
   document.getElementById("info-artist").innerText = song.artist || "";
   document.getElementById("info-album").innerText = song.album || "";
   document.getElementById("info-year").innerText = song.year || "";
   document.getElementById("info-release").innerText = song.release || "";
 
+  // ✅ Overlay fields
+  document.getElementById("info-charter").innerText = song.charter || song.Charter || "";
+  document.getElementById("info-genre").innerText = song.genre || "";
+  document.getElementById("info-source").innerText = song.category || "";
+  document.getElementById("info-rating").innerText = song.rating || "NR";
+
+  // Difficulty bars
   ["guitar","proguitar","bass","probass","keys","prokeys","drums","vocals"].forEach(inst => {
     const elem = document.getElementById(`info-${inst}`);
     if (elem) elem.innerHTML = createDifficulty(song.difficulty?.[inst]);
   });
 
-  // ✅ Overlay vocals icon
+  // Vocals icon
   const vocalsIcon = document.getElementById("info-vocals-icon");
   if (vocalsIcon) {
     let harm = song.Harm || song.harm || 1;
