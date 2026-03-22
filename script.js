@@ -224,14 +224,12 @@ ${ratingText}
     document.getElementById("info-prokeys").innerHTML = createDifficulty(song.difficulty?.prokeys);
 
     // --- Vocals overlay update ---
-    const vocalsContainer = document.getElementById("info-vocals");
-    if(vocalsContainer){
-        const vocalsImg = `./assets/vocals${song.harm && song.harm > 1 ? song.harm : ''}.png`;
-        vocalsContainer.innerHTML = `
-            <img class="instrument-icon" src="${vocalsImg}" alt="Vocals">
-            ${createDifficulty(song.difficulty?.vocals)}
-        `;
-    }
+    const vocalsImg = `./assets/vocals${song.harm && song.harm > 1 ? song.harm : ''}.png`;
+    const vocalsIcon = document.querySelector("#info-vocals img.instrument-icon");
+    if(vocalsIcon) vocalsIcon.src = vocalsImg;
+
+    const vocalsBars = document.querySelector("#info-vocals .diff-row");
+    if(vocalsBars) vocalsBars.innerHTML = createDifficulty(song.difficulty?.vocals);
 
     overlay.classList.add("open");
 }
