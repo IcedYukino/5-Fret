@@ -115,59 +115,6 @@ function displaySongs(songList) {
     const file = song.file || "";
     const difficulty = song.difficulty || {};
 
-    // Map category to full source text
-    let sourceText = "";
-    switch (song.category) {
-      case "rb1":
-        sourceText = "Rock Band";
-        break;
-      case "rb1dlc":
-        sourceText = "Rock Band DLC";
-        break;
-      case "rb2":
-        sourceText = "Rock Band 2";
-        break;
-      case "rb2dlc":
-        sourceText = "Rock Band 2 DLC";
-        break;
-      case "rb3":
-        sourceText = "Rock Band 3";
-        break;
-      case "rb3dlc":
-        sourceText = "Rock Band 3 DLC";
-        break;
-      case "rb4":
-        sourceText = "Rock Band 4";
-        break;
-      case "rb4dlc":
-        sourceText = "Rock Band 4 DLC";
-        break;
-      case "rb4rivals":
-        sourceText = "Rock Band Rivals";
-        break;
-      case "lrb":
-        sourceText = "LEGO Rock Band";
-        break;
-      case "gdrb":
-        sourceText = "Green Day: Rock Band";
-        break;
-      case "tbrb":
-        sourceText = "The Beatles: Rock Band";
-        break;
-      case "tbrbdlc":
-        sourceText = "The Beatles: Rock Band DLC";
-        break;
-      case "rb_blitz":
-        sourceText = "Rock Band Blitz";
-        break;
-      default:
-        sourceText = song.category || "";
-    }
-
-    const sourceIcon = song.category
-      ? `<img class="source-icon" src="./assets/${song.category}.png">`
-      : "";
-
     card.innerHTML = `
       <div class="cover-container">
         <img src="${cover}">${coverTag}
@@ -176,8 +123,7 @@ function displaySongs(songList) {
       <p>${song.artist || ""}</p>
       <div class="genre-row">
         <div class="source-row">
-          ${sourceIcon}
-          <span class="source-text">${sourceText}</span>
+          ${song.category ? `<img class="source-icon" src="./assets/${song.category}.png">` : ""}
         </div>
         <span class="genre-tag ${song.genre?.toLowerCase().replace(/[^a-z]/g, "") || ""}">${song.genre || ""}</span>
         <span class="song-rating ${rating}">${rating}</span>
@@ -228,19 +174,9 @@ function openSongInfo(song) {
   document.getElementById("info-year").innerText = song.year || "";
   document.getElementById("info-release").innerText = song.release || "";
 
-  // Charter
+  // Charter field always Harmonix if the song has a source
   const charterEl = document.getElementById("info-charter");
-  const knownSources = [
-    "rb1","rb1dlc","rb2","rb2dlc","rb3","rb3dlc",
-    "rb4","rb4dlc","rb4rivals","lrb","gdrb","tbrb","tbrbdlc","rb_blitz"
-  ];
-  if (knownSources.includes(song.category)) {
-    charterEl.innerText = "Harmonix";
-    charterEl.classList.add("harmonix-charter");
-  } else {
-    charterEl.innerText = song.charter || "";
-    charterEl.classList.remove("harmonix-charter");
-  }
+  charterEl.innerText = song.category ? "Harmonix" : (song.charter || "");
 
   ["guitar","proguitar","bass","probass","keys","prokeys","drums","vocals"].forEach(inst => {
     const elem = document.getElementById(`info-${inst}`);
@@ -258,9 +194,6 @@ function openSongInfo(song) {
   document.getElementById("info-genre").innerText = song.genre || "";
 
   // Source
-  const sourceTextEl = document.getElementById("info-source-text");
-  const sourceIconEl = document.getElementById("info-source-icon");
-
   let sourceText = "";
   switch (song.category) {
     case "rb1":
@@ -290,17 +223,17 @@ function openSongInfo(song) {
     case "rb4rivals":
       sourceText = "Rock Band Rivals";
       break;
-    case "lrb":
-      sourceText = "LEGO Rock Band";
-      break;
-    case "gdrb":
-      sourceText = "Green Day: Rock Band";
-      break;
     case "tbrb":
       sourceText = "The Beatles: Rock Band";
       break;
     case "tbrbdlc":
       sourceText = "The Beatles: Rock Band DLC";
+      break;
+    case "lrb":
+      sourceText = "Lego Rock Band";
+      break;
+    case "gdrb":
+      sourceText = "Green Day: Rock Band";
       break;
     case "rb_blitz":
       sourceText = "Rock Band Blitz";
@@ -308,9 +241,9 @@ function openSongInfo(song) {
     default:
       sourceText = song.category || "";
   }
-
-  sourceTextEl.innerText = sourceText;
-  if (sourceIconEl) sourceIconEl.src = `assets/${song.category}.png`;
+  document.getElementById("info-source-text").innerText = sourceText;
+  const sourceIconEl = document.getElementById("info-source-icon");
+  if (sourceIconEl) sourceIconEl.src = song.category ? `./assets/${song.category}.png` : "";
 
   // Song rating
   let ratingText = "Not Rated";
