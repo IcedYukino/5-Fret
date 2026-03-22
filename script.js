@@ -27,7 +27,8 @@ function setupSongClickHandler() {
 
     // More Info button
     if (target.classList.contains("more-info-btn")) {
-      const title = songCard.querySelector("h3")?.innerText;
+      const titleEl = songCard.querySelector("h3 a") || songCard.querySelector("h3");
+      const title = titleEl?.innerText;
       const song = songs.find(s => s.title === title);
       if (song) openSongInfo(song);
       return;
@@ -36,11 +37,7 @@ function setupSongClickHandler() {
     // Toggle difficulty dropdown
     if (dropdown && !target.classList.contains("song-download")) {
       const isOpen = dropdown.classList.contains("open");
-
-      // Close all other dropdowns
       document.querySelectorAll(".difficulty-dropdown.open").forEach(d => d.classList.remove("open"));
-
-      // Toggle this one
       if (!isOpen) dropdown.classList.add("open");
     }
   });
@@ -198,7 +195,8 @@ function openSongInfo(song) {
   let ratingText = "Not Rated";
   if (song.rating === "FF") ratingText = "Family Friendly";
   if (song.rating === "SR") ratingText = "Supervision Recommended";
-  document.getElementById("info-rating").innerText = ratingText;
+  const ratingEl = document.getElementById("info-rating");
+  ratingEl.innerText = ratingText;
 
   // Overlay source text
   let sourceText = "Unknown Source";
@@ -210,6 +208,7 @@ function openSongInfo(song) {
   }
   document.getElementById("info-source").innerText = sourceText;
 
+  // Overlay genre
   document.getElementById("info-genre").innerText = song.genre || "";
 
   overlay.classList.add("open");
@@ -285,7 +284,8 @@ function setupRandomButton() {
     setTimeout(() => {
       const cards = document.querySelectorAll(".song");
       for (const card of cards) {
-        if (card.querySelector("h3")?.innerText === random.title) {
+        const titleEl = card.querySelector("h3 a") || card.querySelector("h3");
+        if (titleEl?.innerText === random.title) {
           card.scrollIntoView({ behavior:"smooth", block:"center" });
           card.style.boxShadow = "0 0 25px #0aa3ff";
           const dropdown = card.querySelector(".difficulty-dropdown");
