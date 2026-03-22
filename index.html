@@ -6,19 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rock Band HD</title>
 <link rel="stylesheet" href="styles.css">
-<style>
-/* Added CSS for source icon + text alignment */
-.source-icon-overlay {
-  width: 24px;
-  height: 24px;
-  margin-right: 6px;
-}
-
-.info-value {
-  display: flex;
-  align-items: center;
-}
-</style>
 </head>
 
 <body>
@@ -121,7 +108,6 @@
           <div id="info-drums"></div>
         </div>
 
-        <!-- Vocals icon -->
         <div class="diff-box">
           <img id="info-vocals-icon" src="assets/vocals.png" class="diff-icon">
           <div id="info-vocals"></div>
@@ -134,21 +120,25 @@
         <div class="info-label">GENRE</div>
         <div id="info-genre" class="info-value"></div>
       </div>
+
       <div class="info-section">
         <div class="info-label">SOURCE</div>
-        <div id="info-source" class="info-value">
-          <img id="info-source-icon" class="source-icon-overlay" src="">
+        <div class="info-value">
+          <img id="info-source-icon" class="source-icon-overlay">
           <span id="info-source-text"></span>
         </div>
       </div>
+
       <div class="info-section">
         <div class="info-label">SONG RATING</div>
         <div id="info-rating" class="info-value"></div>
       </div>
+
       <div class="info-section">
         <div class="info-label">RELEASE</div>
         <div id="info-release" class="info-value"></div>
       </div>
+
       <div class="info-section">
         <div class="info-label">CHARTER</div>
         <div id="info-charter" class="info-value"></div>
