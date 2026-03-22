@@ -187,10 +187,16 @@ function openSongInfo(song) {
   document.getElementById("info-year").innerText = song.year || "";
   document.getElementById("info-release").innerText = song.release || "";
 
-  // ✅ Overlay fields with full source names
+  // Overlay fields with source icon
+  const sourceIcon = document.getElementById("info-source-icon");
+  if (sourceIcon && song.category) {
+    sourceIcon.src = `./assets/${song.category}.png`;
+  }
+  const sourceText = document.getElementById("info-source-text");
+  sourceText.innerText = categoryFullNames[song.category] || song.category || "";
+
   document.getElementById("info-charter").innerText = song.charter || song.Charter || "";
   document.getElementById("info-genre").innerText = song.genre || "";
-  document.getElementById("info-source").innerText = categoryFullNames[song.category] || song.category || "";
   document.getElementById("info-rating").innerText = song.rating || "NR";
 
   // Difficulty bars
