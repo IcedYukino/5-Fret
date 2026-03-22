@@ -6,6 +6,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rock Band HD</title>
 <link rel="stylesheet" href="styles.css">
+<style>
+/* Added CSS for source icon + text alignment */
+.source-icon-overlay {
+  width: 24px;
+  height: 24px;
+  margin-right: 6px;
+}
+
+.info-value {
+  display: flex;
+  align-items: center;
+}
+</style>
 </head>
 
 <body>
@@ -108,7 +121,7 @@
           <div id="info-drums"></div>
         </div>
 
-        <!-- Updated vocals icon with id for dynamic swap -->
+        <!-- Vocals icon -->
         <div class="diff-box">
           <img id="info-vocals-icon" src="assets/vocals.png" class="diff-icon">
           <div id="info-vocals"></div>
@@ -123,7 +136,10 @@
       </div>
       <div class="info-section">
         <div class="info-label">SOURCE</div>
-        <div id="info-source" class="info-value"></div>
+        <div id="info-source" class="info-value">
+          <img id="info-source-icon" class="source-icon-overlay" src="">
+          <span id="info-source-text"></span>
+        </div>
       </div>
       <div class="info-section">
         <div class="info-label">SONG RATING</div>
