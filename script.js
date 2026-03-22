@@ -26,7 +26,7 @@ function setupSongClickHandler() {
 
     const dropdown = songCard.querySelector(".difficulty-dropdown");
 
-    // More Info button inside dropdown
+    // More Info button
     if (target.classList.contains("more-info-btn")) {
       const title = songCard.dataset.title;
       const song = songs.find((s) => s.title === title);
@@ -35,7 +35,7 @@ function setupSongClickHandler() {
     }
 
     // Toggle dropdown
-    if (dropdown && !target.classList.contains("song-download")) {
+    if (dropdown && !target.classList.contains("song-download") && !target.classList.contains("more-info-btn")) {
       const isOpen = dropdown.classList.contains("open");
 
       // Close all other dropdowns
@@ -87,7 +87,7 @@ async function loadSongs(tab) {
 }
 
 // ==========================
-// Get Instrument Icon (vocals dynamic)
+// Get Instrument Icon
 // ==========================
 function getInstrumentIcon(inst, song) {
   if (inst === "vocals") {
@@ -121,9 +121,10 @@ function displaySongs(songList) {
       case "rb1": sourceText = "Rock Band"; break;
       case "rb1dlc": sourceText = "Rock Band DLC"; break;
       case "rb4rivals": sourceText = "Rock Band Rivals"; break;
-      default: sourceText = song.category || "";
+      default: sourceText = song.category || ""; 
     }
 
+    // Optional icon for source
     const sourceIcon = song.category
       ? `<img class="source-icon" src="./assets/${song.category}.png">`
       : "";
@@ -144,14 +145,13 @@ function displaySongs(songList) {
       </div>
 
       <div class="difficulty-dropdown">
-        ${["guitar","bass","drums","vocals","proguitar","probass","keys","prokeys"].map(inst => `
+        ${["guitar","bass","drums","vocals","proguitar","probass","keys","prokeys"].map(inst=>`
           <div class="instrument">
             <img class="instrument-icon" src="${getInstrumentIcon(inst,song)}">
             ${createDifficulty(difficulty[inst])}
           </div>
         `).join("")}
-
-        <button class="more-info-btn">More Info</button>
+        <button class="more-info-btn" style="margin-top:10px; display:block; margin-left:auto; margin-right:auto;">More Info</button>
       </div>
     `;
 
@@ -178,65 +178,67 @@ function createDifficulty(level) {
 // ==========================
 function openSongInfo(song) {
   const overlay = document.getElementById("song-info-overlay");
-  document.getElementById("info-cover").src = song.cover || "./assets/default_cover.png";
-
+  const cover = song.cover || "./assets/default_cover.png";
+  document.getElementById("info-cover").src = cover;
   const bg = document.querySelector(".overlay-bg");
-  if (bg) bg.style.backgroundImage = `url(${song.cover || './assets/default_cover.png'})`;
+  if (bg) bg.style.backgroundImage = `url(${cover})`;
 
-  // Title & artist
   document.getElementById("info-title").innerText = song.title || "";
   document.getElementById("info-artist").innerText = song.artist || "";
-
-  // Album & Year
   document.getElementById("info-album").innerText = song.album || "";
   document.getElementById("info-year").innerText = song.year || "";
-
-  // Charter
+  document.getElementById("info-release").innerText = song.release || "";
   const charterEl = document.getElementById("info-charter");
   charterEl.innerText = song.charter || "";
-  charterEl.className = "info-value charter";
+  charterEl.className = song.charter === "Harmonix" ? "info-value harmonix-charter" : "info-value";
 
-  // Genre
-  document.getElementById("info-genre").innerText = song.genre || "";
-
-  // Source text + icon
-  let sourceText = "";
-  switch (song.category) {
-    case "rb1": sourceText = "Rock Band"; break;
-    case "rb1dlc": sourceText = "Rock Band DLC"; break;
-    case "rb4rivals": sourceText = "Rock Band Rivals"; break;
-    default: sourceText = song.category || "";
-  }
-  document.getElementById("info-source-text").innerText = sourceText;
-  const sourceIconEl = document.getElementById("info-source-icon");
-  if(song.category) {
-    sourceIconEl.src = `assets/${song.category}.png`;
-    sourceIconEl.style.display = "inline-block";
-  } else {
-    sourceIconEl.style.display = "none";
-  }
-
-  // Song rating
-  const ratingEl = document.getElementById("info-rating");
-  let ratingText = "Not Rated";
-  let ratingClass = "NR";
-  if(song.rating === "FF"){ ratingText="Family Friendly"; ratingClass="FF"; }
-  else if(song.rating === "SR"){ ratingText="Supervision Recommended"; ratingClass="SR"; }
-  ratingEl.innerText = ratingText;
-  ratingEl.className = "info-value " + ratingClass;
-
-  // Difficulty icons
   ["guitar","proguitar","bass","probass","keys","prokeys","drums","vocals"].forEach(inst => {
     const elem = document.getElementById(`info-${inst}`);
-    if(elem) elem.innerHTML = createDifficulty(song.difficulty?.[inst]);
+    if (elem) elem.innerHTML = createDifficulty(song.difficulty?.[inst]);
   });
 
   // Vocals icon
   const vocalsIcon = document.getElementById("info-vocals-icon");
-  if(vocalsIcon){
+  if (vocalsIcon) {
     let harm = song.Harm || song.harm || 1;
     vocalsIcon.src = `assets/vocals${harm > 1 ? harm : ""}.png`;
   }
+
+  // Genre
+  document.getElementById("info-genre").innerText = song.genre || "";
+
+  // Source with icon
+  let sourceText = "";
+  let sourceIconPath = "";
+  switch (song.category) {
+    case "rb1": sourceText = "Rock Band"; sourceIconPath = "./assets/rb1.png"; break;
+    case "rb1dlc": sourceText = "Rock Band DLC"; sourceIconPath = "./assets/rb1dlc.png"; break;
+    case "rb4rivals": sourceText = "Rock Band Rivals"; sourceIconPath = "./assets/rb4rivals.png"; break;
+    default: sourceText = song.category || ""; sourceIconPath = song.category ? `./assets/${song.category}.png` : ""; 
+  }
+  const sourceTextEl = document.getElementById("info-source-text");
+  const sourceIconEl = document.getElementById("info-source-icon");
+  if (sourceTextEl) sourceTextEl.innerText = sourceText;
+  if (sourceIconEl && sourceIconPath) {
+    sourceIconEl.src = sourceIconPath;
+    sourceIconEl.style.display = "inline-block";
+  } else if (sourceIconEl) {
+    sourceIconEl.style.display = "none";
+  }
+
+  // Song rating
+  let ratingText = "Not Rated";
+  let ratingClass = "NR";
+  if (song.rating === "FF") {
+    ratingText = "Family Friendly";
+    ratingClass = "FF";
+  } else if (song.rating === "SR") {
+    ratingText = "Supervision Recommended";
+    ratingClass = "SR";
+  }
+  const ratingEl = document.getElementById("info-rating");
+  ratingEl.innerText = ratingText;
+  ratingEl.className = "info-value " + ratingClass;
 
   overlay.classList.add("open");
 }
