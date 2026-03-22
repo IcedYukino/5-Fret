@@ -58,7 +58,7 @@ async function loadSongs(tab) {
       return;
     }
   } else {
-    files = [tab]; // simplified for other tabs
+    files = [tab];
   }
 
   let loadedSongs = [];
@@ -260,4 +260,37 @@ function setupRandomButton() {
       }
     }, 100);
   });
+}
+
+// ==========================
+// Gold Feature
+// ==========================
+function setupGoldToggle() {
+  const goldCheckbox = document.getElementById("markGoldCheckbox");
+  if (!goldCheckbox) return;
+
+  goldCheckbox.addEventListener("change", () => {
+    const overlayModal = document.querySelector(".song-info-modal");
+    if (!overlayModal) return;
+
+    overlayModal.classList.toggle("gold", goldCheckbox.checked);
+
+    const title = document.getElementById("info-title")?.innerText;
+    if (!title) return;
+
+    const cards = document.querySelectorAll(".song");
+    cards.forEach(card => {
+      const cardTitle = card.querySelector("h3")?.innerText;
+      if (cardTitle === title)
+        card.classList.toggle("gold", goldCheckbox.checked);
+    });
+  });
+}
+
+function removeGoldStyles() {
+  const overlayModal = document.querySelector(".song-info-modal");
+  overlayModal.classList.remove("gold");
+
+  const cards = document.querySelectorAll(".song.gold");
+  cards.forEach(card => card.classList.remove("gold"));
 }
