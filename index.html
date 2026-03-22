@@ -6,146 +6,87 @@
 <title>Rock Band HD</title>
 <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<header class="header">
-  <div class="header-left">
-    <img src="assets/logo.png" class="logo">
-    <div class="title-group">
-      <p class="subtitle">Website is still work-in-progress, bugs are to be expected.</p>
-    </div>
-  </div>
+<input id="search" onkeyup="searchSongs()" placeholder="Search songs...">
 
-  <div class="header-center">
-    <input type="text" id="search" placeholder="Search songs or artists...">
-    <button id="randomSong" class="tab">🎲 Random Song</button>
+<div id="song-count"></div>
 
-    <div class="sort-buttons">
-      <button data-sort="title">Sort by Song</button>
-      <button data-sort="artist">Sort by Artist</button>
-    </div>
+<div id="song-grid"></div>
 
-    <div class="tabs">
-      <button class="tab active" data-tab="all">All</button>
-      <button class="tab" data-tab="rb1"><img src="assets/rb1.png"></button>
-      <button class="tab" data-tab="rb1dlc"><img src="assets/rb1dlc.png"></button>
-      <button class="tab" data-tab="rb2"><img src="assets/rb2.png"></button>
-      <button class="tab" data-tab="rb2dlc"><img src="assets/rb2dlc.png"></button>
-      <button class="tab" data-tab="tbrb"><img src="assets/tbrb.png"></button>
-      <button class="tab" data-tab="tbrbdlc"><img src="assets/tbrbdlc.png"></button>
-      <button class="tab" data-tab="lrb"><img src="assets/lrb.png"></button>
-      <button class="tab" data-tab="gdrb"><img src="assets/gdrb.png"></button>
-      <button class="tab" data-tab="rb3"><img src="assets/rb3.png"></button>
-      <button class="tab" data-tab="rb3dlc"><img src="assets/rb3dlc.png"></button>
-      <button class="tab" data-tab="rb_blitz"><img src="assets/rb_blitz.png"></button>
-      <button class="tab" data-tab="rb4"><img src="assets/rb4.png"></button>
-      <button class="tab" data-tab="rb4dlc"><img src="assets/rb4dlc.png"></button>
-      <button class="tab" data-tab="rb4rivals"><img src="assets/rb4rivals.png"></button>
-    </div>
-  </div>
-
-  <div class="header-right">
-    <p id="song-count"></p>
-  </div>
-</header>
-
-<main>
-  <div id="song-grid" class="song-grid"></div>
-</main>
-
-<footer>
-  <p>This project is not affiliated with Harmonix.</p>
-</footer>
-
-<!-- Overlay -->
-<div id="song-info-overlay" class="song-info-overlay">
-  <div class="overlay-bg"></div>
-
+<!-- ================= OVERLAY ================= -->
+<div id="song-info-overlay">
   <div class="song-info-modal">
-    <button class="close-info" id="closeOverlay">✕</button>
 
-    <div class="info-left">
-      <img id="info-cover" class="song-info-cover">
+    <div class="overlay-bg"></div>
+
+    <img id="info-cover">
+
+    <h2 id="info-title"></h2>
+    <p id="info-artist"></p>
+
+    <div class="info-grid">
+      <div>Genre: <span id="info-genre"></span></div>
+      <div>Charter: <span id="info-charter" class="harmonix"></span></div>
+      <div>Release: <span id="info-release"></span></div>
+
+      <div class="source-row">
+        <img id="info-source-icon">
+        <span id="info-source-text"></span>
+      </div>
+
+      <div>Rating: <span id="info-rating" class="song-rating"></span></div>
     </div>
 
-    <div class="info-middle">
-      <div id="info-title" class="info-title"></div>
-      <div id="info-artist" class="info-artist"></div>
-      <div class="info-meta">
-        <div id="info-album"></div>
-        <div id="info-year"></div>
+    <!-- ✅ FIXED DIFFICULTIES -->
+    <div class="overlay-difficulties">
+
+      <div class="instrument">
+        <img src="./assets/guitar.png">
+        <div id="info-guitar"></div>
       </div>
 
-      <div class="difficulty-grid">
-        <div class="diff-box">
-          <img src="assets/guitar.png" class="diff-icon">
-          <div id="info-guitar"></div>
-        </div>
-        <div class="diff-box">
-          <img src="assets/proguitar.png" class="diff-icon">
-          <div id="info-proguitar"></div>
-        </div>
-        <div class="diff-box">
-          <img src="assets/bass.png" class="diff-icon">
-          <div id="info-bass"></div>
-        </div>
-        <div class="diff-box">
-          <img src="assets/probass.png" class="diff-icon">
-          <div id="info-probass"></div>
-        </div>
-        <div class="diff-box">
-          <img src="assets/keys.png" class="diff-icon">
-          <div id="info-keys"></div>
-        </div>
-        <div class="diff-box">
-          <img src="assets/prokeys.png" class="diff-icon">
-          <div id="info-prokeys"></div>
-        </div>
-        <div class="diff-box">
-          <img src="assets/drums.png" class="diff-icon">
-          <div id="info-drums"></div>
-        </div>
-        <div class="diff-box">
-          <img id="info-vocals-icon" src="assets/vocals.png" class="diff-icon">
-          <div id="info-vocals"></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="info-right">
-      <div class="info-section">
-        <div class="info-label">GENRE</div>
-        <div id="info-genre" class="info-value"></div>
+      <div class="instrument">
+        <img src="./assets/bass.png">
+        <div id="info-bass"></div>
       </div>
 
-      <div class="info-section">
-        <div class="info-label">SOURCE</div>
-        <div class="info-value">
-          <img id="info-source-icon" class="source-icon-overlay">
-          <span id="info-source-text"></span>
-        </div>
+      <div class="instrument">
+        <img src="./assets/drums.png">
+        <div id="info-drums"></div>
       </div>
 
-      <div class="info-section">
-        <div class="info-label">SONG RATING</div>
-        <div id="info-rating" class="info-value"></div>
+      <div class="instrument">
+        <img id="info-vocals-icon" src="./assets/vocals1.png">
+        <div id="info-vocals"></div>
       </div>
 
-      <div class="info-section">
-        <div class="info-label">RELEASE</div>
-        <div id="info-release" class="info-value"></div>
+      <div class="instrument">
+        <img src="./assets/proguitar.png">
+        <div id="info-proguitar"></div>
       </div>
 
-      <div class="info-section">
-        <div class="info-label">CHARTER</div>
-        <div id="info-charter" class="info-value harmonix-charter">Harmonix</div>
+      <div class="instrument">
+        <img src="./assets/probass.png">
+        <div id="info-probass"></div>
+      </div>
+
+      <div class="instrument">
+        <img src="./assets/keys.png">
+        <div id="info-keys"></div>
+      </div>
+
+      <div class="instrument">
+        <img src="./assets/prokeys.png">
+        <div id="info-prokeys"></div>
       </div>
 
     </div>
+
   </div>
 </div>
 
 <script src="script.js"></script>
-
 </body>
 </html>
