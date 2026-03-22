@@ -35,11 +35,9 @@ function setupSongClickHandler() {
 
       const isOpen = dropdown.classList.contains("open");
 
-      // Close all dropdowns
       document.querySelectorAll(".difficulty-dropdown.open")
         .forEach(d => d.classList.remove("open"));
 
-      // Re-open only if it was previously closed
       if (!isOpen) {
         dropdown.classList.add("open");
       }
@@ -199,6 +197,13 @@ function openSongInfo(song) {
       const elem = document.getElementById(`info-${inst}`);
       if (elem) elem.innerHTML = createDifficulty(song.difficulty?.[inst]);
     });
+
+  // ✅ VOCALS HARMONY ICON LOGIC
+  const vocalsIcon = document.getElementById("info-vocals-icon");
+  if (vocalsIcon) {
+    let harm = song.Harm || 1;
+    vocalsIcon.src = `assets/vocals${harm > 1 ? harm : ""}.png`;
+  }
 
   overlay.classList.add("open");
 
