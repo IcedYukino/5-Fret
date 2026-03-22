@@ -1,74 +1,161 @@
+/* =========================
+   BASE
+========================= */
 body {
   margin: 0;
-  background: #0a0a0a;
+  background: #0b0f1a;
+  font-family: Arial, sans-serif;
   color: white;
-  font-family: Arial;
 }
 
+#search {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background: #111827;
+  color: white;
+}
+
+/* =========================
+   GRID
+========================= */
 #song-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 18px;
   padding: 20px;
 }
 
+/* =========================
+   CARD
+========================= */
 .song {
-  background: #111;
-  padding: 10px;
-  border-radius: 10px;
+  background: #111827;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: 0.2s;
   cursor: pointer;
+}
+
+.song:hover {
+  transform: scale(1.03);
 }
 
 .song img {
   width: 100%;
-  border-radius: 6px;
+  height: 230px;
+  object-fit: cover;
 }
 
+/* =========================
+   TEXT
+========================= */
+.song h3 {
+  margin: 10px;
+  font-size: 16px;
+}
+
+.song p {
+  margin: 0 10px 10px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* =========================
+   GENRE + RATING ROW
+========================= */
 .genre-row {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 0 10px 10px;
 }
 
 .song-rating {
-  padding: 2px 6px;
-  border-radius: 4px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 12px;
 }
 
-.song-rating.FF { background: green; }
-.song-rating.SR { background: orange; }
-.song-rating.NR { background: gray; }
+/* Rating Colors */
+.song-rating.FF { background: #22c55e; }
+.song-rating.SR { background: #f59e0b; }
+.song-rating.NR { background: #6b7280; }
 
+/* =========================
+   DROPDOWN
+========================= */
 .dropdown {
   display: none;
-  margin-top: 10px;
+  padding: 10px;
+  border-top: 1px solid #222;
 }
 
 .dropdown.open {
   display: block;
 }
 
+/* =========================
+   INSTRUMENT ROW
+========================= */
+.instrument {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.instrument img {
+  width: 18px;
+  height: 18px;
+}
+
+/* =========================
+   DIFFICULTY DOTS
+========================= */
 .diff {
   width: 8px;
   height: 8px;
-  border: 1px solid white;
+  border: 1px solid #555;
   display: inline-block;
+  margin-right: 2px;
+  border-radius: 2px;
 }
 
 .filled {
-  background: #0aa3ff;
+  background: #38bdf8;
 }
 
+/* =========================
+   MORE INFO BUTTON
+========================= */
 .more-info {
   display: block;
-  margin: 10px auto;
+  margin: 12px auto 0;
+  padding: 6px 12px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-/* OVERLAY */
+.more-info:hover {
+  background: #1d4ed8;
+}
+
+/* =========================
+   OVERLAY
+========================= */
 #overlay {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.85);
+  z-index: 1000;
 }
 
 #overlay.open {
@@ -76,9 +163,33 @@ body {
 }
 
 .modal {
-  background: #111;
-  padding: 20px;
+  background: #111827;
   width: 90%;
-  max-width: 500px;
-  margin: 50px auto;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* =========================
+   OVERLAY CONTENT
+========================= */
+.modal img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.modal h2 {
+  margin-top: 10px;
+}
+
+.modal p {
+  margin: 5px 0;
+}
+
+/* =========================
+   OVERLAY DIFFICULTIES
+========================= */
+#info-difficulties {
+  margin-top: 15px;
 }
