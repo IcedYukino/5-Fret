@@ -63,7 +63,7 @@ function displaySongs(songList){
         const coverTag = song.master === false ? `<div class="cover-tag">COVER</div>` : "";
         const file = song.file || "";
 
-        // Determine correct vocals image
+        // Determine correct vocals image for the card
         const vocalsImg = `./assets/vocals${song.harm && song.harm > 1 ? song.harm : ''}.png`;
 
         card.innerHTML = `
@@ -224,11 +224,14 @@ ${ratingText}
     document.getElementById("info-prokeys").innerHTML = createDifficulty(song.difficulty?.prokeys);
 
     // --- Vocals overlay update ---
-    const vocalsImg = `./assets/vocals${song.harm && song.harm > 1 ? song.harm : ''}.png`;
-    const vocalsIcon = document.getElementById("info-vocals-icon");
-    if(vocalsIcon) vocalsIcon.src = vocalsImg;
-    const vocalsBars = document.getElementById("info-vocals-bars");
-    if(vocalsBars) vocalsBars.innerHTML = createDifficulty(song.difficulty?.vocals);
+    const vocalsContainer = document.getElementById("info-vocals");
+    if(vocalsContainer){
+        const vocalsImg = `./assets/vocals${song.harm && song.harm > 1 ? song.harm : ''}.png`;
+        vocalsContainer.innerHTML = `
+            <img class="instrument-icon" src="${vocalsImg}" alt="Vocals">
+            ${createDifficulty(song.difficulty?.vocals)}
+        `;
+    }
 
     overlay.classList.add("open");
 }
