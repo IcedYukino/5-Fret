@@ -63,7 +63,6 @@ function displaySongs(songList){
         const coverTag = song.master === false ? `<div class="cover-tag">COVER</div>` : "";
         const file = song.file || "";
 
-        // Determine correct vocals image for the card
         const vocalsImg = `./assets/vocals${song.harm && song.harm > 1 ? song.harm : ''}.png`;
 
         card.innerHTML = `
@@ -228,7 +227,7 @@ ${ratingText}
     const vocalsIcon = document.querySelector("#info-vocals img.instrument-icon");
     if(vocalsIcon) vocalsIcon.src = vocalsImg;
 
-    const vocalsBars = document.querySelector("#info-vocals .diff-row");
+    const vocalsBars = document.getElementById("info-vocals-bars");
     if(vocalsBars) vocalsBars.innerHTML = createDifficulty(song.difficulty?.vocals);
 
     overlay.classList.add("open");
