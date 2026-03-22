@@ -1,181 +1,84 @@
-/* =========================
-   GLOBAL FIX (prevents zoom/stretch)
-========================= */
-* {
-  box-sizing: border-box;
-}
-
 body {
   margin: 0;
   background: #0a0a0a;
   color: white;
-  font-family: Arial, sans-serif;
+  font-family: Arial;
 }
 
-/* =========================
-   SONG GRID (THIS FIXES ZOOM ISSUE)
-========================= */
 #song-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 16px;
+  gap: 15px;
   padding: 20px;
 }
 
-/* =========================
-   CARD
-========================= */
 .song {
   background: #111;
   padding: 10px;
   border-radius: 10px;
-  transition: transform 0.2s ease;
   cursor: pointer;
 }
 
-.song:hover {
-  transform: scale(1.03);
-}
-
-/* COVER IMAGE */
-.cover-container {
+.song img {
   width: 100%;
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-  border-radius: 8px;
+  border-radius: 6px;
 }
 
-.cover-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* TITLE */
-.song h3 {
-  margin: 8px 0 4px;
-  font-size: 14px;
-}
-
-/* ARTIST */
-.song p {
-  margin: 0;
-  font-size: 12px;
-  color: #ccc;
-}
-
-/* =========================
-   GENRE + RATING (FIXED ALIGNMENT)
-========================= */
 .genre-row {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  margin-top: 6px;
-  gap: 6px;
-}
-
-.genre-tag {
-  font-size: 11px;
-  opacity: 0.8;
 }
 
 .song-rating {
-  font-size: 11px;
   padding: 2px 6px;
   border-radius: 4px;
-  white-space: nowrap;
 }
 
-/* COLORS */
-.song-rating.FF { background: #1db954; }
-.song-rating.SR { background: #ff9800; }
-.song-rating.NR { background: #666; }
+.song-rating.FF { background: green; }
+.song-rating.SR { background: orange; }
+.song-rating.NR { background: gray; }
 
-/* =========================
-   DROPDOWN
-========================= */
-.difficulty-dropdown {
+.dropdown {
   display: none;
   margin-top: 10px;
 }
 
-.difficulty-dropdown.open {
+.dropdown.open {
   display: block;
-}
-
-/* INSTRUMENT ROW */
-.instrument {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 4px;
-}
-
-.instrument img {
-  width: 18px;
-}
-
-/* DIFFICULTY */
-.diff-row {
-  display: flex;
-  gap: 2px;
 }
 
 .diff {
   width: 8px;
   height: 8px;
   border: 1px solid white;
+  display: inline-block;
 }
 
-.diff.filled {
+.filled {
   background: #0aa3ff;
 }
 
-/* =========================
-   MORE INFO BUTTON (CENTERED)
-========================= */
-.more-info-btn {
+.more-info {
   display: block;
-  margin: 10px auto 0;
-  padding: 5px 10px;
-  cursor: pointer;
+  margin: 10px auto;
 }
 
-/* =========================
-   REMOVE SOURCE OUTSIDE OVERLAY
-========================= */
-.song-source,
-.source-text,
-.source-label {
-  display: none !important;
-}
-
-/* =========================
-   OVERLAY (FIXED SCALE)
-========================= */
-#song-info-overlay {
+/* OVERLAY */
+#overlay {
   display: none;
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.8);
-  overflow-y: auto;
 }
 
-#song-info-overlay.open {
+#overlay.open {
   display: block;
 }
 
-.song-info-modal {
+.modal {
   background: #111;
   padding: 20px;
   width: 90%;
-  max-width: 600px;
-  margin: 40px auto;
-  border-radius: 10px;
-}
-
-/* HARMONIX */
-.harmonix {
-  color: #0aa3ff;
+  max-width: 500px;
+  margin: 50px auto;
 }
