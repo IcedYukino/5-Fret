@@ -24,10 +24,19 @@ function setupSongClickHandler() {
     const songCard = target.closest(".song");
     if (!songCard) return;
 
-    const dropdown = songCard.querySelector(".difficulty-dropdown");
+    // More Info button
+    if (target.classList.contains("more-info-btn")) {
+      const title = songCard.dataset.title;
+      const song = songs.find((s) => s.title === title);
+      if (song) openSongInfo(song);
+      return;
+    }
 
-    // Toggle dropdown
-    if (dropdown && !target.classList.contains("song-download")) {
+    // Toggle dropdown (except download links)
+    if (!target.classList.contains("song-download")) {
+      const dropdown = songCard.querySelector(".difficulty-dropdown");
+      if (!dropdown) return;
+
       const isOpen = dropdown.classList.contains("open");
 
       // Close all other dropdowns
@@ -37,14 +46,6 @@ function setupSongClickHandler() {
 
       // Toggle this one
       if (!isOpen) dropdown.classList.add("open");
-    }
-
-    // More Info button inside dropdown
-    if (target.classList.contains("more-info-btn")) {
-      const title = songCard.dataset.title;
-      const song = songs.find((s) => s.title === title);
-      if (song) openSongInfo(song);
-      return;
     }
   });
 }
@@ -87,7 +88,7 @@ async function loadSongs(tab) {
 }
 
 // ==========================
-// Get Instrument Icon (vocals dynamic)
+// Get Instrument Icon
 // ==========================
 function getInstrumentIcon(inst, song) {
   if (inst === "vocals") {
@@ -118,23 +119,53 @@ function displaySongs(songList) {
     // Map category to full source text
     let sourceText = "";
     switch (song.category) {
-      case "rb1": sourceText = "Rock Band"; break;
-      case "rb1dlc": sourceText = "Rock Band DLC"; break;
-      case "rb2": sourceText = "Rock Band 2"; break;
-      case "rb2dlc": sourceText = "Rock Band 2 DLC"; break;
-      case "tbrb": sourceText = "The Beatles: Rock Band"; break;
-      case "tbrbdlc": sourceText = "The Beatles: Rock Band DLC"; break;
-      case "lrb": sourceText = "LEGO Rock Band"; break;
-      case "gdrb": sourceText = "Green Day: Rock Band"; break;
-      case "rb3": sourceText = "Rock Band 3"; break;
-      case "rb3dlc": sourceText = "Rock Band 3 DLC"; break;
-      case "rb_blitz": sourceText = "Rock Band Blitz"; break;
-      case "rb4": sourceText = "Rock Band 4"; break;
-      case "rb4dlc": sourceText = "Rock Band 4 DLC"; break;
-      case "rb4rivals": sourceText = "Rock Band Rivals"; break;
-      default: sourceText = song.category || "";
+      case "rb1":
+        sourceText = "Rock Band";
+        break;
+      case "rb1dlc":
+        sourceText = "Rock Band DLC";
+        break;
+      case "rb2":
+        sourceText = "Rock Band 2";
+        break;
+      case "rb2dlc":
+        sourceText = "Rock Band 2 DLC";
+        break;
+      case "rb3":
+        sourceText = "Rock Band 3";
+        break;
+      case "rb3dlc":
+        sourceText = "Rock Band 3 DLC";
+        break;
+      case "rb4":
+        sourceText = "Rock Band 4";
+        break;
+      case "rb4dlc":
+        sourceText = "Rock Band 4 DLC";
+        break;
+      case "rb4rivals":
+        sourceText = "Rock Band Rivals";
+        break;
+      case "tbrb":
+        sourceText = "The Beatles: Rock Band";
+        break;
+      case "tbrbdlc":
+        sourceText = "The Beatles: Rock Band DLC";
+        break;
+      case "lrb":
+        sourceText = "LEGO Rock Band";
+        break;
+      case "gdrb":
+        sourceText = "Green Day: Rock Band";
+        break;
+      case "rb_blitz":
+        sourceText = "Rock Band Blitz";
+        break;
+      default:
+        sourceText = song.category || "";
     }
 
+    // Optional icon for source
     const sourceIcon = song.category
       ? `<img class="source-icon" src="./assets/${song.category}.png">`
       : "";
@@ -146,7 +177,7 @@ function displaySongs(songList) {
       <h3><a class="song-download" ${file ? `href="${file}" download` : "disabled"}>${song.title}</a></h3>
       <p>${song.artist || ""}</p>
       <div class="genre-row">
-        <div class="source-display">
+        <div class="source-row">
           ${sourceIcon}
           <span class="source-text">${sourceText}</span>
         </div>
@@ -161,7 +192,8 @@ function displaySongs(songList) {
             ${createDifficulty(difficulty[inst])}
           </div>
         `).join("")}
-        <button class="more-info-btn" style="margin:auto; display:block;">More Info</button>
+
+        <button class="more-info-btn">More Info</button>
       </div>
     `;
 
@@ -190,31 +222,42 @@ function openSongInfo(song) {
   const overlay = document.getElementById("song-info-overlay");
   const cover = song.cover || "./assets/default_cover.png";
   document.getElementById("info-cover").src = cover;
-
   const bg = document.querySelector(".overlay-bg");
   if (bg) bg.style.backgroundImage = `url(${cover})`;
 
   document.getElementById("info-title").innerText = song.title || "";
   document.getElementById("info-artist").innerText = song.artist || "";
   document.getElementById("info-album").innerText = song.album || "";
-  document.getElementById("info-year").innerText = song.year || "";
 
-  // Format release as "January 1 2000"
-  const releaseEl = document.getElementById("info-release");
+  // Format release date
   if (song.release) {
-    const d = new Date(song.release);
-    if (!isNaN(d)) releaseEl.innerText = d.toLocaleDateString("en-US", {month:"long", day:"numeric", year:"numeric"});
-    else releaseEl.innerText = song.release;
-  } else releaseEl.innerText = "";
+    const date = new Date(song.release);
+    if (!isNaN(date)) {
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      document.getElementById("info-release").innerText = date.toLocaleDateString(undefined, options);
+    } else {
+      document.getElementById("info-release").innerText = song.release;
+    }
+  } else {
+    document.getElementById("info-release").innerText = "";
+  }
 
-  // Charter always Harmonix in blue if source exists
-  document.getElementById("info-charter").innerHTML = song.category ? `<span class="harmonix-charter">Harmonix</span>` : "";
+  // Harmonix charter
+  const charterEl = document.getElementById("info-charter");
+  if (song.category) {
+    charterEl.innerText = "Harmonix";
+    charterEl.classList.add("harmonix-charter");
+  } else {
+    charterEl.innerText = song.charter || "";
+    charterEl.classList.remove("harmonix-charter");
+  }
 
   ["guitar","proguitar","bass","probass","keys","prokeys","drums","vocals"].forEach(inst => {
     const elem = document.getElementById(`info-${inst}`);
     if (elem) elem.innerHTML = createDifficulty(song.difficulty?.[inst]);
   });
 
+  // Vocals icon
   const vocalsIcon = document.getElementById("info-vocals-icon");
   if (vocalsIcon) {
     let harm = song.Harm || song.harm || 1;
@@ -224,35 +267,41 @@ function openSongInfo(song) {
   // Genre
   document.getElementById("info-genre").innerText = song.genre || "";
 
-  // Source icon + full text
-  const infoSourceIcon = document.getElementById("info-source-icon");
-  const infoSourceText = document.getElementById("info-source-text");
-  let sourceText = "";
-  switch (song.category) {
-    case "rb1": sourceText = "Rock Band"; break;
-    case "rb1dlc": sourceText = "Rock Band DLC"; break;
-    case "rb2": sourceText = "Rock Band 2"; break;
-    case "rb2dlc": sourceText = "Rock Band 2 DLC"; break;
-    case "tbrb": sourceText = "The Beatles: Rock Band"; break;
-    case "tbrbdlc": sourceText = "The Beatles: Rock Band DLC"; break;
-    case "lrb": sourceText = "LEGO Rock Band"; break;
-    case "gdrb": sourceText = "Green Day: Rock Band"; break;
-    case "rb3": sourceText = "Rock Band 3"; break;
-    case "rb3dlc": sourceText = "Rock Band 3 DLC"; break;
-    case "rb_blitz": sourceText = "Rock Band Blitz"; break;
-    case "rb4": sourceText = "Rock Band 4"; break;
-    case "rb4dlc": sourceText = "Rock Band 4 DLC"; break;
-    case "rb4rivals": sourceText = "Rock Band Rivals"; break;
-    default: sourceText = song.category || "";
+  // Source text & icon
+  const sourceTextEl = document.getElementById("info-source-text");
+  const sourceIconEl = document.getElementById("info-source-icon");
+  const category = song.category;
+  let fullSource = "";
+  switch (category) {
+    case "rb1": fullSource = "Rock Band"; break;
+    case "rb1dlc": fullSource = "Rock Band DLC"; break;
+    case "rb2": fullSource = "Rock Band 2"; break;
+    case "rb2dlc": fullSource = "Rock Band 2 DLC"; break;
+    case "rb3": fullSource = "Rock Band 3"; break;
+    case "rb3dlc": fullSource = "Rock Band 3 DLC"; break;
+    case "rb4": fullSource = "Rock Band 4"; break;
+    case "rb4dlc": fullSource = "Rock Band 4 DLC"; break;
+    case "rb4rivals": fullSource = "Rock Band Rivals"; break;
+    case "tbrb": fullSource = "The Beatles: Rock Band"; break;
+    case "tbrbdlc": fullSource = "The Beatles: Rock Band DLC"; break;
+    case "lrb": fullSource = "LEGO Rock Band"; break;
+    case "gdrb": fullSource = "Green Day: Rock Band"; break;
+    case "rb_blitz": fullSource = "Rock Band Blitz"; break;
+    default: fullSource = category || "";
   }
-  infoSourceText.innerText = sourceText;
-  if (infoSourceIcon && song.category) infoSourceIcon.src = `./assets/${song.category}.png`;
+  if (sourceTextEl) sourceTextEl.innerText = fullSource;
+  if (sourceIconEl && category) sourceIconEl.src = `assets/${category}.png`;
 
   // Song rating
   let ratingText = "Not Rated";
   let ratingClass = "NR";
-  if (song.rating === "FF") { ratingText = "Family Friendly"; ratingClass = "FF"; }
-  else if (song.rating === "SR") { ratingText = "Supervision Recommended"; ratingClass = "SR"; }
+  if (song.rating === "FF") {
+    ratingText = "Family Friendly";
+    ratingClass = "FF";
+  } else if (song.rating === "SR") {
+    ratingText = "Supervision Recommended";
+    ratingClass = "SR";
+  }
   const ratingEl = document.getElementById("info-rating");
   ratingEl.innerText = ratingText;
   ratingEl.className = "info-value " + ratingClass;
