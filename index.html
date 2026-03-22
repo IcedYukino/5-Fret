@@ -3,30 +3,71 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rock Band Songs</title>
+<title>Rock Band Revived</title>
 <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-<input id="search" placeholder="Search..." onkeyup="searchSongs()">
+<header class="header">
+  <div class="header-left">
+    <img src="assets/logo.png" class="logo">
+    <div class="title-group">
+      <p class="title">Rock Band Revived</p>
+      <p class="subtitle">Work-in-progress, bugs expected</p>
+    </div>
+  </div>
 
-<div id="song-grid"></div>
+  <div class="header-center">
+    <input type="text" id="search" placeholder="Search songs or artists...">
+    <button id="randomSong">🎲 Random Song</button>
+    <div class="sort-buttons">
+      <button data-sort="title">Sort by Song</button>
+      <button data-sort="artist">Sort by Artist</button>
+    </div>
+    <div class="tabs">
+      <button class="tab active" data-tab="all">All</button>
+      <button class="tab" data-tab="rb1"><img src="assets/rb1.png"></button>
+      <button class="tab" data-tab="rb1dlc"><img src="assets/rb1dlc.png"></button>
+      <button class="tab" data-tab="rb2"><img src="assets/rb2.png"></button>
+      <button class="tab" data-tab="rb2dlc"><img src="assets/rb2dlc.png"></button>
+      <button class="tab" data-tab="rb3"><img src="assets/rb3.png"></button>
+      <button class="tab" data-tab="rb3dlc"><img src="assets/rb3dlc.png"></button>
+      <button class="tab" data-tab="rb4"><img src="assets/rb4.png"></button>
+      <button class="tab" data-tab="rb4dlc"><img src="assets/rb4dlc.png"></button>
+      <button class="tab" data-tab="rb4rivals"><img src="assets/rb4rivals.png"></button>
+    </div>
+  </div>
 
-<!-- OVERLAY -->
-<div id="overlay">
+  <div class="header-right">
+    <p id="song-count"></p>
+  </div>
+</header>
+
+<main>
+  <div id="song-grid" class="song-grid"></div>
+</main>
+
+<footer>
+  <p>Not affiliated with Harmonix.</p>
+</footer>
+
+<!-- Overlay -->
+<div id="overlay" class="overlay">
   <div class="modal">
-    <img id="info-cover">
+    <button id="closeOverlay" class="close-info">✕</button>
+    <img id="info-cover" src="assets/default_cover.png">
     <h2 id="info-title"></h2>
     <p id="info-artist"></p>
 
-    <p><b>Genre:</b> <span id="info-genre"></span></p>
-    <p><b>Charter:</b> <span id="info-charter"></span></p>
-    <p><b>Release:</b> <span id="info-release"></span></p>
-    <p><b>Source:</b> <span id="info-source"></span></p>
-    <p><b>Rating:</b> <span id="info-rating"></span></p>
-
     <div id="info-difficulties"></div>
+
+    <div class="info-grid">
+      <div><b>Genre:</b> <span id="info-genre"></span></div>
+      <div><b>Charter:</b> <span id="info-charter" class="harmonix-charter"></span></div>
+      <div><b>Release:</b> <span id="info-release"></span></div>
+      <div><b>Source:</b> <span id="info-source"></span></div>
+      <div><b>Rating:</b> <span id="info-rating" class="song-rating"></span></div>
+    </div>
   </div>
 </div>
 
