@@ -193,3 +193,8 @@ body {
 #info-difficulties {
   margin-top: 15px;
 }
+
+/* Overlay rating colors (important fix) */
+#info-rating.FF { background: #22c55e; }
+#info-rating.SR { background: #f59e0b; }
+#info-rating.NR { background: #6b7280; }
