@@ -14,7 +14,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 });
 
 // ==========================
-// Song Click Handler (FIXED)
+// Song Click Handler
 // ==========================
 function setupSongClickHandler() {
   const grid = document.getElementById("song-grid");
@@ -38,9 +38,7 @@ function setupSongClickHandler() {
       document.querySelectorAll(".difficulty-dropdown.open")
         .forEach(d => d.classList.remove("open"));
 
-      if (!isOpen) {
-        dropdown.classList.add("open");
-      }
+      if (!isOpen) dropdown.classList.add("open");
     }
   });
 }
@@ -90,6 +88,17 @@ async function loadSongs(tab) {
 }
 
 // ==========================
+// Instrument Icon Logic (NEW)
+// ==========================
+function getInstrumentIcon(inst, song) {
+  if (inst === "vocals") {
+    let harm = song.Harm || 1;
+    return `./assets/vocals${harm > 1 ? harm : ""}.png`;
+  }
+  return `./assets/${inst}.png`;
+}
+
+// ==========================
 // Display Songs
 // ==========================
 function displaySongs(songList) {
@@ -119,7 +128,12 @@ function displaySongs(songList) {
       </div>
       <div class="difficulty-dropdown">
         ${["guitar","bass","drums","vocals","proguitar","probass","keys","prokeys"]
-          .map(inst => `<div class="instrument"><img class="instrument-icon" src="./assets/${inst}.png">${createDifficulty(difficulty[inst])}</div>`).join("")}
+          .map(inst => `
+            <div class="instrument">
+              <img class="instrument-icon" src="${getInstrumentIcon(inst, song)}">
+              ${createDifficulty(difficulty[inst])}
+            </div>
+          `).join("")}
         <div class="more-info-row">
           <button class="more-info-btn">More Info</button>
         </div>
@@ -145,7 +159,7 @@ function createDifficulty(level) {
 }
 
 // ==========================
-// Open / Close Overlay
+// Open Song Info
 // ==========================
 function openSongInfo(song) {
   const overlay = document.getElementById("song-info-overlay");
@@ -198,7 +212,7 @@ function openSongInfo(song) {
       if (elem) elem.innerHTML = createDifficulty(song.difficulty?.[inst]);
     });
 
-  // ✅ VOCALS HARMONY ICON LOGIC
+  // ✅ Overlay vocals icon logic
   const vocalsIcon = document.getElementById("info-vocals-icon");
   if (vocalsIcon) {
     let harm = song.Harm || 1;
