@@ -230,13 +230,13 @@ ${ratingText}
     document.getElementById("info-keys").innerHTML = createDifficulty(song.difficulty?.keys);
     document.getElementById("info-prokeys").innerHTML = createDifficulty(song.difficulty?.prokeys);
 
-    // --- Vocals overlay update ---
-    const vocalsImg = `./assets/vocals${song.harm && song.harm > 1 ? song.harm : ''}.png`;
-    const vocalsIcon = document.querySelector("#info-vocals img.instrument-icon");
-    if(vocalsIcon) vocalsIcon.src = vocalsImg;
+// --- Vocals overlay update ---
+const vocalsImg = `./assets/vocals${song.harm && song.harm > 1 ? song.harm : ''}.png`;
+const vocalsIcon = document.getElementById("info-vocals-icon");
+if (vocalsIcon) vocalsIcon.src = vocalsImg;
 
-    const vocalsBars = document.getElementById("info-vocals-bars");
-    if(vocalsBars) vocalsBars.innerHTML = createDifficulty(song.difficulty?.vocals);
+const vocalsBars = document.getElementById("info-vocals-bars");
+if (vocalsBars) vocalsBars.innerHTML = createDifficulty(song.difficulty?.vocals);
 
     overlay.classList.add("open");
 }
