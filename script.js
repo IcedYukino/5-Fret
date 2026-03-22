@@ -218,7 +218,9 @@ document.getElementById("info-source").innerHTML = `
 ${ratingText}
 </span>`;
 
-    document.getElementById("info-charter").innerHTML = song.charter || "";
+ document.getElementById("info-charter").innerHTML = song.charter 
+    ? song.charter 
+    : `<span style="color:#0aa3ff">Harmonix</span>`;
 
     document.getElementById("info-guitar").innerHTML = createDifficulty(song.difficulty?.guitar);
     document.getElementById("info-bass").innerHTML = createDifficulty(song.difficulty?.bass);
