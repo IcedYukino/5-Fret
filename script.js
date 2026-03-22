@@ -3,6 +3,27 @@ let currentTab = "all";
 let sortDirection = 1;
 
 // ==========================
+// Category Full Names Mapping
+// ==========================
+const categoryFullNames = {
+  "all": "All Songs",
+  "rb1": "Rock Band",
+  "rb1dlc": "Rock Band DLC",
+  "rb2": "Rock Band 2",
+  "rb2dlc": "Rock Band 2 DLC",
+  "tbrb": "The Beatles: Rock Band",
+  "tbrbdlc": "The Beatles: Rock Band DLC",
+  "lrb": "LEGO Rock Band",
+  "gdrb": "Green Day: Rock Band",
+  "rb3": "Rock Band 3",
+  "rb3dlc": "Rock Band 3 DLC",
+  "rb_blitz": "Rock Band Blitz",
+  "rb4": "Rock Band 4",
+  "rb4dlc": "Rock Band 4 DLC",
+  "rb4rivals": "Rock Band Rivals"
+};
+
+// ==========================
 // DOMContentLoaded
 // ==========================
 window.addEventListener("DOMContentLoaded", async () => {
@@ -166,10 +187,10 @@ function openSongInfo(song) {
   document.getElementById("info-year").innerText = song.year || "";
   document.getElementById("info-release").innerText = song.release || "";
 
-  // ✅ Overlay fields
+  // ✅ Overlay fields with full source names
   document.getElementById("info-charter").innerText = song.charter || song.Charter || "";
   document.getElementById("info-genre").innerText = song.genre || "";
-  document.getElementById("info-source").innerText = song.category || "";
+  document.getElementById("info-source").innerText = categoryFullNames[song.category] || song.category || "";
   document.getElementById("info-rating").innerText = song.rating || "NR";
 
   // Difficulty bars
