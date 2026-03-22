@@ -619,7 +619,7 @@ z-index:-1;
     position: absolute;
     inset: 0; /* covers entire card */
     z-index: 0; /* behind all content */
-    background: linear-gradient(270deg, #565656, #000000);
+    background: linear-gradient(343deg, #000000, #292541);
     background-size: 400% 400%;
     border-radius: 10px; /* match card border radius */
     -webkit-animation: songcards 19s ease infinite;
