@@ -18,7 +18,6 @@ window.addEventListener("DOMContentLoaded", async () => {
 // ==========================
 function setupSongClickHandler() {
   const grid = document.getElementById("song-grid");
-
   if (!grid) return;
 
   grid.addEventListener("click", function (e) {
@@ -119,20 +118,12 @@ function displaySongs(songList) {
     const file = song.file || "";
     const difficulty = song.difficulty || {};
 
-    // Map category to full source text
     let sourceText = "";
     switch (song.category) {
-      case "rb1":
-        sourceText = "Rock Band";
-        break;
-      case "rb1dlc":
-        sourceText = "Rock Band DLC";
-        break;
-      case "rb4rivals":
-        sourceText = "Rock Band Rivals";
-        break;
-      default:
-        sourceText = song.category || "";
+      case "rb1": sourceText = "Rock Band"; break;
+      case "rb1dlc": sourceText = "Rock Band DLC"; break;
+      case "rb4rivals": sourceText = "Rock Band Rivals"; break;
+      default: sourceText = song.category || "";
     }
 
     const sourceIcon = song.category
@@ -157,9 +148,9 @@ function displaySongs(songList) {
       <button class="more-info-btn">More Info</button>
 
       <div class="difficulty-dropdown">
-        ${["guitar","bass","drums","vocals","proguitar","probass","keys","prokeys"].map(inst=>`
+        ${["guitar","bass","drums","vocals","proguitar","probass","keys","prokeys"].map(inst => `
           <div class="instrument">
-            <img class="instrument-icon" src="${getInstrumentIcon(inst,song)}">
+            <img class="instrument-icon" src="${getInstrumentIcon(inst, song)}">
             ${createDifficulty(difficulty[inst])}
           </div>
         `).join("")}
@@ -192,48 +183,44 @@ function openSongInfo(song) {
   const overlay = document.getElementById("song-info-overlay");
   if (!overlay) return;
 
-  const cover = song.cover || "./assets/default_cover.png";
   const infoCover = document.getElementById("info-cover");
-  if (infoCover) infoCover.src = cover;
+  if (infoCover) infoCover.src = song.cover || "./assets/default_cover.png";
 
   const bg = document.querySelector(".overlay-bg");
-  if (bg) bg.style.backgroundImage = `url(${cover})`;
+  if (bg) bg.style.backgroundImage = `url(${song.cover || "./assets/default_cover.png"})`;
 
-  document.getElementById("info-title").innerText = song.title || "";
-  document.getElementById("info-artist").innerText = song.artist || "";
-  document.getElementById("info-album").innerText = song.album || "";
-  document.getElementById("info-year").innerText = song.year || "";
-  document.getElementById("info-release").innerText = song.release || "";
-  document.getElementById("info-charter").innerText = song.charter || "";
+  const infoTitle = document.getElementById("info-title");
+  if (infoTitle) infoTitle.innerText = song.title || "";
 
-  ["guitar","proguitar","bass","probass","keys","prokeys","drums","vocals"].forEach(inst => {
-    const elem = document.getElementById(`info-${inst}`);
-    if (elem) elem.innerHTML = createDifficulty(song.difficulty?.[inst]);
-  });
+  const infoArtist = document.getElementById("info-artist");
+  if (infoArtist) infoArtist.innerText = song.artist || "";
 
-  const vocalsIcon = document.getElementById("info-vocals-icon");
-  if (vocalsIcon) {
-    let harm = song.Harm || song.harm || 1;
-    vocalsIcon.src = `assets/vocals${harm > 1 ? harm : ""}.png`;
-  }
+  const infoAlbum = document.getElementById("info-album");
+  if (infoAlbum) infoAlbum.innerText = song.album || "";
 
-  document.getElementById("info-genre").innerText = song.genre || "";
+  const infoYear = document.getElementById("info-year");
+  if (infoYear) infoYear.innerText = song.year || "";
 
+  const infoRelease = document.getElementById("info-release");
+  if (infoRelease) infoRelease.innerText = song.release || "";
+
+  const infoCharter = document.getElementById("info-charter");
+  if (infoCharter) infoCharter.innerText = song.charter || "";
+
+  // Source
+  const sourceTextEl = document.getElementById("info-source-text");
+  const sourceIconEl = document.getElementById("info-source-icon");
   let sourceText = "";
-  switch (song.category) {
-    case "rb1":
-      sourceText = "Rock Band";
-      break;
-    case "rb1dlc":
-      sourceText = "Rock Band DLC";
-      break;
-    case "rb4rivals":
-      sourceText = "Rock Band Rivals";
-      break;
-    default:
-      sourceText = song.category || "";
+  if (song.category) {
+    switch (song.category) {
+      case "rb1": sourceText = "Rock Band"; break;
+      case "rb1dlc": sourceText = "Rock Band DLC"; break;
+      case "rb4rivals": sourceText = "Rock Band Rivals"; break;
+      default: sourceText = song.category || "";
+    }
   }
-  document.getElementById("info-source").innerText = sourceText;
+  if (sourceTextEl) sourceTextEl.innerText = sourceText;
+  if (sourceIconEl && song.category) sourceIconEl.src = `assets/${song.category}.png`;
 
   // Song rating
   const ratingEl = document.getElementById("info-rating");
@@ -244,6 +231,18 @@ function openSongInfo(song) {
     else if (song.rating === "SR") { ratingText = "Supervision Recommended"; ratingClass = "SR"; }
     ratingEl.innerText = ratingText;
     ratingEl.className = "info-value " + ratingClass;
+  }
+
+  // Difficulty & vocals icon
+  ["guitar","proguitar","bass","probass","keys","prokeys","drums","vocals"].forEach(inst => {
+    const elem = document.getElementById(`info-${inst}`);
+    if (elem) elem.innerHTML = createDifficulty(song.difficulty?.[inst]);
+  });
+
+  const vocalsIcon = document.getElementById("info-vocals-icon");
+  if (vocalsIcon) {
+    let harm = song.Harm || song.harm || 1;
+    vocalsIcon.src = `assets/vocals${harm > 1 ? harm : ""}.png`;
   }
 
   overlay.classList.add("open");
