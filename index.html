@@ -5,6 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rock Band HD</title>
 <link rel="stylesheet" href="styles.css">
+<style>
+/* Minimal CSS to make dropdown and More Info button work */
+.song .difficulty-dropdown {
+  display: none;
+  flex-direction: column;
+  margin-top: 5px;
+}
+.song .difficulty-dropdown.open {
+  display: flex;
+}
+.song .difficulty-dropdown .more-info-btn {
+  margin-top: 8px;
+  align-self: flex-end;
+}
+</style>
 </head>
 <body>
 
@@ -60,7 +75,6 @@
 <!-- Overlay -->
 <div id="song-info-overlay" class="song-info-overlay">
   <div class="overlay-bg"></div>
-
   <div class="song-info-modal">
     <button class="close-info" id="closeOverlay">✕</button>
 
@@ -71,12 +85,10 @@
     <div class="info-middle">
       <div id="info-title" class="info-title"></div>
       <div id="info-artist" class="info-artist"></div>
-
       <div class="info-meta">
         <div id="info-album"></div>
         <div id="info-year"></div>
       </div>
-
       <div class="difficulty-grid">
         <div class="diff-box"><img src="assets/guitar.png" class="diff-icon"><div id="info-guitar"></div></div>
         <div class="diff-box"><img src="assets/proguitar.png" class="diff-icon"><div id="info-proguitar"></div></div>
@@ -100,12 +112,11 @@
 </div>
 
 <script src="script.js"></script>
-
 <script>
-document.getElementById("search")?.addEventListener("keyup",searchSongs);
-document.querySelectorAll("[data-sort]").forEach(btn=>btn.addEventListener("click",()=>sortSongs(btn.dataset.sort)));
-document.querySelectorAll("[data-tab]").forEach(btn=>btn.addEventListener("click",()=>switchTab(btn.dataset.tab,btn)));
-document.getElementById("closeOverlay")?.addEventListener("click",closeSongInfo);
+document.getElementById("search")?.addEventListener("keyup", searchSongs);
+document.querySelectorAll("[data-sort]").forEach(btn => btn.addEventListener("click", () => sortSongs(btn.dataset.sort)));
+document.querySelectorAll("[data-tab]").forEach(btn => btn.addEventListener("click", () => switchTab(btn.dataset.tab, btn)));
+document.getElementById("closeOverlay")?.addEventListener("click", closeSongInfo);
 </script>
 
 </body>
