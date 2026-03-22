@@ -116,56 +116,7 @@ function displaySongs(songList) {
     const file = song.file || "";
     const difficulty = song.difficulty || {};
 
-    // Map category to full source text
-    let sourceText = "";
-    switch (song.category) {
-      case "rb1":
-        sourceText = "Rock Band";
-        break;
-      case "rb1dlc":
-        sourceText = "Rock Band DLC";
-        break;
-      case "rb2":
-        sourceText = "Rock Band 2";
-        break;
-      case "rb2dlc":
-        sourceText = "Rock Band 2 DLC";
-        break;
-      case "rb3":
-        sourceText = "Rock Band 3";
-        break;
-      case "rb3dlc":
-        sourceText = "Rock Band 3 DLC";
-        break;
-      case "rb4":
-        sourceText = "Rock Band 4";
-        break;
-      case "rb4dlc":
-        sourceText = "Rock Band 4 DLC";
-        break;
-      case "rb4rivals":
-        sourceText = "Rock Band Rivals";
-        break;
-      case "tbrb":
-        sourceText = "The Beatles: Rock Band";
-        break;
-      case "tbrbdlc":
-        sourceText = "The Beatles: Rock Band DLC";
-        break;
-      case "lrb":
-        sourceText = "LEGO Rock Band";
-        break;
-      case "gdrb":
-        sourceText = "Green Day: Rock Band";
-        break;
-      case "rb_blitz":
-        sourceText = "Rock Band Blitz";
-        break;
-      default:
-        sourceText = song.category || "";
-    }
-
-    // Optional icon for source
+    // Only show the source icon on cards
     const sourceIcon = song.category
       ? `<img class="source-icon" src="./assets/${song.category}.png">`
       : "";
@@ -179,7 +130,6 @@ function displaySongs(songList) {
       <div class="genre-row">
         <div class="source-row">
           ${sourceIcon}
-          <span class="source-text">${sourceText}</span>
         </div>
         <span class="genre-tag ${song.genre?.toLowerCase().replace(/[^a-z]/g, "") || ""}">${song.genre || ""}</span>
         <span class="song-rating ${rating}">${rating}</span>
@@ -292,7 +242,7 @@ function openSongInfo(song) {
   if (sourceTextEl) sourceTextEl.innerText = fullSource;
   if (sourceIconEl && category) sourceIconEl.src = `assets/${category}.png`;
 
-  // Song rating
+  // Song rating text
   let ratingText = "Not Rated";
   let ratingClass = "NR";
   if (song.rating === "FF") {
