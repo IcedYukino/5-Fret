@@ -1,178 +1,166 @@
 let songs = [];
+let currentTab = "all";
+let sortDirection = 1;
 
-// ==========================
-// LOAD SONGS
-// ==========================
-async function loadSongs() {
-  const indexRes = await fetch("./songlists/index.json");
-  const files = await indexRes.json();
+// Load songs on page load
+window.addEventListener("DOMContentLoaded", async () => {
+  await loadSongs(currentTab);
+  setupDropdowns();
+  setupOverlay();
+  setupSearch();
+  setupSort();
+  setupRandom();
+});
 
-  let allSongs = [];
-
-  for (const file of files) {
-    const res = await fetch(`./songlists/${file}.json`);
-    const data = await res.json();
-    allSongs.push(...data);
+// Load Songs
+async function loadSongs(tab) {
+  let files = tab === "all" ? await (await fetch("./songlists/index.json")).json() : [tab];
+  let loaded = [];
+  for(const f of files){
+    try{
+      const res = await fetch(`./songlists/${f}.json`);
+      if(!res.ok) continue;
+      const data = await res.json();
+      loaded.push(...data);
+    }catch{}
   }
-
-  songs = allSongs;
-  renderSongs(songs);
+  songs = loaded.sort((a,b)=>a.title.localeCompare(b.title));
+  displaySongs(songs);
+  document.getElementById("song-count").innerText = songs.length + " songs";
 }
 
-// ==========================
-// RENDER SONGS
-// ==========================
-function renderSongs(list) {
+// Display Songs
+function displaySongs(list){
   const grid = document.getElementById("song-grid");
   grid.innerHTML = "";
-
-  list.forEach(song => {
+  list.forEach(song=>{
     const card = document.createElement("div");
-    card.className = "song";
-
-    card.innerHTML = `
-      <img src="${song.cover}">
+    card.className="song";
+    card.dataset.title=song.title;
+    const cover=song.cover||"./assets/default_cover.png";
+    const rating=song.rating||"NR";
+    card.innerHTML=`
+      <div class="cover-container"><img src="${cover}"></div>
       <h3>${song.title}</h3>
-      <p>${song.artist}</p>
-
+      <p>${song.artist||""}</p>
       <div class="genre-row">
-        <span>${song.genre || ""}</span>
-        <span class="song-rating ${song.rating || "NR"}">${song.rating || "NR"}</span>
+        <span class="genre-tag">${song.genre||""}</span>
+        <span class="song-rating ${rating}">${rating}</span>
       </div>
-
-      <div class="dropdown">
-        ${renderInstruments(song)}
-        <button class="more-info">More Info</button>
+      <div class="difficulty-dropdown">
+        ${["guitar","bass","drums","vocals","proguitar","probass","keys","prokeys"].map(inst=>`
+          <div class="instrument">
+            <img src="./assets/${inst}.png">
+            <div>${createDifficulty(song.difficulty?.[inst])}</div>
+          </div>
+        `).join("")}
+        <button class="more-info-btn">More Info</button>
       </div>
     `;
+    grid.appendChild(card);
+  });
+  setupCardClicks();
+}
 
-    card.onclick = (e) => {
-      if (e.target.classList.contains("more-info")) {
-        e.stopPropagation();
-        openOverlay(song);
+// Difficulty
+function createDifficulty(level){
+  if(level==null||level===-1)return"<span class='diff-row'><span class='diff'></span><span class='diff'></span><span class='diff'></span><span class='diff'></span><span class='diff'></span></span>";
+  let html="";
+  for(let i=1;i<=5;i++) html+=`<span class='diff ${i<=level?"filled":""}'></span>`;
+  return `<span class='diff-row'>${html}</span>`;
+}
+
+// Dropdown + More Info
+function setupCardClicks(){
+  document.querySelectorAll(".song").forEach(card=>{
+    card.addEventListener("click", e=>{
+      const dropdown=card.querySelector(".difficulty-dropdown");
+      if(e.target.classList.contains("more-info-btn")){
+        const song=songs.find(s=>s.title===card.dataset.title);
+        if(song) openOverlay(song);
         return;
       }
-
-      card.querySelector(".dropdown").classList.toggle("open");
-    };
-
-    grid.appendChild(card);
+      dropdown.classList.toggle("open");
+    });
   });
 }
 
-// ==========================
-// INSTRUMENTS
-// ==========================
-function renderInstruments(song) {
-  const instruments = [
-    "guitar","bass","drums","vocals",
-    "proguitar","probass","keys","prokeys"
-  ];
-
-  return instruments.map(inst => {
-    const level = song.difficulty?.[inst];
-    if (level == null) return "";
-
-    return `
-      <div class="instrument">
-        <img src="${getInstrumentIcon(inst, song)}">
-        ${createDiff(level)}
-      </div>
-    `;
-  }).join("");
-}
-
-// ==========================
-// ICONS
-// ==========================
-function getInstrumentIcon(inst, song) {
-  if (inst === "vocals") {
-    let harm = song.Harm || song.harm || 1;
-    return `./assets/vocals${harm > 1 ? harm : ""}.png`;
-  }
-  return `./assets/${inst}.png`;
-}
-
-// ==========================
-// DIFFICULTY
-// ==========================
-function createDiff(level) {
-  if (level === -1) return `<span style="color:#888;">NO PART</span>`;
-
-  let out = "";
-  for (let i = 1; i <= 5; i++) {
-    out += `<span class="diff ${i <= level ? "filled" : ""}"></span>`;
-  }
-  return `<div>${out}</div>`;
-}
-
-// ==========================
-// SOURCE MAP
-// ==========================
-const sourceMap = {
-  rb3dlc: "Rock Band 3 DLC",
-  rb2dlc: "Rock Band 2 DLC",
-  rb1: "Rock Band",
-  rb2: "Rock Band 2",
-  rb3: "Rock Band 3"
-};
-
-// ==========================
-// OVERLAY
-// ==========================
-function openOverlay(song) {
+// Overlay
+function openOverlay(song){
   document.getElementById("overlay").classList.add("open");
+  document.getElementById("info-cover").src=song.cover||"./assets/default_cover.png";
+  document.getElementById("info-title").innerText=song.title||"";
+  document.getElementById("info-artist").innerText=song.artist||"";
+  document.getElementById("info-genre").innerText=song.genre||"";
+  document.getElementById("info-charter").innerText="Harmonix";
+  document.getElementById("info-release").innerText=song.release||"";
+  document.getElementById("info-source").innerText=mapSource(song.category);
+  const ratingEl=document.getElementById("info-rating");
+  ratingEl.innerText=song.rating||"NR";
+  ratingEl.className="song-rating "+(song.rating||"NR");
+  // Difficulties
+  const diffDiv=document.getElementById("info-difficulties");
+  diffDiv.innerHTML="";
+  ["guitar","bass","drums","vocals","proguitar","probass","keys","prokeys"].forEach(inst=>{
+    diffDiv.innerHTML+=`<div>${inst}: ${createDifficulty(song.difficulty?.[inst])}</div>`;
+  });
+}
+document.getElementById("closeOverlay").addEventListener("click",()=>document.getElementById("overlay").classList.remove("open"));
 
-  document.getElementById("info-cover").src = song.cover;
-  document.getElementById("info-title").innerText = song.title;
-  document.getElementById("info-artist").innerText = song.artist;
-  document.getElementById("info-genre").innerText = song.genre || "";
-
-  // Harmonix (styled)
-  const charterEl = document.getElementById("info-charter");
-  charterEl.innerText = "Harmonix";
-  charterEl.style.color = "#38bdf8";
-
-  // Release date formatted
-  if (song.release) {
-    const d = new Date(song.release);
-    document.getElementById("info-release").innerText =
-      d.toLocaleDateString("en-US", {
-        month: "long",
-        day: "numeric",
-        year: "numeric"
-      });
+// Map shortname to full source
+function mapSource(cat){
+  switch(cat){
+    case"rb1":return"Rock Band";
+    case"rb1dlc":return"Rock Band DLC";
+    case"rb2":return"Rock Band 2";
+    case"rb2dlc":return"Rock Band 2 DLC";
+    case"rb3":return"Rock Band 3";
+    case"rb3dlc":return"Rock Band 3 DLC";
+    case"rb4":return"Rock Band 4";
+    case"rb4dlc":return"Rock Band 4 DLC";
+    case"rb4rivals":return"Rock Band Rivals";
+    default:return cat||"";
   }
-
-  // FULL SOURCE NAME (overlay only)
-  document.getElementById("info-source").innerText =
-    sourceMap[song.category] || song.category || "";
-
-  // RATING (with color)
-  const ratingEl = document.getElementById("info-rating");
-  const rating = song.rating || "NR";
-
-  ratingEl.innerText = rating;
-  ratingEl.className = "song-rating " + rating;
-
-  // DIFFICULTIES
-  document.getElementById("info-difficulties").innerHTML =
-    renderInstruments(song);
 }
 
-// ==========================
-// SEARCH
-// ==========================
-function searchSongs() {
-  const val = document.getElementById("search").value.toLowerCase();
-
-  renderSongs(songs.filter(s =>
-    s.title.toLowerCase().includes(val) ||
-    s.artist.toLowerCase().includes(val)
-  ));
+// Search
+function setupSearch(){
+  document.getElementById("search").addEventListener("keyup", ()=>{
+    const val=document.getElementById("search").value.toLowerCase();
+    displaySongs(songs.filter(s=>s.title.toLowerCase().includes(val)||s.artist.toLowerCase().includes(val)));
+  });
 }
 
-// ==========================
-// INIT
-// ==========================
-loadSongs();
+// Sort
+function setupSort(){
+  document.querySelectorAll("[data-sort]").forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+      songs.sort((a,b)=>{
+        const A=(a[btn.dataset.sort]||"").toLowerCase();
+        const B=(b[btn.dataset.sort]||"").toLowerCase();
+        if(A<B)return -1*sortDirection;
+        if(A>B)return 1*sortDirection;
+        return 0;
+      });
+      sortDirection*=-1;
+      displaySongs(songs);
+    });
+  });
+}
+
+// Random
+function setupRandom(){
+  document.getElementById("randomSong").addEventListener("click",()=>{
+    const song=songs[Math.floor(Math.random()*songs.length)];
+    if(!song)return;
+    displaySongs(songs);
+    setTimeout(()=>{
+      document.querySelectorAll(".song").forEach(card=>{
+        if(card.dataset.title===song.title){
+          card.scrollIntoView({behavior:"smooth",block:"center"});
+          card.querySelector(".difficulty-dropdown").classList.add("open");
+        }
+      });
+    },100);
+  });
+}
