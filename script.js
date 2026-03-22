@@ -31,9 +31,11 @@ async function loadSongs(tab){
 
 let files = [];
 
-if(tab === "60s") files = ["60s"];
-else if(tab === "70s") files = ["70s"];
-else if(tab === "all") files = ["60s","70s"];
+if(tab === "rb1") files = ["rb1"];
+else if(tab === "rb1dlc") files = ["rb1dlc"];
+else if(tab === "rb3dlc") files = ["rb3dlc"];
+else if(tab === "rb4dlc") files = ["rb4dlc"];    
+else if(tab === "all") files = ["rb1","rb1dlc","rb3dlc","rb4dlc"];
 
 let loadedSongs = [];
 
@@ -126,13 +128,33 @@ ${createDifficulty(song.difficulty?.guitar)}
 </div>
 
 <div class="instrument">
+<img class="instrument-icon" src="./assets/proguitar.png">
+${createDifficulty(song.difficulty?.proguitar)}
+</div>
+
+<div class="instrument">
 <img class="instrument-icon" src="./assets/bass.png">
 ${createDifficulty(song.difficulty?.bass)}
 </div>
 
 <div class="instrument">
+<img class="instrument-icon" src="./assets/probass.png">
+${createDifficulty(song.difficulty?.probass)}
+</div>
+
+<div class="instrument">
 <img class="instrument-icon" src="./assets/drums.png">
 ${createDifficulty(song.difficulty?.drums)}
+</div>
+
+<div class="instrument">
+<img class="instrument-icon" src="./assets/keys.png">
+${createDifficulty(song.difficulty?.keys)}
+</div>
+
+<div class="instrument">
+<img class="instrument-icon" src="./assets/prokeys.png">
+${createDifficulty(song.difficulty?.prokeys)}
 </div>
 
 <div class="instrument">
