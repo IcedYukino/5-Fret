@@ -202,7 +202,7 @@ body{
   pointer-events:none;
 }
 
-/* Guitar Hero glow */
+/* Glow effects */
 .song.gh:hover,
 .song.gh2:hover,
 .song.ghwor:hover,
@@ -210,12 +210,10 @@ body{
   box-shadow:0 0 18px #ff8c00;
 }
 
-/* Rock Band glow */
 .song.rb1dlc:hover{
   box-shadow:0 0 18px #2b8fff;
 }
 
-/* Fortnite Festival glow */
 .song.fnf:hover{
   box-shadow:0 0 18px #ff2bf3;
 }
@@ -231,103 +229,40 @@ body{
   margin:2px 0;
 }
 
-/* Genre row */
-.genre-row{
-  display:grid;
-  grid-template-columns:20px auto auto;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  margin-top:6px;
+/* Genre row (outside overlay) */
+.genre-row {
+  display: flex;
+  justify-content: space-between; /* rating floats right */
+  align-items: center; /* vertical alignment */
+  margin-top: 6px;
+  gap: 8px;
+  width: 100%;
+  padding: 0 5px;
 }
 
-.source-icon{
-  width:18px;
-  height:18px;
-  object-fit:contain;
-  justify-self:end;
-  opacity:.95;
+/* Source + genre container */
+.source-display {
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
-.source-display{
-  display:flex;
-  align-items:center;
-  gap:8px;
+/* Source icon */
+.source-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  opacity: .95;
 }
 
-.overlay-source-icon{
-  width:22px;
-  height:22px;
+/* Genre tag */
+.genre-tag {
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
 }
-
-.source-row{
-  display:flex;
-  align-items:center;
-  gap:8px;
-}
-
-.source-row .source-icon{
-  width:20px;
-  height:20px;
-}
-
-.harmonix-charter{
-  color:#0078ff;
-  font-weight:600;
-}
-
-/* Song rating */
-.song-rating{
-  font-weight:bold;
-  font-size:13px;
-}
-
-.song-rating.NR{color:#999;}
-.song-rating.FF{color:#22c55e;} /* green */
-.song-rating.SR{color:#facc15;} /* yellow */
-
-/* Genre tags */
-.genre-tag{
-  display:inline-block;
-  padding:4px 10px;
-  border-radius:12px;
-  font-size:11px;
-  font-weight:bold;
-  color:white;
-}
-
-.genre-tag{
-  padding:3px 8px;
-  border-radius:6px;
-  font-size:12px;
-  font-weight:600;
-}
-
-/* genre colors */
-.genre-tag.rock{background:#e74c3c;}
-.genre-tag.metal{background:#9b59b6;}
-.genre-tag.alternative{background:#1abc9c;}
-.genre-tag.indierock{background:#3498db;}
-.genre-tag.classicrock{background:#e67e22;}
-.genre-tag.punk{background:#f1c40f;}
-.genre-tag.newwave{background:#2ecc71;}
-.genre-tag.grunge{background:#34495e;}
-.genre-tag.emo{background:#ff66cc;}
-.genre-tag.country{background:#d4ac0d;}
-.genre-tag.blues{background:#2980b9;}
-.genre-tag.jrock{background:#ff3366;}
-.genre-tag.prog{background:#8e44ad;}
-.genre-tag.glam{background:#ff1493;}
-.genre-tag.reggae-ska{background:#27ae60;}
-.genre-tag.hiphoprap{background:#2c3e50;}
-.genre-tag.r&bsoulfunk{background:#16a085;}
-.genre-tag.poprock{background:#ff7675;}
-.genre-tag.popdanceelectronic{background:#00cec9;}
-.genre-tag.southernrock{background:#d35400;}
-.genre-tag.numetal{background:#6c5ce7;}
-.genre-tag.classical{background:#7f8c8d;}
-.genre-tag.novelty{background:#f39c12;}
-.genre-tag.other{background:#95a5a6;}
 
 /* Difficulty dropdown */
 .difficulty-dropdown{
@@ -343,7 +278,7 @@ body{
   max-height:1000px;
 }
 
-/* Instruments (dropdown only) */
+/* Instruments */
 .instrument{
   display:grid;
   grid-template-columns:34px 1fr;
@@ -360,7 +295,7 @@ body{
   opacity:.95;
 }
 
-/* Difficulty bars (dropdown only) */
+/* Difficulty bars */
 .diff-row{
   display:flex;
   gap:4px;
@@ -390,26 +325,41 @@ body{
   letter-spacing:1px;
 }
 
-/* Center the More Info button at bottom of dropdown */
-.difficulty-dropdown .more-info-btn {
-  margin-top: 10px;
-  padding: 8px 16px;
-  background: #0aa3ff;
-  border: none;
-  color: white;
-  font-weight: bold;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: 0.2s;
-  display: block;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
+/* Song rating (outside overlay) */
+.song-rating{
+  font-weight:bold;
+  font-size:13px;
 }
 
-.difficulty-dropdown .more-info-btn:hover {
-  background: #0078cc;
-}
+.song-rating.NR{color:#999;}
+.song-rating.FF{color:#22c55e;} /* green */
+.song-rating.SR{color:#facc15;} /* yellow */
+
+/* Genre colors */
+.genre-tag.rock{background:#e74c3c;}
+.genre-tag.metal{background:#9b59b6;}
+.genre-tag.alternative{background:#1abc9c;}
+.genre-tag.indierock{background:#3498db;}
+.genre-tag.classicrock{background:#e67e22;}
+.genre-tag.punk{background:#f1c40f;}
+.genre-tag.newwave{background:#2ecc71;}
+.genre-tag.grunge{background:#34495e;}
+.genre-tag.emo{background:#ff66cc;}
+.genre-tag.country{background:#d4ac0d;}
+.genre-tag.blues{background:#2980b9;}
+.genre-tag.jrock{background:#ff3366;}
+.genre-tag.prog{background:#8e44ad;}
+.genre-tag.glam{background:#ff1493;}
+.genre-tag.reggae-ska{background:#27ae60;}
+.genre-tag.hiphoprap{background:#2c3e50;}
+.genre-tag.r&bsoulfunk{background:#16a085;}
+.genre-tag.poprock{background:#ff7675;}
+.genre-tag.popdanceelectronic{background:#00cec9;}
+.genre-tag.southernrock{background:#d35400;}
+.genre-tag.numetal{background:#6c5ce7;}
+.genre-tag.classical{background:#7f8c8d;}
+.genre-tag.novelty{background:#f39c12;}
+.genre-tag.other{background:#95a5a6;}
 
 /* OVERLAY */
 .song-info-overlay{
@@ -432,12 +382,6 @@ body{
 .song-info-overlay.open{
   opacity:1;
   pointer-events:auto;
-}
-
-.charter{
-  margin-top:6px;
-  font-weight:600;
-  color:#0078ff;
 }
 
 /* MODAL */
@@ -497,7 +441,7 @@ body{
   color:#aaa;
 }
 
-/* OVERLAY DIFFICULTIES */
+/* Overlay difficulties */
 .song-info-modal .difficulty-grid{
   margin-top:18px;
   display:grid;
@@ -557,7 +501,7 @@ body{
 .info-value{
   font-weight:bold;
   display:flex;
-  align-items:center;
+  align-items:center; /* for icon + text */
   gap:8px;
 }
 
@@ -573,10 +517,11 @@ body{
   vertical-align:middle;
 }
 
-/* Song rating overlay colors */
-#info-rating.FF { color: #22c55e; }
-#info-rating.SR { color: #facc15; }
-#info-rating.NR { color: #999; }
+/* Charter text in blue */
+.harmonix-charter{
+  color:#0078ff;
+  font-weight:600;
+}
 
 /* CLOSE BUTTON */
 .close-info{
