@@ -607,6 +607,59 @@ transform:scale(1.2);
 z-index:-1;
 }
 
+/* Animated gradient for song cards with overlay */
+.song {
+    position: relative; /* needed for layering */
+    overflow: hidden;   /* clip the gradient and overlay to card shape */
+}
+
+/* Gradient background layer */
+.song::before {
+    content: "";
+    position: absolute;
+    inset: 0; /* covers entire card */
+    z-index: 0; /* behind all content */
+    background: linear-gradient(270deg, #565656, #000000);
+    background-size: 400% 400%;
+    border-radius: 10px; /* match card border radius */
+    -webkit-animation: songcards 19s ease infinite;
+    -moz-animation: songcards 19s ease infinite;
+    animation: songcards 19s ease infinite;
+}
+
+/* Dark semi-transparent overlay to improve readability */
+.song::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: rgba(0,0,0,0.35); /* adjust opacity for contrast */
+    border-radius: 10px;
+}
+
+/* Keep all card content above the overlays */
+.song > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Keyframes for gradient animation */
+@-webkit-keyframes songcards {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 51%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes songcards {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 51%}
+    100%{background-position:0% 50%}
+}
+@keyframes songcards {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 51%}
+    100%{background-position:0% 50%}
+}
+
 /* Footer */
 
 footer{
