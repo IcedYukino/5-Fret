@@ -195,13 +195,19 @@ function openSongInfo(song){
 ${song.genre || ""}
 </span>`;
 
-    const sourceNames = {"60s": "The 60s","70s": "The 70s"};
-    const sourceName = sourceNames[song.category] || "";
+ const sourceNames = {
+    "rb1": "Rock Band",
+    "rb1dlc": "Rock Band DLC",
+    "rb3dlc": "Rock Band 3 DLC",
+    "rb4dlc": "Rock Band 4 DLC"
+};
 
-    document.getElementById("info-source").innerHTML =
-`<span class="source-row">
-${song.category ? `<img class="source-icon" src="./assets/${song.category}.png">` : ""}
-<span>${sourceName}</span>
+const sourceName = sourceNames[song.category] || song.category || "";
+
+document.getElementById("info-source").innerHTML = `
+<span class="source-row">
+  ${song.category ? `<img class="source-icon" src="./assets/${song.category}.png">` : ""}
+  <span>${sourceName}</span>
 </span>`;
 
     let ratingText = rating;
