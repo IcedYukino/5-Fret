@@ -18,30 +18,33 @@ window.addEventListener("DOMContentLoaded", async () => {
 // ==========================
 function setupSongClickHandler() {
   const grid = document.getElementById("song-grid");
-  if (!grid) return;
 
-  grid.addEventListener("click", e => {
+  grid.addEventListener("click", function (e) {
     const target = e.target;
-    const card = target.closest(".song");
-    if (!card) return;
+    const songCard = target.closest(".song");
+    if (!songCard) return;
 
-    const dropdown = card.querySelector(".difficulty-dropdown");
+    const dropdown = songCard.querySelector(".difficulty-dropdown");
+
+    // More Info button inside dropdown
+    if (target.classList.contains("more-info-btn")) {
+      const title = songCard.dataset.title;
+      const song = songs.find((s) => s.title === title);
+      if (song) openSongInfo(song);
+      return;
+    }
 
     // Toggle dropdown
     if (dropdown && !target.classList.contains("song-download")) {
       const isOpen = dropdown.classList.contains("open");
 
       // Close all other dropdowns
-      document.querySelectorAll(".difficulty-dropdown.open").forEach(d => d.classList.remove("open"));
+      document.querySelectorAll(".difficulty-dropdown.open").forEach((d) =>
+        d.classList.remove("open")
+      );
 
+      // Toggle this one
       if (!isOpen) dropdown.classList.add("open");
-    }
-
-    // More Info button inside dropdown
-    if (target.classList.contains("more-info-btn")) {
-      const title = card.dataset.title?.trim().toLowerCase();
-      const song = songs.find(s => s.title?.trim().toLowerCase() === title);
-      if (song) openSongInfo(song);
     }
   });
 }
@@ -84,7 +87,7 @@ async function loadSongs(tab) {
 }
 
 // ==========================
-// Get Instrument Icon
+// Get Instrument Icon (vocals dynamic)
 // ==========================
 function getInstrumentIcon(inst, song) {
   if (inst === "vocals") {
@@ -95,37 +98,13 @@ function getInstrumentIcon(inst, song) {
 }
 
 // ==========================
-// Difficulty Display
-// ==========================
-function createDifficulty(level) {
-  level = Number(level);
-  if (level == null || level === -1 || isNaN(level)) {
-    return `<div class="no-part">NO PART</div>`;
-  }
-
-  let bars = "";
-  for (let i = 1; i <= 5; i++) {
-    if (level === 6) {
-      bars += `<div class="diff red"></div>`;
-    } else if (i <= level) {
-      bars += `<div class="diff filled"></div>`;
-    } else {
-      bars += `<div class="diff"></div>`;
-    }
-  }
-
-  return `<div class="diff-row">${bars}</div>`;
-}
-
-// ==========================
 // Display Songs
 // ==========================
 function displaySongs(songList) {
   const grid = document.getElementById("song-grid");
-  if (!grid) return;
   grid.innerHTML = "";
 
-  songList.forEach(song => {
+  songList.forEach((song) => {
     const card = document.createElement("div");
     card.className = `song ${song.category || ""} ${song.gold ? "gold" : ""}`;
     card.dataset.title = song.title;
@@ -136,6 +115,7 @@ function displaySongs(songList) {
     const file = song.file || "";
     const difficulty = song.difficulty || {};
 
+    // Map category to full source text
     let sourceText = "";
     switch (song.category) {
       case "rb1": sourceText = "Rock Band"; break;
@@ -144,7 +124,9 @@ function displaySongs(songList) {
       default: sourceText = song.category || "";
     }
 
-    const sourceIcon = song.category ? `<img class="source-icon" src="./assets/${song.category}.png">` : "";
+    const sourceIcon = song.category
+      ? `<img class="source-icon" src="./assets/${song.category}.png">`
+      : "";
 
     card.innerHTML = `
       <div class="cover-container">
@@ -168,6 +150,7 @@ function displaySongs(songList) {
             ${createDifficulty(difficulty[inst])}
           </div>
         `).join("")}
+
         <button class="more-info-btn">More Info</button>
       </div>
     `;
@@ -177,53 +160,82 @@ function displaySongs(songList) {
 }
 
 // ==========================
+// Difficulty
+// ==========================
+function createDifficulty(level) {
+  if (level == null || level === -1) return `<div class="no-part">NO PART</div>`;
+  let bars = "";
+  for (let i = 1; i <= 5; i++) {
+    if (level === 6) bars += `<div class="diff red"></div>`;
+    else if (i <= level) bars += `<div class="diff filled"></div>`;
+    else bars += `<div class="diff"></div>`;
+  }
+  return `<div class="diff-row">${bars}</div>`;
+}
+
+// ==========================
 // Open Song Info Overlay
 // ==========================
 function openSongInfo(song) {
   const overlay = document.getElementById("song-info-overlay");
-  if (!overlay) return;
-
   document.getElementById("info-cover").src = song.cover || "./assets/default_cover.png";
-  document.querySelector(".overlay-bg").style.backgroundImage = `url(${song.cover || "./assets/default_cover.png"})`;
 
+  const bg = document.querySelector(".overlay-bg");
+  if (bg) bg.style.backgroundImage = `url(${song.cover || './assets/default_cover.png'})`;
+
+  // Title & artist
   document.getElementById("info-title").innerText = song.title || "";
   document.getElementById("info-artist").innerText = song.artist || "";
+
+  // Album & Year
   document.getElementById("info-album").innerText = song.album || "";
   document.getElementById("info-year").innerText = song.year || "";
-  document.getElementById("info-release").innerText = song.release || "";
-  document.getElementById("info-charter").innerText = song.charter || "";
 
+  // Charter
+  const charterEl = document.getElementById("info-charter");
+  charterEl.innerText = song.charter || "";
+  charterEl.className = "info-value charter";
+
+  // Genre
+  document.getElementById("info-genre").innerText = song.genre || "";
+
+  // Source text + icon
+  let sourceText = "";
+  switch (song.category) {
+    case "rb1": sourceText = "Rock Band"; break;
+    case "rb1dlc": sourceText = "Rock Band DLC"; break;
+    case "rb4rivals": sourceText = "Rock Band Rivals"; break;
+    default: sourceText = song.category || "";
+  }
+  document.getElementById("info-source-text").innerText = sourceText;
+  const sourceIconEl = document.getElementById("info-source-icon");
+  if(song.category) {
+    sourceIconEl.src = `assets/${song.category}.png`;
+    sourceIconEl.style.display = "inline-block";
+  } else {
+    sourceIconEl.style.display = "none";
+  }
+
+  // Song rating
+  const ratingEl = document.getElementById("info-rating");
+  let ratingText = "Not Rated";
+  let ratingClass = "NR";
+  if(song.rating === "FF"){ ratingText="Family Friendly"; ratingClass="FF"; }
+  else if(song.rating === "SR"){ ratingText="Supervision Recommended"; ratingClass="SR"; }
+  ratingEl.innerText = ratingText;
+  ratingEl.className = "info-value " + ratingClass;
+
+  // Difficulty icons
   ["guitar","proguitar","bass","probass","keys","prokeys","drums","vocals"].forEach(inst => {
     const elem = document.getElementById(`info-${inst}`);
-    if (elem) elem.innerHTML = createDifficulty(song.difficulty?.[inst]);
+    if(elem) elem.innerHTML = createDifficulty(song.difficulty?.[inst]);
   });
 
+  // Vocals icon
   const vocalsIcon = document.getElementById("info-vocals-icon");
-  if (vocalsIcon) {
+  if(vocalsIcon){
     let harm = song.Harm || song.harm || 1;
     vocalsIcon.src = `assets/vocals${harm > 1 ? harm : ""}.png`;
-  }
-
-  const ratingEl = document.getElementById("info-rating");
-  if (ratingEl) {
-    let ratingText = "Not Rated";
-    let ratingClass = "NR";
-    if (song.rating === "FF") { ratingText = "Family Friendly"; ratingClass = "FF"; }
-    else if (song.rating === "SR") { ratingText = "Supervision Recommended"; ratingClass = "SR"; }
-    ratingEl.innerText = ratingText;
-    ratingEl.className = "info-value " + ratingClass;
-  }
-
-  const infoSourceText = document.getElementById("info-source-text");
-  if (infoSourceText) {
-    let sourceText = "";
-    switch(song.category){
-      case "rb1": sourceText = "Rock Band"; break;
-      case "rb1dlc": sourceText = "Rock Band DLC"; break;
-      case "rb4rivals": sourceText = "Rock Band Rivals"; break;
-      default: sourceText = song.category || "";
-    }
-    infoSourceText.innerText = sourceText;
   }
 
   overlay.classList.add("open");
@@ -241,20 +253,26 @@ function closeSongInfo() {
 // ==========================
 function setupOverlayClose() {
   const overlay = document.getElementById("song-info-overlay");
-  overlay?.addEventListener("click", e => { if (e.target === overlay) closeSongInfo(); });
-  document.addEventListener("keydown", e => { if (e.key === "Escape") closeSongInfo(); });
+  overlay.addEventListener("click", (e) => { if (e.target === overlay) closeSongInfo(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeSongInfo(); });
 }
 
 // ==========================
-// Search / Sort / Tabs / Random / Gold
+// Search Songs
 // ==========================
 function searchSongs() {
-  const input = document.getElementById("search")?.value.toLowerCase() || "";
-  const filtered = songs.filter(s => (s.title || "").toLowerCase().includes(input) || (s.artist || "").toLowerCase().includes(input));
+  const input = document.getElementById("search").value.toLowerCase();
+  const filtered = songs.filter(song =>
+    (song.title || "").toLowerCase().includes(input) ||
+    (song.artist || "").toLowerCase().includes(input)
+  );
   displaySongs(filtered);
   document.getElementById("song-count").innerText = filtered.length + " songs";
 }
 
+// ==========================
+// Sort Songs
+// ==========================
 function sortSongs(type) {
   songs.sort((a, b) => {
     const A = (a[type] || "").toLowerCase();
@@ -267,6 +285,9 @@ function sortSongs(type) {
   sortDirection *= -1;
 }
 
+// ==========================
+// Switch Tabs
+// ==========================
 async function switchTab(tab, button) {
   currentTab = tab;
   document.querySelectorAll(".tab").forEach(btn => btn.classList.remove("active"));
@@ -275,11 +296,14 @@ async function switchTab(tab, button) {
   await loadSongs(tab);
 }
 
+// ==========================
+// Random Song
+// ==========================
 function setupRandomButton() {
-  const btn = document.getElementById("randomSong");
-  if (!btn) return;
+  const randomBtn = document.getElementById("randomSong");
+  if (!randomBtn) return;
 
-  btn.addEventListener("click", () => {
+  randomBtn.addEventListener("click", () => {
     if (songs.length === 0) return;
     const random = songs[Math.floor(Math.random() * songs.length)];
     displaySongs(songs);
@@ -288,9 +312,10 @@ function setupRandomButton() {
       const cards = document.querySelectorAll(".song");
       for (const card of cards) {
         if (card.querySelector("h3")?.innerText === random.title) {
-          card.scrollIntoView({ behavior: "smooth", block: "center" });
+          card.scrollIntoView({ behavior:"smooth", block:"center" });
           card.style.boxShadow = "0 0 25px #0aa3ff";
-          card.querySelector(".difficulty-dropdown")?.classList.add("open");
+          const dropdown = card.querySelector(".difficulty-dropdown");
+          if (dropdown) dropdown.classList.add("open");
           break;
         }
       }
@@ -298,6 +323,9 @@ function setupRandomButton() {
   });
 }
 
+// ==========================
+// Gold Feature
+// ==========================
 function setupGoldToggle() {
   const goldCheckbox = document.getElementById("markGoldCheckbox");
   if (!goldCheckbox) return;
@@ -311,9 +339,19 @@ function setupGoldToggle() {
     const title = document.getElementById("info-title")?.innerText;
     if (!title) return;
 
-    document.querySelectorAll(".song").forEach(card => {
+    const cards = document.querySelectorAll(".song");
+    cards.forEach(card => {
       const cardTitle = card.querySelector("h3")?.innerText;
-      if (cardTitle === title) card.classList.toggle("gold", goldCheckbox.checked);
+      if (cardTitle === title)
+        card.classList.toggle("gold", goldCheckbox.checked);
     });
   });
+}
+
+function removeGoldStyles() {
+  const overlayModal = document.querySelector(".song-info-modal");
+  overlayModal.classList.remove("gold");
+
+  const cards = document.querySelectorAll(".song.gold");
+  cards.forEach(card => card.classList.remove("gold"));
 }
