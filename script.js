@@ -48,19 +48,19 @@ function setupSongClickHandler() {
     const dropdown = songCard.querySelector(".difficulty-dropdown");
     if (!dropdown) return;
 
-    if (target.classList.contains("more-info-btn")) {
+    // ✅ Handle More Info Button clicks, even on children
+    const moreInfoBtn = target.closest(".more-info-btn");
+    if (moreInfoBtn) {
       const title = songCard.querySelector("h3")?.innerText;
       const song = songs.find(s => s.title === title);
       if (song) openSongInfo(song);
-    } else if (!target.classList.contains("song-download")) {
-      const isOpen = dropdown.classList.contains("open");
-
-      // Close all other dropdowns
-      document.querySelectorAll(".difficulty-dropdown.open").forEach(d => d.classList.remove("open"));
-
-      // Toggle only this one
-      if (!isOpen) dropdown.classList.add("open");
+      return; // stop further processing
     }
+
+    // Toggle dropdown
+    const isOpen = dropdown.classList.contains("open");
+    document.querySelectorAll(".difficulty-dropdown.open").forEach(d => d.classList.remove("open"));
+    if (!isOpen) dropdown.classList.add("open");
   });
 }
 
