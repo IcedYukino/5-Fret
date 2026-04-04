@@ -1,0 +1,24 @@
+    [
+    {
+    "title": "Anybody Else,
+    "artist": "Audible Mainframe",
+    "album": "Transients",
+    "cover": "covers/audiblemainframetransients.png",
+    "year": 2009,
+    "genre": "Hip-Hop/Rap",
+    "category": "rbn1",
+    "release": "6-14-2010",
+    "rating": "",
+    "difficulty": {
+      "band": 0,
+      "guitar": ,
+      "proguitar": -1,
+      "bass": 0,
+      "probass": -1,  
+      "drums": 0, 
+      "vocals": 0,
+      "keys": -1,
+      "prokeys": -1
+    }
+    }    
+    ]
