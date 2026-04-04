@@ -25,9 +25,10 @@ async function loadSongs(tab){
     let files = [];
     if(tab === "rb1") files = ["rb1"];
     else if(tab === "rb1dlc") files = ["rb1dlc"];
+    else if(tab === "rb1dlc") files = ["rbn1"];    
     else if(tab === "rb3dlc") files = ["rb3dlc"];
     else if(tab === "rb4dlc") files = ["rb4dlc"];    
-    else if(tab === "all") files = ["rb1","rb1dlc","rb3dlc","rb4dlc"];
+    else if(tab === "all") files = ["rb1","rb1dlc","rbn1","rb3dlc","rb4dlc"];
 
     let loadedSongs = [];
     for(const file of files){
