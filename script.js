@@ -199,6 +199,7 @@ ${song.genre || ""}
  const sourceNames = {
     "rb1": "Rock Band",
     "rb1dlc": "Rock Band DLC",
+    "rbn1": "Rock Band Network 1.0",
     "rb3dlc": "Rock Band 3 DLC",
     "rb4dlc": "Rock Band 4 DLC"
 };
