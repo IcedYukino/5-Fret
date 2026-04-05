@@ -1,24 +1,24 @@
     [
     {
-    "title": "Anybody Else",
-    "artist": "Audible Mainframe",
-    "album": "Transients",
-    "cover": "covers/audiblemainframetransients.png",
-    "year": 2009,
-    "genre": "Hip-Hop/Rap",
+    "title": "Battles and Brotherhood",
+    "artist": "3 Inches of Blood",
+    "album": "???",
+    "cover": "covers/noart.png",
+    "year": ???,
+    "genre": "???",
     "category": "rbn1",
-    "release": "6-14-2010",
+    "release": "3-4-2010",
     "rating": "",
     "difficulty": {
-      "band": 0,
-      "guitar": 0,
+      "band": -1,
+      "guitar": -1,
       "proguitar": -1,
-      "bass": 0,
+      "bass": -1,
       "probass": -1,  
-      "drums": 0, 
-      "vocals": 0,
+      "drums": -1, 
+      "vocals": -1,
       "keys": -1,
       "prokeys": -1
     }
-    }    
+    }  
     ]
