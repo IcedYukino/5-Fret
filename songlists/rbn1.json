@@ -130,5 +130,49 @@
       "keys": -1,
       "prokeys": -1
     }
+    },
+    {
+    "title": "Sick",
+    "artist": "Bif Naked",
+    "album": "???",
+    "cover": "covers/noart.png",
+    "year": 1900,
+    "genre": "",
+    "category": "rbn1",
+    "release": "3-4-2010",
+    "rating": "",
+    "difficulty": {
+      "band": -1,
+      "guitar": -1,
+      "proguitar": -1,
+      "bass": -1,
+      "probass": -1,  
+      "drums": -1, 
+      "vocals": -1,
+      "keys": -1,
+      "prokeys": -1
+    }
+    },
+    {
+    "title": "Footloose and Fancy Free",
+    "artist": "Bill Bruford's Earthworks",
+    "album": "???",
+    "cover": "covers/noart.png",
+    "year": 1900,
+    "genre": "",
+    "category": "rbn1",
+    "release": "3-4-2010",
+    "rating": "",
+    "difficulty": {
+      "band": -1,
+      "guitar": -1,
+      "proguitar": -1,
+      "bass": -1,
+      "probass": -1,  
+      "drums": -1, 
+      "vocals": -1,
+      "keys": -1,
+      "prokeys": -1
+    }
     }    
     ]
