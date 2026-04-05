@@ -20,5 +20,115 @@
       "keys": -1,
       "prokeys": -1
     }
-    }  
+    },
+    {
+    "title": "Top Back",
+    "artist": "Alias Unknown",
+    "album": "???",
+    "cover": "covers/noart.png",
+    "year": 1900,
+    "genre": "",
+    "category": "rbn1",
+    "release": "3-4-2010",
+    "rating": "",
+    "difficulty": {
+      "band": -1,
+      "guitar": -1,
+      "proguitar": -1,
+      "bass": -1,
+      "probass": -1,  
+      "drums": -1, 
+      "vocals": -1,
+      "keys": -1,
+      "prokeys": -1
+    }
+    },
+    {
+    "title": "He Sleep in a Grove",
+    "artist": "Amberian Dawn",
+    "album": "???",
+    "cover": "covers/noart.png",
+    "year": 1900,
+    "genre": "",
+    "category": "rbn1",
+    "release": "3-4-2010",
+    "rating": "",
+    "difficulty": {
+      "band": -1,
+      "guitar": -1,
+      "proguitar": -1,
+      "bass": -1,
+      "probass": -1,  
+      "drums": -1, 
+      "vocals": -1,
+      "keys": -1,
+      "prokeys": -1
+    }
+    },
+    {
+    "title": "River of Tuoni",
+    "artist": "Amberian Dawn",
+    "album": "???",
+    "cover": "covers/noart.png",
+    "year": 1900,
+    "genre": "",
+    "category": "rbn1",
+    "release": "3-4-2010",
+    "rating": "",
+    "difficulty": {
+      "band": -1,
+      "guitar": -1,
+      "proguitar": -1,
+      "bass": -1,
+      "probass": -1,  
+      "drums": -1, 
+      "vocals": -1,
+      "keys": -1,
+      "prokeys": -1
+    }
+    },
+    {
+    "title": "Trippolette",
+    "artist": "Andrew Buch",
+    "album": "???",
+    "cover": "covers/noart.png",
+    "year": 1900,
+    "genre": "",
+    "category": "rbn1",
+    "release": "3-4-2010",
+    "rating": "",
+    "difficulty": {
+      "band": -1,
+      "guitar": -1,
+      "proguitar": -1,
+      "bass": -1,
+      "probass": -1,  
+      "drums": -1, 
+      "vocals": -1,
+      "keys": -1,
+      "prokeys": -1
+    }
+    },
+    {
+    "title": "Race the Hourglass",
+    "artist": "Audio Fiction",
+    "album": "???",
+    "cover": "covers/noart.png",
+    "year": 1900,
+    "genre": "",
+    "category": "rbn1",
+    "release": "3-4-2010",
+    "rating": "",
+    "difficulty": {
+      "band": -1,
+      "guitar": -1,
+      "proguitar": -1,
+      "bass": -1,
+      "probass": -1,  
+      "drums": -1, 
+      "vocals": -1,
+      "keys": -1,
+      "prokeys": -1
+    }
+    }    
     ]
