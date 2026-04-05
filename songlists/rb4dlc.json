@@ -1,0 +1,704 @@
+    [ 
+    {
+    "title": "All the Rage Back Home",
+    "artist": "Interpol",
+    "album": "El Pintor",
+    "cover": "covers/interpolelpintor.png",
+    "year": 2014,
+    "genre": "Indie Rock",
+    "category": "rb4dlc",
+    "release": "10-6-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 2,
+      "guitar": 1,
+      "bass": 2,
+      "drums": 4, 
+      "vocals": 3 
+    }
+    },
+    {
+    "title": "Backwoods Company",
+    "artist": "The Wild Feathers",
+    "album": "The Wild Feathers",
+    "cover": "covers/thewildfeathersthewildfeathers.png",
+    "year": 2013,
+    "genre": "Southern Rock",
+    "category": "rb4dlc",
+    "release": "10-6-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 3,
+      "guitar": 2,
+      "bass": 3,
+      "drums": 3, 
+      "vocals": 4 
+    }
+    },
+    {
+    "title": "Cowboys From Hell (Live)",
+    "artist": "Pantera",
+    "album": "Cowboys From Hell",
+    "cover": "covers/panteracowboysfromhell.png",
+    "year": 1991,
+    "genre": "Metal",
+    "category": "rb4dlc",
+    "release": "10-6-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 5,
+      "guitar": 6,
+      "bass": 6,
+      "drums": 4, 
+      "vocals": 2 
+    }
+    },
+    {
+    "title": "Divide",
+    "artist": "All That Remains",
+    "album": "The Order of Things",
+    "cover": "covers/allthatremainstheorderofthings.png",
+    "year": 2015,
+    "genre": "Metal",
+    "category": "rb4dlc",
+    "release": "10-6-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 4,
+      "guitar": 4,
+      "bass": 3,
+      "drums": 4, 
+      "vocals": 3 
+    }
+    },
+    {
+    "title": "Gimme Chocolate!!",
+    "artist": "BABYMETAL",
+    "album": "BABYMETAL",
+    "cover": "covers/babymetalbabymetal.png",
+    "year": 2014,
+    "genre": "Metal",
+    "category": "rb4dlc",
+    "release": "10-6-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 5,
+      "guitar": 6,
+      "bass": 5,
+      "drums": 6, 
+      "vocals": 3 
+    }
+    },
+    {
+    "title": "High Road",
+    "artist": "Mastodon",
+    "album": "Once More 'Round the Sun",
+    "cover": "covers/mastodononcemoreroundthesun.png",
+    "year": 2014,
+    "genre": "Metal",
+    "category": "rb4dlc",
+    "release": "10-6-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 5,
+      "guitar": 4,
+      "bass": 4,
+      "drums": 6, 
+      "vocals": 1 
+    }
+    }, 
+    {
+    "title": "Jane",
+    "artist": "Jefferson Starship",
+    "album": "Freedom at Point Zero",
+    "cover": "covers/jeffersonstarshipfreedomatpointzero.png",
+    "year": 1979,
+    "genre": "Classic Rock",
+    "category": "rb4dlc",
+    "release": "10-6-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 4,
+      "guitar": 3,
+      "bass": 1,
+      "drums": 4, 
+      "vocals": 6 
+    }
+    },   
+    {
+    "title": "King for a Day (ft. Kellin Quinn)",
+    "artist": "Pierce the Veil",
+    "album": "Collide with the Sky",
+    "cover": "covers/piercetheveilcollidewiththesky.png",
+    "year": 2012,
+    "genre": "Emo",
+    "category": "rb4dlc",
+    "release": "10-6-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 4,
+      "guitar": 3,
+      "bass": 4,
+      "drums": 6, 
+      "vocals": 3 
+    }
+    },
+    {
+    "title": "The Mephistopheles of Los Angeles",
+    "artist": "Marilyn Manson",
+    "album": "The Pale Emperor",
+    "cover": "covers/marilynmansonthepaleemperor.png",
+    "year": 2015,
+    "genre": "Metal",
+    "category": "rb4dlc",
+    "release": "10-6-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 3,
+      "guitar": 2,
+      "bass": 2,
+      "drums": 3, 
+      "vocals": 4 
+    }
+    },
+    {
+    "title": "Mona Lisa",
+    "artist": "Dead Sara",
+    "album": "Pleasure to Meet You",
+    "cover": "covers/deadsarapleasuretomeetyou.png",
+    "year": 2015,
+    "genre": "Alternative",
+    "category": "rb4dlc",
+    "release": "10-6-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 3,
+      "guitar": 2,
+      "bass": 2,
+      "drums": 4, 
+      "vocals": 4 
+    }
+    },
+    {
+    "title": "Move Over",
+    "artist": "Janis Joplin",
+    "album": "Pearl",
+    "cover": "covers/janisjoplinpearl.png",
+    "year": 1971,
+    "genre": "Classic Rock",
+    "category": "rb4dlc",
+    "release": "10-6-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 4,
+      "guitar": 5,
+      "bass": 3,
+      "drums": 3, 
+      "vocals": 5 
+    }
+    },
+    {
+    "title": "My Own Eyes",
+    "artist": "Weird Al Yankovic",
+    "album": "Mandatory Fun",
+    "cover": "covers/weirdalyankovicmandatoryfun.png",
+    "year": 2014,
+    "genre": "Novelty",
+    "category": "rb4dlc",
+    "release": "10-6-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 3,
+      "guitar": 2,
+      "bass": 2,
+      "drums": 4, 
+      "vocals": 3 
+    }
+    },
+    {
+    "title": "One Big Holiday",
+    "artist": "My Morning Jacket",
+    "album": "It Still Moves",
+    "cover": "covers/mymorningjacketitstillmoves.png",
+    "year": 2003,
+    "genre": "Southern Rock",
+    "category": "rb4dlc",
+    "release": "10-6-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 4,
+      "guitar": 4,
+      "bass": 1,
+      "drums": 6, 
+      "vocals": 1 
+    }
+    }, 
+    {
+    "title": "Rebellion (ft. Daron Malakian)",
+    "artist": "Linkin Park",
+    "album": "The Hunting Party",
+    "cover": "covers/linkinparkthehuntingparty.png",
+    "year": 2014,
+    "genre": "Nu-Metal",
+    "category": "rb4dlc",
+    "release": "10-6-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 5,
+      "guitar": 5,
+      "bass": 6,
+      "drums": 6, 
+      "vocals": 2 
+    }
+    },
+    {
+    "title": "The Reflex",
+    "artist": "Duran Duran",
+    "album": "Seven and the Ragged Tiger",
+    "cover": "covers/duranduransevenandtheraggedtiger.png",
+    "year": 1983,
+    "genre": "New Wave",
+    "category": "rb4dlc",
+    "release": "10-6-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 4,
+      "guitar": 3,
+      "bass": 3,
+      "drums": 5, 
+      "vocals": 4 
+    }
+    },
+    {
+    "title": "Run for Cover",
+    "artist": "Blitz Kids",
+    "album": "The Good Youth",
+    "cover": "covers/blitzkidsthegoodyouth.png",
+    "year": 2014,
+    "genre": "Pop-Rock",
+    "category": "rb4dlc",
+    "release": "10-6-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 3,
+      "guitar": 4,
+      "bass": 2,
+      "drums": 4, 
+      "vocals": 3 
+    }
+    },
+    {
+    "title": "September",
+    "artist": "Earth, Wind & Fire",
+    "album": "The Best of Earth, Wind & Fire, Vol. 1",
+    "cover": "covers/earthwind&firethebestofearthwind&firevol1.png",
+    "year": 1978,
+    "genre": "R&B/Soul/Funk",
+    "category": "rb4dlc",
+    "release": "10-6-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 3,
+      "guitar": 3,
+      "bass": 3,
+      "drums": 1, 
+      "vocals": 4 
+    }
+    },
+    {
+    "title": "Sugar, You",
+    "artist": "Oh Honey",
+    "album": "Wish You Were Here",
+    "cover": "covers/ohhoneywishyouwerehere.png",
+    "year": 2015,
+    "genre": "Indie Rock",
+    "category": "rb4dlc",
+    "release": "10-6-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 3,
+      "guitar": 2,
+      "bass": 2,
+      "drums": 3, 
+      "vocals": 3 
+    }
+    },
+    {
+    "title": "Summertime Boy",
+    "artist": "Seasick Steve",
+    "album": "Sonic Soul Surfer",
+    "cover": "covers/seasickstevesonicsoulsurfer.png",
+    "year": 2015,
+    "genre": "Blues",
+    "category": "rb4dlc",
+    "release": "10-6-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 2,
+      "guitar": 2,
+      "bass": 2,
+      "drums": 1, 
+      "vocals": 5 
+    }
+    },
+    {
+    "title": "Throne",
+    "artist": "Bring Me the Horizon",
+    "album": "That's the Spirit",
+    "cover": "covers/bringmethehorizonthatsthespirit.png",
+    "year": 2015,
+    "genre": "Nu-Metal",
+    "category": "rb4dlc",
+    "release": "10-6-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 3,
+      "guitar": 3,
+      "bass": 1,
+      "drums": 5, 
+      "vocals": 2 
+    }
+    },
+    {
+    "title": "What If I Was Nothing?",
+    "artist": "All That Remains",
+    "album": "A War You Cannot Win",
+    "cover": "covers/allthatremainsawaryoucannotwin.png",
+    "year": 2012,
+    "genre": "Metal",
+    "category": "rb4dlc",
+    "release": "10-6-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 1,
+      "guitar": 3,
+      "bass": 1,
+      "drums": 1, 
+      "vocals": 1 
+    }
+    },
+    {
+    "title": "Would You Still Be There",
+    "artist": "Of Mice & Men",
+    "album": "Restoring Force",
+    "cover": "covers/ofmice&menrestoringforce.png",
+    "year": 2014,
+    "genre": "Nu-Metal",
+    "category": "rb4dlc",
+    "release": "10-6-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 3,
+      "guitar": 2,
+      "bass": 2,
+      "drums": 5, 
+      "vocals": 2 
+    }
+    },
+    {
+    "title": "Don't Wanna Fight",
+    "artist": "Alabama Shakes",
+    "album": "Sound & Color",
+    "cover": "covers/alabamashakessound&color.png",
+    "year": 2015,
+    "genre": "Southern Rock",
+    "category": "rb4dlc",
+    "release": "10-13-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 2,
+      "guitar": 2,
+      "bass": 1,
+      "drums": 1, 
+      "vocals": 6 
+    }
+    },
+    {
+    "title": "Failure",
+    "artist": "Breaking Benjamin",
+    "album": "Dark Before Dawn",
+    "cover": "covers/breakingbenjamindarkbeforedawn.png",
+    "year": 2015,
+    "genre": "Rock",
+    "category": "rb4dlc",
+    "release": "10-13-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 3,
+      "guitar": 3,
+      "bass": 3,
+      "drums": 3, 
+      "vocals": 2 
+    }
+    },
+    {
+    "title": "Follow Me Down",
+    "artist": "The Pretty Reckless",
+    "album": "Going to Hell",
+    "cover": "covers/theprettyrecklessgoingtohell.png",
+    "year": 2014,
+    "genre": "Rock",
+    "category": "rb4dlc",
+    "release": "10-13-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 3,
+      "guitar": 2,
+      "bass": 2,
+      "drums": 4, 
+      "vocals": 3 
+    }
+    },
+    {
+    "title": "Trainwreck 1979",
+    "artist": "Death from Above 1979",
+    "album": "The Physical World",
+    "cover": "covers/deathfromabove1979thephysicalworld.png",
+    "year": 2014,
+    "genre": "Rock",
+    "category": "rb4dlc",
+    "release": "10-13-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 3,
+      "guitar": 3,
+      "bass": 2,
+      "drums": 3, 
+      "vocals": 2 
+    }
+    },
+    {
+    "title": "Cryin'",
+    "artist": "Aerosmith",
+    "album": "Get a Grip",
+    "cover": "covers/aerosmithgetagrip.png",
+    "year": 1993,
+    "genre": "Rock",
+    "category": "rb4dlc",
+    "release": "10-19-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 3,
+      "guitar": 3,
+      "bass": 1,
+      "drums": 3, 
+      "vocals": 4 
+    }
+    },
+    {
+    "title": "Dude (Looks Like a Lady)",
+    "artist": "Aerosmith",
+    "album": "Permanent Vacation",
+    "cover": "covers/aerosmithpermanentvacation.png",
+    "year": 1987,
+    "genre": "Rock",
+    "category": "rb4dlc",
+    "release": "10-19-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 3,
+      "guitar": 3,
+      "bass": 1,
+      "drums": 2, 
+      "vocals": 3 
+    }
+    },
+    {
+    "title": "Eat the Rich",
+    "artist": "Aerosmith",
+    "album": "Get a Grip",
+    "cover": "covers/aerosmithgetagrip.png",
+    "year": 1993,
+    "genre": "Rock",
+    "category": "rb4dlc",
+    "release": "10-19-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 4,
+      "guitar": 5,
+      "bass": 4,
+      "drums": 2, 
+      "vocals": 4 
+    }
+    },
+    {
+    "title": "Love in an Elevator",
+    "artist": "Aerosmith",
+    "album": "Pump",
+    "cover": "covers/aerosmithpump.png",
+    "year": 1989,
+    "genre": "Rock",
+    "category": "rb4dlc",
+    "release": "10-19-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 4,
+      "guitar": 4,
+      "bass": 3,
+      "drums": 4, 
+      "vocals": 4 
+    }
+    },
+    {
+    "title": "Rats in the Cellar",
+    "artist": "Aerosmith",
+    "album": "Rocks",
+    "cover": "covers/aerosmithrocks.png",
+    "year": 1976,
+    "genre": "Rock",
+    "category": "rb4dlc",
+    "release": "10-19-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 5,
+      "guitar": 5,
+      "bass": 6,
+      "drums": 5, 
+      "vocals": 3 
+    }
+    },
+    {
+    "title": "Seasons of Wither",
+    "artist": "Aerosmith",
+    "album": "Get Your Wings",
+    "cover": "covers/aerosmithgetyourwings.png",
+    "year": 1974,
+    "genre": "Rock",
+    "category": "rb4dlc",
+    "release": "10-19-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 1,
+      "guitar": 1,
+      "bass": 0,
+      "drums": 0, 
+      "vocals": 2 
+    }
+    },
+    {
+    "title": "Always Something There to Remind Me",
+    "artist": "Naked Eyes",
+    "album": "Burning Bridges",
+    "cover": "covers/nakedeyesburningbridges.png",
+    "year": 1983,
+    "genre": "New Wave",
+    "category": "rb4dlc",
+    "release": "10-27-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 2,
+      "guitar": 0,
+      "bass": 1,
+      "drums": 4, 
+      "vocals": 3 
+    }
+    },
+    {
+    "title": "People Are People",
+    "artist": "Depeche Mode",
+    "album": "Some Great Reward",
+    "cover": "covers/depechemodesomegreatreward.png",
+    "year": 1984,
+    "genre": "Pop/Dance/Electronic",
+    "category": "rb4dlc",
+    "release": "10-27-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 2,
+      "guitar": 0,
+      "bass": 1,
+      "drums": 3, 
+      "vocals": 3 
+    }
+    },
+    {
+    "title": "What You Need",
+    "artist": "INXS",
+    "album": "Listen Like Thieves",
+    "cover": "covers/inxslistenlikethieves.png",
+    "year": 1985,
+    "genre": "Pop-Rock",
+    "category": "rb4dlc",
+    "release": "10-27-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 2,
+      "guitar": 1,
+      "bass": 0,
+      "drums": 2, 
+      "vocals": 5 
+    }
+    },
+    {
+    "title": "Bad Case of Loving You (Doctor, Doctor)",
+    "artist": "Robert Palmer",
+    "album": "Secrets",
+    "cover": "covers/robertpalmersecrets.png",
+    "year": 1979,
+    "genre": "Pop-Rock",
+    "category": "rb4dlc",
+    "release": "11-4-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 2,
+      "guitar": 2,
+      "bass": 3,
+      "drums": 2, 
+      "vocals": 3 
+    }
+    },
+    {
+    "title": "Long Cool Woman in a Black Dress",
+    "artist": "The Hollies",
+    "album": "Distant Light",
+    "cover": "covers/theholliesdistantlight.png",
+    "year": 1971,
+    "genre": "Classic Rock",
+    "category": "rb4dlc",
+    "release": "11-4-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 2,
+      "guitar": 2,
+      "bass": 0,
+      "drums": 0, 
+      "vocals": 3 
+    }
+    },
+    {
+    "title": "Lust for Life",
+    "artist": "Iggy Pop",
+    "album": "Lust for Life",
+    "cover": "covers/iggypoplustforlife.png",
+    "year": 1977,
+    "genre": "Rock",
+    "category": "rb4dlc",
+    "release": "11-4-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 4,
+      "guitar": 4,
+      "bass": 4,
+      "drums": 4, 
+      "vocals": 2 
+    }
+    },
+    {
+    "title": "Awake",
+    "artist": "Godsmack",
+    "album": "Awake",
+    "cover": "covers/godsmackawake.png",
+    "year": 2000,
+    "genre": "Nu-Metal",
+    "category": "rb4dlc",
+    "release": "11-9-2015",
+    "rating": "",
+    "difficulty": {
+      "band": 3,
+      "guitar": 3,
+      "bass": 1,
+      "drums": 4, 
+      "vocals": 3 
+    }
+    }       
+    ]
