@@ -202,7 +202,7 @@ ${song.genre || ""}
     "rb1dlc": "Rock Band DLC",
     "rbn1": "Rock Band Network 1.0",
     "rb3dlc": "Rock Band 3 DLC",
-    "rb4dlc": "Rock Band 4 DLC"
+    "rb4dlc": "Rock Band 4 DLC",
     "fnfestival": "Fortnite Festival"
 };
 
