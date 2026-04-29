@@ -27,8 +27,9 @@ async function loadSongs(tab){
     else if(tab === "rb1dlc") files = ["rb1dlc"];
     else if(tab === "rbn1") files = ["rbn1"];    
     else if(tab === "rb3dlc") files = ["rb3dlc"];
-    else if(tab === "rb4dlc") files = ["rb4dlc"];    
-    else if(tab === "all") files = ["rb1","rb1dlc","rbn1","rb3dlc","rb4dlc"];
+    else if(tab === "rb4dlc") files = ["rb4dlc"];
+    else if(tab === "fnfestival") files = ["fnfestival"];        
+    else if(tab === "all") files = ["rb1","rb1dlc","rbn1","rb3dlc","rb4dlc","fnfestival"];
 
     let loadedSongs = [];
     for(const file of files){
@@ -202,6 +203,7 @@ ${song.genre || ""}
     "rbn1": "Rock Band Network 1.0",
     "rb3dlc": "Rock Band 3 DLC",
     "rb4dlc": "Rock Band 4 DLC"
+    "fnfestival": "Fortnite Festival"
 };
 
 const sourceName = sourceNames[song.category] || song.category || "";
