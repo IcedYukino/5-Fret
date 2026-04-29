@@ -124,5 +124,75 @@
       "drums": 5, 
       "vocals": 3
     }
-    }        
+    },
+    {
+    "title": "My Songs Know What You Did in the Dark (Light Em Up)",
+    "artist": "Fall Out Boy",
+    "album": "Save Rock and Roll",
+    "cover": "covers/falloutboysaverockandroll.png",
+    "year": 2013,
+    "genre": "Pop-Rock",
+    "category": "fnfestival",
+    "release": "12-9-2023",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 2,
+      "bass": 2,
+      "drums": 1, 
+      "vocals": 4
+    }
+    },
+    {
+    "title": "OG (Future Remix)",
+    "artist": "Epic Games",
+    "album": "OG (Future Remix) (Single)",
+    "cover": "covers/epicgamesogfutureremix.png",
+    "year": 2020,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "12-9-2023",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 3,
+      "guitar": 4,
+      "bass": 3,
+      "drums": 3, 
+    }
+    },
+    {
+    "title": "Poison",
+    "artist": "Bell Biv DeVoe",
+    "album": "Poison",
+    "cover": "covers/bellbivdevoepoison.png",
+    "year": 1990,
+    "genre": "Hip-Hop/Rap",
+    "category": "fnfestival",
+    "release": "12-9-2023",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 0,
+      "bass": 2,
+      "drums": 3, 
+      "vocals": 4
+    }
+    },
+    {
+    "title": "Run It",
+    "artist": "Epic Games",
+    "album": "Run It (Single)",
+    "cover": "covers/epicgamesrunit.png",
+    "year": 2023,
+    "genre": "Hip-Hop/Rap",
+    "category": "fnfestival",
+    "release": "12-9-2023",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 0,
+      "bass": 1,
+      "drums": 2, 
+      "vocals": 0
+    }
+    }     
     ]
