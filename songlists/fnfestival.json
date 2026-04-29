@@ -88,5 +88,22 @@
       "drums": 1, 
       "vocals": 4
     }
-    }        
+    },
+    "title": "Gangnam Style",
+    "artist": "PSY",
+    "album": "PIX SIX RULES, Pt. 1",
+    "cover": "covers/psypsysixrulespt1.png",
+    "year": 2012,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "12-9-2023",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 3,
+      "bass": 2,
+      "drums": 3, 
+      "vocals": 1
+    }
+    },        
     ]
