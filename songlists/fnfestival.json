@@ -1,0 +1,19 @@
+    [
+    {
+    "title": "bad guy",
+    "artist": "Billie Eilish",
+    "album": "WHEN WE ALL FALL ASLEEP, WHERE DO WE GO?",
+    "cover": "covers/billieeilishwhenweallfallasleepwheredowego.png",
+    "year": 2019,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "12-9-2023",
+    "difficulty": {
+      "band": 1,
+      "guitar": 0,
+      "bass": 1,
+      "drums": 1, 
+      "vocals": 3,
+    }
+    }
+    ]
