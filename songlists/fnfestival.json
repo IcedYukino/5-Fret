@@ -34,5 +34,23 @@
       "drums": 1, 
       "vocals": 3
     }
-    }    
+    },
+    {
+    "title": "Blinding Lights",
+    "artist": "The Weeknd",
+    "album": "After Hours",
+    "cover": "covers/theweekndafterhours.png",
+    "year": 2020,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "12-9-2023",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 1,
+      "guitar": 2,
+      "bass": 0,
+      "drums": 1, 
+      "vocals": 3
+    }
+    }        
     ]
