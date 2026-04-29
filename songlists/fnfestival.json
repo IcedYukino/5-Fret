@@ -52,5 +52,41 @@
       "drums": 1, 
       "vocals": 3
     }
+    },
+    {
+    "title": "Brace for Chaos",
+    "artist": "Epic Games",
+    "album": "Brace for Chaos (Single)",
+    "cover": "covers/epicgamesbraceforchaos.png",
+    "year": 2023,
+    "genre": "Rock",
+    "category": "fnfestival",
+    "release": "12-9-2023",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 3,
+      "guitar": 3,
+      "bass": 2,
+      "drums": 5, 
+      "vocals": 2
+    }
+    },
+    {
+    "title": "Blinding Lights",
+    "artist": "Epic Games",
+    "album": "Butter Barn Hoedown (Single)",
+    "cover": "covers/epicgamesbutterbarnhoedown.png",
+    "year": 2021,
+    "genre": "Country",
+    "category": "fnfestival",
+    "release": "12-9-2023",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 4,
+      "bass": 2,
+      "drums": 1, 
+      "vocals": 4
+    }
     }        
     ]
