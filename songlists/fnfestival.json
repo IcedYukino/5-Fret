@@ -105,5 +105,23 @@
       "drums": 3, 
       "vocals": 1
     }
-    },        
+    },
+    },
+    "title": "i",
+    "artist": "Kendrick Lamar",
+    "album": "To Pimp a Butterfly",
+    "cover": "covers/kendricklamartopimpabutterfly.png",
+    "year": 2015,
+    "genre": "Hip-Hop/Rap",
+    "category": "fnfestival",
+    "release": "12-9-2023",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 4,
+      "guitar": 4,
+      "bass": 5,
+      "drums": 5, 
+      "vocals": 3
+    }
+    }        
     ]
