@@ -16,5 +16,23 @@
       "drums": 1, 
       "vocals": 3
     }
+    },
+    {
+    "title": "Bad Romance",
+    "artist": "Lady Gaga",
+    "album": "The Fame Monster",
+    "cover": "covers/ladygagathefamemonster.png",
+    "year": 2009,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "12-9-2023",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 1,
+      "bass": 3,
+      "drums": 1, 
+      "vocals": 3
     }
+    }    
     ]
