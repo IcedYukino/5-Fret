@@ -217,6 +217,7 @@ document.getElementById("info-source").innerHTML = `
     let ratingText = rating;
     if(rating === "FF") ratingText = "Family Friendly";
     if(rating === "SR") ratingText = "Supervision Recommended";
+    if(rating === "NR") ratingText = "Not Rated";
     document.getElementById("info-rating").innerHTML = `
 <span class="song-rating ${rating}">
 ${ratingText}
