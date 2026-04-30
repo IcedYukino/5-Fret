@@ -373,5 +373,77 @@
       "drums": 3,
       "vocals": 5  
     }
-    }        
+    },
+    {
+    "title": "vampire",
+    "artist": "Olivia Rodrigo",
+    "album": "Guts",
+    "cover": "covers/oliviarodrigoguts.png",
+    "year": 2023,
+    "genre": "Pop-Rock",
+    "category": "fnfestival",
+    "release": "12-10-2023",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 3,
+      "guitar": 3,  
+      "bass": 2,
+      "drums": 3,
+      "vocals": 5  
+    }
+    },
+    {
+    "title": "Mr. Brightside",
+    "artist": "The Killers",
+    "album": "Hot Fuss",
+    "cover": "covers/thekillershotfuss.png",
+    "year": 2004,
+    "genre": "Alternative",
+    "category": "fnfestival",
+    "release": "12-11-2023",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 3,
+      "guitar": 4,  
+      "bass": 3,
+      "drums": 4,
+      "vocals": 2  
+    }
+    },
+    {
+    "title": "Party Rock Anthem (ft. Lauren Bennett & GoonRock)",
+    "artist": "LMFAO",
+    "album": "Sorry for Party Rocking",
+    "cover": "covers/lmfaosorryforpartyrocking.png",
+    "year": 2011,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "12-11-2023",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 1,  
+      "bass": 1,
+      "drums": 3,
+      "vocals": 1  
+    }
+    },
+    {
+    "title": "The Search",
+    "artist": "NF",
+    "album": "The Search",
+    "cover": "covers/nfthesearch.png",
+    "year": 2019,
+    "genre": "Hip-Hop/Rap",
+    "category": "fnfestival",
+    "release": "12-11-2023",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 1,
+      "guitar": 1,  
+      "bass": 1,
+      "drums": 3,
+      "vocals": 0  
+    }
+    }         
     ]
