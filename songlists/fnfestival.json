@@ -481,5 +481,59 @@
       "drums": 3,
       "vocals": 2  
     }
-    }        
+    },
+    {
+    "title": "Go with the Flow",
+    "artist": "Queens of the Stone Age",
+    "album": "Songs for the Deaf",
+    "cover": "covers/queensofthestoneagesongsforthedeaf.png",
+    "year": 2002,
+    "genre": "Alternative",
+    "category": "fnfestival",
+    "release": "12-13-2023",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 2,  
+      "bass": 2,
+      "drums": 4,
+      "vocals": 2  
+    }
+    },
+    {
+    "title": "Highway Tune",
+    "artist": "Greta Van Fleet",
+    "album": "From the Fires",
+    "cover": "covers/gretavanfleetfromthefires.png",
+    "year": 2017,
+    "genre": "Rock",
+    "category": "fnfestival",
+    "release": "12-13-2023",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 3,
+      "guitar": 5,  
+      "bass": 3,
+      "drums": 3,
+      "vocals": 3  
+    }
+    },
+    {
+    "title": "Suddenly I See",
+    "artist": "KT Tunstall",
+    "album": "Eye to the Telescope",
+    "cover": "covers/kttunstalleyetothetelescope.png",
+    "year": 2004,
+    "genre": "Rock",
+    "category": "fnfestival",
+    "release": "12-13-2023",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 3,
+      "guitar": 3,  
+      "bass": 2,
+      "drums": 3,
+      "vocals": 4  
+    }
+    }
     ]
