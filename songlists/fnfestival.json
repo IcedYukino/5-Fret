@@ -375,24 +375,6 @@
     }
     },
     {
-    "title": "vampire",
-    "artist": "Olivia Rodrigo",
-    "album": "Guts",
-    "cover": "covers/oliviarodrigoguts.png",
-    "year": 2023,
-    "genre": "Pop-Rock",
-    "category": "fnfestival",
-    "release": "12-10-2023",
-    "rating": "NR",    
-    "difficulty": {
-      "band": 3,
-      "guitar": 3,  
-      "bass": 2,
-      "drums": 3,
-      "vocals": 5  
-    }
-    },
-    {
     "title": "Mr. Brightside",
     "artist": "The Killers",
     "album": "Hot Fuss",
