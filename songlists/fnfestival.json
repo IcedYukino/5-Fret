@@ -194,5 +194,58 @@
       "drums": 2, 
       "vocals": 0
     }
-    }     
+    },
+    {
+    "title": "Save Your Tears",
+    "artist": "The Weeknd",
+    "album": "After Hours",
+    "cover": "covers/theweekndafterhours.png",
+    "year": 2020,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "12-9-2023",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 1,
+      "guitar": 2,
+      "bass": 1,
+      "drums": 0, 
+      "vocals": 3
+    }
+    },
+    {
+    "title": "Seven Nation Army",
+    "artist": "The White Stripes",
+    "album": "Elephant",
+    "cover": "covers/thewhitestripeselephant.png",
+    "year": 2003,
+    "genre": "Rock",
+    "category": "fnfestival",
+    "release": "12-9-2023",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 1,
+      "guitar": 2,
+      "bass": 1,
+      "drums": 0, 
+      "vocals": 1
+    }
+    },
+    {
+    "title": "Show Them Who We Are",
+    "artist": "Epic Games",
+    "album": "Show Them Who We Are (Single)",
+    "cover": "covers/epicgamesshowthemwhoweare.png",
+    "year": 2022,
+    "genre": "",
+    "category": "fnfestival",
+    "release": "12-9-2023",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "bass": 2,
+      "drums": 4, 
+      "vocals": 3
+    }
+    }        
     ]
