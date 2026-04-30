@@ -643,5 +643,77 @@
       "drums": 4,
       "vocals": 3  
     }
+    },
+    {
+    "title": "Beautiful Day",
+    "artist": "U2",
+    "album": "All That You Can't Leave Behind",
+    "cover": "covers/u2allthatyoucantleavebehind.png",
+    "year": 2000,
+    "genre": "Rock",
+    "category": "fnfestival",
+    "release": "12-21-2023",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 3,  
+      "bass": 2,
+      "drums": 2,
+      "vocals": 4  
     }
+    },
+    {
+    "title": "Believer",
+    "artist": "Imagine Dragons",
+    "album": "Evolve",
+    "cover": "covers/imaginedragonsevolve.png",
+    "year": 2017,
+    "genre": "Alternative",
+    "category": "fnfestival",
+    "release": "12-21-2023",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 1,
+      "guitar": 1,  
+      "bass": 0,
+      "drums": 2,
+      "vocals": 4  
+    }
+    },
+    {
+    "title": "Heartbreaker",
+    "artist": "Pat Benatar",
+    "album": "In the Heat of the Night",
+    "cover": "covers/patbenatarintheheatofthenight.png",
+    "year": 1979,
+    "genre": "Classic Rock",
+    "category": "fnfestival",
+    "release": "12-21-2023",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 3,  
+      "bass": 1,
+      "drums": 3,
+      "vocals": 4  
+    }
+    },
+    {
+    "title": "Winterfest Wish",
+    "artist": "Epic Games",
+    "album": "Winterfest Wish (Single)",
+    "cover": "covers/epicgameswinterfestwish.png",
+    "year": 2023,
+    "genre": "",
+    "category": "fnfestival",
+    "release": "12-22-2023",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 3,
+      "guitar": 2,  
+      "bass": 2,
+      "drums": 5,
+      "vocals": 4  
+    }
+    }        
     ]
