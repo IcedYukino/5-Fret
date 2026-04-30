@@ -248,5 +248,76 @@
       "drums": 4, 
       "vocals": 3
     }
+    },
+    {
+    "title": "Switch Up",
+    "artist": "Epic Games",
+    "album": "Switch Up (Single)",
+    "cover": "covers/epicgamesswitchup.png",
+    "year": 2020,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "12-9-2023",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 3,  
+      "bass": 1,
+      "drums": 2 
+    }
+    },
+    {
+    "title": "Take Me Higher",
+    "artist": "Epic Games",
+    "album": "Take Me Higher (Single)",
+    "cover": "covers/epicgamestakemehigher.png",
+    "year": 2022,
+    "genre": "",
+    "category": "fnfestival",
+    "release": "12-9-2023",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 3,  
+      "bass": 1,
+      "drums": 3,
+      "vocals": 3  
+    }
+    },
+    {
+    "title": "Take My Breath",
+    "artist": "The Weeknd",
+    "album": "Dawn FM",
+    "cover": "covers/theweeknddawnfm.png",
+    "year": 2022,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "12-9-2023",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 4,  
+      "bass": 1,
+      "drums": 3,
+      "vocals": 4  
+    }
+    },
+    {
+    "title": "The Hills",
+    "artist": "The Weeknd",
+    "album": "Beauty Behind the Madness",
+    "cover": "covers/theweekndbeautybehindthemadness.png",
+    "year": 2015,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "12-9-2023",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 1,
+      "guitar": 1,  
+      "bass": 1,
+      "drums": 4,
+      "vocals": 4  
+    }
     }        
     ]
