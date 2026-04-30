@@ -427,5 +427,59 @@
       "drums": 3,
       "vocals": 0  
     }
-    }         
+    },
+    {
+    "title": "Cake by the Ocean",
+    "artist": "DNCE",
+    "album": "Swaay",
+    "cover": "covers/dnceswaay.png",
+    "year": 2015,
+    "genre": "Pop-Rock",
+    "category": "fnfestival",
+    "release": "12-12-2023",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 3,  
+      "bass": 1,
+      "drums": 4,
+      "vocals": 4  
+    }
+    },
+    {
+    "title": "Cradles",
+    "artist": "Sub Urban",
+    "album": "Cradles (Single)",
+    "cover": "covers/suburbancradles.png",
+    "year": 2019,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "12-12-2023",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 1,
+      "guitar": 1,  
+      "bass": 0,
+      "drums": 3,
+      "vocals": 4  
+    }
+    },
+    {
+    "title": "Dirty Little Secret",
+    "artist": "The All-American Rejects",
+    "album": "Move Along",
+    "cover": "covers/theallamericanrejectsmovealong.png",
+    "year": 2005,
+    "genre": "Emo",
+    "category": "fnfestival",
+    "release": "12-12-2023",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 2,  
+      "bass": 2,
+      "drums": 3,
+      "vocals": 2  
+    }
+    }        
     ]
