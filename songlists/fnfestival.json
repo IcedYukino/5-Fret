@@ -535,5 +535,113 @@
       "drums": 3,
       "vocals": 4  
     }
+    },
+    {
+    "title": "Buddy Holly",
+    "artist": "Weezer",
+    "album": "Weezer (The Blue Album)",
+    "cover": "covers/weezerthebluealbum.png",
+    "year": 1994,
+    "genre": "Alternative",
+    "category": "fnfestival",
+    "release": "12-14-2023",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 1,  
+      "bass": 1,
+      "drums": 1,
+      "vocals": 3  
+    }
+    },
+    {
+    "title": "emo girl (ft. WILLOW)",
+    "artist": "mgk",
+    "album": "mainstream sellout",
+    "cover": "covers/mgkmainstreamsellout.png",
+    "year": 2022,
+    "genre": "Alternative",
+    "category": "fnfestival",
+    "release": "12-14-2023",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 2,  
+      "bass": 1,
+      "drums": 3,
+      "vocals": 3  
+    }
+    },
+    {
+    "title": "Nothing's Alright",
+    "artist": "witchgang",
+    "album": "Nothing's Alright (Single)",
+    "cover": "covers/witchgangnothingsalright.png",
+    "year": 2023,
+    "genre": "Alternative",
+    "category": "fnfestival",
+    "release": "12-14-2023",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 1,
+      "guitar": 0,  
+      "bass": 0,
+      "drums": 2,
+      "vocals": 3  
+    }
+    },
+    {
+    "title": "Dog Days Are Over",
+    "artist": "Florence + The Machine",
+    "album": "Lungs",
+    "cover": "covers/florencethemachinelungs.png",
+    "year": 2009,
+    "genre": "Indie Rock",
+    "category": "fnfestival",
+    "release": "12-15-2023",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 2,  
+      "bass": 0,
+      "drums": 3,
+      "vocals": 4  
+    }
+    },
+    {
+    "title": "The Hand That Feeds",
+    "artist": "Nine Inch Nails",
+    "album": "With Teeth",
+    "cover": "covers/nineinchnailswithteeth.png",
+    "year": 2005,
+    "genre": "Rock",
+    "category": "fnfestival",
+    "release": "12-15-2023",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 2,  
+      "bass": 2,
+      "drums": 5,
+      "vocals": 2  
+    }
+    },
+    {
+    "title": "Zombie",
+    "artist": "The Cranberries",
+    "album": "No Need to Argue",
+    "cover": "covers/thecranberriesnoneedtoargue.png",
+    "year": 1994,
+    "genre": "Alternative",
+    "category": "fnfestival",
+    "release": "12-15-2023",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 2,  
+      "bass": 1,
+      "drums": 4,
+      "vocals": 3  
+    }
     }
     ]
