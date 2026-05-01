@@ -715,5 +715,77 @@
       "drums": 5,
       "vocals": 4  
     }
+    },
+    {
+    "title": "Stitches",
+    "artist": "Shawn Mendes",
+    "album": "Handwritten",
+    "cover": "covers/shawnmendeshandwritten.png",
+    "year": 2015,
+    "genre": "Pop-Rock",
+    "category": "fnfestival",
+    "release": "1-11-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 2,  
+      "bass": 2,
+      "drums": 1,
+      "vocals": 5  
+    }
+    },
+    {
+    "title": "Can't Feel My Face",
+    "artist": "The Weeknd",
+    "album": "Beauty Behind the Madness",
+    "cover": "covers/theweekndbeautybehindthemadness.png",
+    "year": 2015,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "1-11-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 1,
+      "guitar": 0,  
+      "bass": 4,
+      "drums": 0,
+      "vocals": 5  
+    }
+    },
+    {
+    "title": "Pompeii",
+    "artist": "Bastille",
+    "album": "Bad Blood",
+    "cover": "covers/bastillebadblood.png",
+    "year": 2013,
+    "genre": "Indie Rock",
+    "category": "fnfestival",
+    "release": "1-18-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 3,
+      "guitar": 2,  
+      "bass": 2,
+      "drums": 5,
+      "vocals": 4  
+    }
+    },
+    {
+    "title": "Heat Waves",
+    "artist": "Glass Animals",
+    "album": "Dreamland",
+    "cover": "covers/glassanimalsdreamland.png",
+    "year": 2020,
+    "genre": "Alternative",
+    "category": "fnfestival",
+    "release": "1-18-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 4,  
+      "bass": 0,
+      "drums": 2,
+      "vocals": 2  
+    }
     }        
     ]
