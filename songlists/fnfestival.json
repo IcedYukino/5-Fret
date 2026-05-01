@@ -894,5 +894,23 @@
       "drums": 3,
       "vocals": 3  
     }
+    },
+    {
+    "title": "good 4 u",
+    "artist": "Olivia Rodrigo",
+    "album": "Sour",
+    "cover": "covers/oliviarodrigosour.png",
+    "year": 2021,
+    "genre": "Pop-Rock",
+    "category": "fnfestival",
+    "release": "1-25-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 2,  
+      "bass": 1,
+      "drums": 2,
+      "vocals": 5  
     }
+    }        
     ]
