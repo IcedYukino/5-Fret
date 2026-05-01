@@ -840,5 +840,59 @@
       "drums": 5,
       "vocals": 4  
     }
-    }         
+    },
+    {
+    "title": "Less Than",
+    "artist": "Nine Inch Nails",
+    "album": "Add Violence",
+    "cover": "covers/nineinchnailsaddviolence.png",
+    "year": 2017,
+    "genre": "Rock",
+    "category": "fnfestival",
+    "release": "1-25-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 5,  
+      "bass": 1,
+      "drums": 4,
+      "vocals": 2  
+    }
+    },
+    {
+    "title": "March of the Pigs",
+    "artist": "Nine Inch Nails",
+    "album": "The Downward Spiral",
+    "cover": "covers/nineinchnailsthedownwardspiral.png",
+    "year": 1994,
+    "genre": "Rock",
+    "category": "fnfestival",
+    "release": "1-25-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 4,
+      "guitar": 4,  
+      "bass": 6,
+      "drums": 6,
+      "vocals": 4  
+    }
+    },
+    {
+    "title": "get him back!",
+    "artist": "Olivia Rodrigo",
+    "album": "Guts",
+    "cover": "covers/oliviarodrigoguts.png",
+    "year": 2023,
+    "genre": "Pop-Rock",
+    "category": "fnfestival",
+    "release": "1-25-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 2,  
+      "bass": 1,
+      "drums": 3,
+      "vocals": 3  
+    }
+    }
     ]
