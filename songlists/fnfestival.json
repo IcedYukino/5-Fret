@@ -967,5 +967,23 @@
       "drums": 1,
       "vocals": 2  
     }
-    }        
+    },
+    {
+    "title": "Basket Case",
+    "artist": "Green Day",
+    "album": "Dookie",  
+    "cover": "covers/greendaydookie.png",
+    "year": 1994,
+    "genre": "Punk",
+    "category": "fnfestival",
+    "release": "2-1-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 3,
+      "guitar": 4,  
+      "bass": 4,
+      "drums": 4,
+      "vocals": 2  
+    }
+    }    
     ]
