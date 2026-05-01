@@ -787,5 +787,58 @@
       "drums": 2,
       "vocals": 2  
     }
-    }        
+    },
+    {
+    "title": "Flickering Flame",
+    "artist": "Epic Games",
+    "album": "Flickering Flame (Single)",
+    "cover": "covers/epicgamesflickeringflame.png",
+    "year": 2023,
+    "genre": "",
+    "category": "fnfestival",
+    "release": "1-23-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 3,
+      "guitar": 4,  
+      "bass": 2,
+      "drums": 4  
+    }
+    },
+    {
+    "title": "Return of the Tiger",
+    "artist": "Epic Games",
+    "album": "Return of the Tiger (Single)",
+    "cover": "covers/epicgamesreturnofthetiger.png",
+    "year": 2023,
+    "genre": "",
+    "category": "fnfestival",
+    "release": "1-23-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 3,
+      "guitar": 4,  
+      "bass": 3,
+      "drums": 5,
+      "vocals": 0  
+    }
+    },
+    {
+    "title": "You Don't Know Me",
+    "artist": "Epic Games",
+    "album": "You Don't Know Me (Single)",
+    "cover": "covers/epicgamesyoudontknowme.png",
+    "year": 2023,
+    "genre": "",
+    "category": "fnfestival",
+    "release": "1-23-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 4,
+      "guitar": 4,  
+      "bass": 3,
+      "drums": 5,
+      "vocals": 4  
+    }
+    }         
     ]
