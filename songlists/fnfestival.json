@@ -1030,7 +1030,7 @@
     "year": 2016,
     "genre": "Pop/Dance/Electronic",
     "category": "fnfestival",
-    "release": "2-8-2026",
+    "release": "2-8-2024",
     "rating": "NR",    
     "difficulty": {
       "band": 2,
@@ -1040,6 +1040,24 @@
       "vocals": 5  
     }
     },
+    {
+    "title": "Hold Me Closer (ft. Britney Spears)",
+    "artist": "Elton John",
+    "album": "Hold Me Closer (Single)",  
+    "cover": "covers/eltonjohnholdmecloser.png",
+    "year": 2022,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "2-8-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 3,  
+      "bass": 2,
+      "drums": 2,
+      "vocals": 4  
+    }
+    },        
     {
     "title": "NEVER ENOUGH",
     "artist": "Turnstile",
