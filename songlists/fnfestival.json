@@ -1522,6 +1522,60 @@
       "drums": 1,
       "vocals": 2  
     }
+    },
+    {
+    "title": "Surround Sound (ft. 21 Savage & Baby Tate)",
+    "artist": "J.I.D",
+    "album": "",  
+    "cover": "covers/.png",
+    "year": 2022,
+    "genre": "Hip-Hop/Rap",
+    "category": "fnfestival",
+    "release": "2-29-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 2,  
+      "bass": 0,
+      "drums": 2,
+      "vocals": 2  
+    }
+    },
+    {
+    "title": "All of Me (Tiësto's Birthday Treatment Remix)",
+    "artist": "John Legend",
+    "album": "All of Me (Tiësto's Birthday Treatment Remix) (Single)",  
+    "cover": "covers/johnlegend.png",
+    "year": 2014
+    "genre": "",
+    "category": "fnfestival",
+    "release": "2-29-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 1,  
+      "bass": 1,
+      "drums": 3,
+      "vocals": 4  
+    }
+    },
+    {
+    "title": "Big Energy",
+    "artist": "Latto",
+    "album": "",  
+    "cover": "covers/latto.png",
+    "year": 2022,
+    "genre": "",
+    "category": "fnfestival",
+    "release": "2-29-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 1,
+      "guitar": 2,  
+      "bass": 0,
+      "drums": 1,
+      "vocals": 1  
+    }
     },        
     {
     "title": "NEVER ENOUGH",
