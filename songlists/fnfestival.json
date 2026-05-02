@@ -1057,6 +1057,42 @@
       "drums": 2,
       "vocals": 4  
     }
+    },
+    {
+    "title": "What Is Love",
+    "artist": "Haddaway",
+    "album": "The Album",  
+    "cover": "covers/haddawaythealbum.png",
+    "year": 1993,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "2-8-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 2,  
+      "bass": 1,
+      "drums": 2,
+      "vocals": 3  
+    }
+    },
+    {
+    "title": "Single Soon",
+    "artist": "Selena Gomez",
+    "album": "Single Soon (Single)",  
+    "cover": "covers/selenagomezsinglesoon.png",
+    "year": 2023,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "2-8-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 1,  
+      "bass": 1,
+      "drums": 3,
+      "vocals": 2  
+    }
     },        
     {
     "title": "NEVER ENOUGH",
