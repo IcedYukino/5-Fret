@@ -987,6 +987,42 @@
     }
     },
     {
+    "title": "Welcome to Paradise",
+    "artist": "Green Day",
+    "album": "Dookie",  
+    "cover": "covers/greendaydookie.png",
+    "year": 1994,
+    "genre": "Punk",
+    "category": "fnfestival",
+    "release": "2-1-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 4,
+      "guitar": 4,  
+      "bass": 4,
+      "drums": 6,
+      "vocals": 2  
+    }
+    },
+    {
+    "title": "When I Come Around",
+    "artist": "Green Day",
+    "album": "Dookie",  
+    "cover": "covers/greendaydookie.png",
+    "year": 1994,
+    "genre": "Punk",
+    "category": "fnfestival",
+    "release": "2-1-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 2,  
+      "bass": 3,
+      "drums": 3,
+      "vocals": 3  
+    }
+    },         
+    {
     "title": "NEVER ENOUGH",
     "artist": "Turnstile",
     "album": "NEVER ENOUGH",  
@@ -1003,5 +1039,5 @@
       "drums": 4,
       "vocals": 1  
     }
-    }        
+    },        
     ]
