@@ -1023,6 +1023,24 @@
     }
     },         
     {
+    "title": "Into You",
+    "artist": "Ariana Grande",
+    "album": "Dangerous Woman",  
+    "cover": "covers/arianagrandedangerouswoman.png",
+    "year": 2016,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "2-8-2026",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 1,  
+      "bass": 2,
+      "drums": 1,
+      "vocals": 5  
+    }
+    },
+    {
     "title": "NEVER ENOUGH",
     "artist": "Turnstile",
     "album": "NEVER ENOUGH",  
