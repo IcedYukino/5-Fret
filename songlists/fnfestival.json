@@ -985,5 +985,23 @@
       "drums": 4,
       "vocals": 2  
     }
-    }    
+    },
+    {
+    "title": "NEVER ENOUGH",
+    "artist": "Turnstile",
+    "album": "NEVER ENOUGH",  
+    "cover": "covers/turnstileneverenough.png",
+    "year": 2025,
+    "genre": "Pop-Rock",
+    "category": "fnfestival",
+    "release": "4-30-2026",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 4,  
+      "bass": 3,
+      "drums": 4,
+      "vocals": 1  
+    }
+    }        
     ]
