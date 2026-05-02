@@ -1450,6 +1450,78 @@
       "bass": 3,
       "drums": 4 
     }
+    },
+    {
+    "title": "All the Small Things",
+    "artist": "blink-182",
+    "album": "Enema of the State",  
+    "cover": "covers/blink182enemaofthestate.png",
+    "year": 1999,
+    "genre": "Punk",
+    "category": "fnfestival",
+    "release": "2-29-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 1,
+      "guitar": 1,  
+      "bass": 1,
+      "drums": 3,
+      "vocals": 1  
+    }
+    },
+    {
+    "title": "What's My Age Again?",
+    "artist": "blink-182",
+    "album": "Enema of the State",  
+    "cover": "covers/blink182enemaofthestate.png",
+    "year": 1999,
+    "genre": "Punk",
+    "category": "fnfestival",
+    "release": "2-29-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 3,  
+      "bass": 1,
+      "drums": 3,
+      "vocals": 1  
+    }
+    },
+    {
+    "title": "YOU DON'T KNOW WHAT YOU'VE GOT",
+    "artist": "blink-182",
+    "album": "ONE MORE TIME...",  
+    "cover": "covers/blink182onemoretime.png",
+    "year": 2023,
+    "genre": "Punk",
+    "category": "fnfestival",
+    "release": "2-29-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 2,  
+      "bass": 2,
+      "drums": 5,
+      "vocals": 1  
+    }
+    },
+    {
+    "title": "Closer (ft. Halsey)",
+    "artist": "The Chainsmokers",
+    "album": "Collage",  
+    "cover": "covers/thechainsmokerscollage.png",
+    "year": 2016,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "2-29-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 1,
+      "guitar": 1,  
+      "bass": 1,
+      "drums": 1,
+      "vocals": 2  
+    }
     },        
     {
     "title": "NEVER ENOUGH",
