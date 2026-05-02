@@ -1547,7 +1547,7 @@
     "album": "All of Me (Tiësto's Birthday Treatment Remix) (Single)",  
     "cover": "covers/johnlegend.png",
     "year": 2014
-    "genre": "",
+    "genre": "R&B/Soul/Funk",
     "category": "fnfestival",
     "release": "2-29-2024",
     "rating": "NR",    
@@ -1562,10 +1562,10 @@
     {
     "title": "Big Energy",
     "artist": "Latto",
-    "album": "",  
+    "album": "Temp",  
     "cover": "covers/latto.png",
     "year": 2022,
-    "genre": "",
+    "genre": "Pop/Dance/Electronic",
     "category": "fnfestival",
     "release": "2-29-2024",
     "rating": "NR",    
