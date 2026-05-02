@@ -1201,7 +1201,256 @@
       "drums": 5,
       "vocals": 0  
     }
-    },         
+    },
+    {
+    "title": "Bloody Mary",
+    "artist": "Lady Gaga",
+    "album": "Born This Way",  
+    "cover": "covers/ladygagabornthisway.png",
+    "year": 2011,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "2-22-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 2,  
+      "bass": 4,
+      "drums": 2,
+      "vocals": 3  
+    }
+    },
+    {
+    "title": "Applause",
+    "artist": "Lady Gaga",
+    "album": "ARTPOP",  
+    "cover": "covers/ladygagaartpop.png",
+    "year": 2013,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "2-22-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 1,  
+      "bass": 0,
+      "drums": 1,
+      "vocals": 5  
+    }
+    },
+    {
+    "title": "Born This Way",
+    "artist": "Lady Gaga",
+    "album": "Born This Way",  
+    "cover": "covers/ladygagabornthisway.png",
+    "year": 2011,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "2-22-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 3,
+      "guitar": 4,  
+      "bass": 3,
+      "drums": 3,
+      "vocals": 4  
+    }
+    },
+    {
+    "title": "The Edge of Glory",
+    "artist": "Lady Gaga",
+    "album": "Born This Way",  
+    "cover": "covers/ladygagabornthisway.png",
+    "year": 2011,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "2-22-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 3,
+      "guitar": 5,  
+      "bass": 2,
+      "drums": 3,
+      "vocals": 4  
+    }
+    },
+    {
+    "title": "Just Dance (ft. Colby O'Donis)",
+    "artist": "Lady Gaga",
+    "album": "The Fame",  
+    "cover": "covers/ladygagathefame.png",
+    "year": 2008,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "2-22-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 1,
+      "guitar": 1,  
+      "bass": 0,
+      "drums": 0,
+      "vocals": 4  
+    }
+    },
+    {
+    "title": "Poker Face",
+    "artist": "Lady Gaga",
+    "album": "The Fame",  
+    "cover": "covers/ladygagathefame.png",
+    "year": 2008,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "2-22-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 1,
+      "guitar": 1,  
+      "bass": 2,
+      "drums": 0,
+      "vocals": 4  
+    }
+    },
+    {
+    "title": "Rain on Me (ft. Ariana Grande)",
+    "artist": "Lady Gaga",
+    "album": "Chromatica",  
+    "cover": "covers/ladygagachromatica.png",
+    "year": 2020,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "2-22-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 3,
+      "guitar": 2,  
+      "bass": 2,
+      "drums": 2,
+      "vocals": 6  
+    }
+    },
+    {
+    "title": "Stupid Love",
+    "artist": "Lady Gaga",
+    "album": "Chromatica",  
+    "cover": "covers/ladygagachromatica.png",
+    "year": 2020,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "2-22-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 0,  
+      "bass": 3,
+      "drums": 3,
+      "vocals": 5  
+    }
+    },
+    {
+    "title": "Ride Wit Me (ft. City Spud)",
+    "artist": "Nelly",
+    "album": "Country Grammer",  
+    "cover": "covers/nellycountrygrammer.png",
+    "year": 2000,
+    "genre": "Hip-Hop/Rap",
+    "category": "fnfestival",
+    "release": "2-22-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 3,
+      "guitar": 3,  
+      "bass": 1,
+      "drums": 4,
+      "vocals": 3  
+    }
+    },
+    {
+    "title": "Black Hole Sun",
+    "artist": "Soundgarden",
+    "album": "Superunknown",  
+    "cover": "covers/soundgardensuperunknown.png",
+    "year": 1994,
+    "genre": "Grunge",
+    "category": "fnfestival",
+    "release": "2-22-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 3,
+      "guitar": 5,  
+      "bass": 3,
+      "drums": 3,
+      "vocals": 2  
+    }
+    },
+    {
+    "title": "Breaking Me (ft. A7S)",
+    "artist": "Topic",
+    "album": "Breaking Me (Single)",  
+    "cover": "covers/topicbreakingme.png",
+    "year": 2019,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "2-22-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 1,
+      "guitar": 0,  
+      "bass": 1,
+      "drums": 1,
+      "vocals": 3  
+    }
+    },
+    {
+    "title": "8-Bit Beat",
+    "artist": "Epic Games",
+    "album": "8-Bit Beat (Single)",  
+    "cover": "covers/epicgames8bitbeat.png",
+    "year": 2019,
+    "genre": "",
+    "category": "fnfestival",
+    "release": "2-22-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 4,
+      "guitar": 5,  
+      "bass": 4,
+      "drums": 4 
+    }
+    },
+    {
+    "title": "Bloom",
+    "artist": "Epic Games",
+    "album": "Bloom (Single)",  
+    "cover": "covers/epicgamesbloom.png",
+    "year": 2020,
+    "genre": "",
+    "category": "fnfestival",
+    "release": "2-22-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 3,
+      "guitar": 4,  
+      "bass": 2,
+      "drums": 3  
+    }
+    },
+    {
+    "title": "Best Buds",
+    "artist": "Epic Games",
+    "album": "Best Buds (Single)",  
+    "cover": "covers/epicgamesbestbuds.png",
+    "year": 2019,
+    "genre": "",
+    "category": "fnfestival",
+    "release": "2-22-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 3,
+      "guitar": 3,  
+      "bass": 3,
+      "drums": 4 
+    }
+    },        
     {
     "title": "NEVER ENOUGH",
     "artist": "Turnstile",
