@@ -2,8 +2,8 @@
 
 body{
 font-family: Arial, sans-serif;
-background-image: url(https://github.com/IcedYukino/5-Fret/blob/main/assets/rockband.png);
-color:white;
+background: #665685;
+background: linear-gradient(90deg, rgba(102, 86, 133, 1) 0%, rgba(48, 0, 0, 1) 100%);
 margin:0;
 text-align:center;
 }
