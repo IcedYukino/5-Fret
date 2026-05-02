@@ -1093,7 +1093,115 @@
       "drums": 3,
       "vocals": 2  
     }
-    },        
+    },
+    {
+    "title": "Barbie Girl",
+    "artist": "Aqua",
+    "album": "Aquarium",  
+    "cover": "covers/aquaaquarium.png",
+    "year": 1997,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "2-15-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 1,  
+      "bass": 3,
+      "drums": 3,
+      "vocals": 3  
+    }
+    },
+    {
+    "title": "Flowers",
+    "artist": "Miley Cyrus",
+    "album": "Endless Summer Vacation",  
+    "cover": "covers/mileycyrusendlesssummervacation.png",
+    "year": 2023,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "2-15-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 3,  
+      "bass": 3,
+      "drums": 2,
+      "vocals": 3  
+    }
+    },
+    {
+    "title": "Popular (ft. Madonna & Playboi Carti)",
+    "artist": "The Weeknd",
+    "album": "Music from the HBO Original Series",  
+    "cover": "covers/theweekndmusicfromthehbooriginalseries.png",
+    "year": 2023,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "2-15-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 1,  
+      "bass": 0,
+      "drums": 3,
+      "vocals": 3  
+    }
+    },
+    {
+    "title": "Timeless",
+    "artist": "witchgang",
+    "album": "Timeless (Single)",  
+    "cover": "covers/witchgangtimeless.png",
+    "year": 2023,
+    "genre": "",
+    "category": "fnfestival",
+    "release": "2-15-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 4,  
+      "bass": 2,
+      "drums": 2,
+      "vocals": 2  
+    }
+    },
+    {
+    "title": "Streets Ignite",
+    "artist": "Epic Games",
+    "album": "Streets Ignite (Single)",  
+    "cover": "covers/epicgamesstreetsignite.png",
+    "year": 2024,
+    "genre": "",
+    "category": "fnfestival",
+    "release": "2-15-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 3,
+      "guitar": 4,  
+      "bass": 3,
+      "drums": 5,
+      "vocals": 0  
+    }
+    },
+    {
+    "title": "Make It Known",
+    "artist": "Epic Games",
+    "album": "Make It Known (Single)",  
+    "cover": "covers/epicgamesmakeitknown.png",
+    "year": 2024,
+    "genre": "",
+    "category": "fnfestival",
+    "release": "2-15-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 2,  
+      "bass": 2,
+      "drums": 5,
+      "vocals": 0  
+    }
+    },         
     {
     "title": "NEVER ENOUGH",
     "artist": "Turnstile",
