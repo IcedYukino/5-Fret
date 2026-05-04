@@ -1706,6 +1706,60 @@
     }
     },
     {
+    "title": "High Hopes",
+    "artist": "Panic at the Disco",
+    "album": "Pray for the Wicked",  
+    "cover": "covers/panicatthediscoprayforthewicked.png",
+    "year": 2018,
+    "genre": "Emo",
+    "category": "fnfestival",
+    "release": "3-7-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 2,  
+      "bass": 2,
+      "drums": 3,
+      "vocals": 3  
+    }
+    },
+    {
+    "title": "Misery Business",
+    "artist": "Paramore",
+    "album": "Riot!",  
+    "cover": "covers/paramoreriot.png",
+    "year": 2007,
+    "genre": "Pop-Rock",
+    "category": "fnfestival",
+    "release": "3-7-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 4,
+      "guitar": 4,  
+      "bass": 3,
+      "drums": 5,
+      "vocals": 6  
+    }
+    },
+    {
+    "title": "Feel It Still",
+    "artist": "Portugal. The Man",
+    "album": "Woodstock",  
+    "cover": "covers/portugalthemanwoodstock.png",
+    "year": 2017,
+    "genre": "Alternative",
+    "category": "fnfestival",
+    "release": "3-7-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 2,  
+      "bass": 1,
+      "drums": 1,
+      "vocals": 3  
+    }
+    },        
+    {
     "title": "NEVER ENOUGH",
     "artist": "Turnstile",
     "album": "NEVER ENOUGH",  
