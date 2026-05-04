@@ -1578,7 +1578,133 @@
       "drums": 1,
       "vocals": 1  
     }
-    },        
+    },
+    {
+    "title": "Me Too",
+    "artist": "Meghan Trainor",
+    "album": "Thank You",  
+    "cover": "covers/meghantrainorthankyou.png",
+    "year": 2017,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "2-29-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 1,  
+      "bass": 1,
+      "drums": 3,
+      "vocals": 3  
+    }
+    },
+    {
+    "title": "It Takes Two",
+    "artist": "Rob Base & DJ E-Z Rock",
+    "album": "It Takes Two",  
+    "cover": "covers/robbase&djezrockittakestwo.png",
+    "year": 1988,
+    "genre": "Hip-Hop/Rap",
+    "category": "fnfestival",
+    "release": "2-29-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 1,
+      "guitar": 0,  
+      "bass": 0,
+      "drums": 3,
+      "vocals": 1  
+    }
+    },
+    {
+    "title": "Down with the Sickness",
+    "artist": "Disturbed",
+    "album": "The Sickness",  
+    "cover": "covers/disturbedthesickness.png",
+    "year": 2000,
+    "genre": "Nu-Metal",
+    "category": "fnfestival",
+    "release": "3-7-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 3,
+      "guitar": 4,  
+      "bass": 4,
+      "drums": 4,
+      "vocals": 2  
+    }
+    },
+    {
+    "title": "Shivers",
+    "artist": "Ed Sheeran",
+    "album": "=",  
+    "cover": "covers/edsheeran=.png",
+    "year": 2021,
+    "genre": "Pop-Rock",
+    "category": "fnfestival",
+    "release": "3-7-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 3,  
+      "bass": 1,
+      "drums": 2,
+      "vocals": 4  
+    }
+    },
+    {
+    "title": "Feel Good Inc. (ft. De La Soul)",
+    "artist": "Gorillaz",
+    "album": "Demon Days",  
+    "cover": "covers/gorillazdemondays.png",
+    "year": 2005,
+    "genre": "Hip-Hop/Rap",
+    "category": "fnfestival",
+    "release": "3-7-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 1,
+      "guitar": 2,  
+      "bass": 1,
+      "drums": 0,
+      "vocals": 2  
+    }
+    },
+    {
+    "title": "WHATS POPPIN",
+    "artist": "Jack Harlow",
+    "album": "Thats What They All Say",  
+    "cover": "covers/jackharlowthatswhattheyallsay.png",
+    "year": 2020,
+    "genre": "Hip-Hop/Rap",
+    "category": "fnfestival",
+    "release": "3-7-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 1,
+      "guitar": 2,  
+      "bass": 0,
+      "drums": 3,
+      "vocals": 0  
+    }
+    },
+    {
+    "title": "Numb",
+    "artist": "Linkin Park",
+    "album": "Meteora",  
+    "cover": "covers/linkinparkmeteora.png",
+    "year": 2003,
+    "genre": "Nu-Metal",
+    "category": "fnfestival",
+    "release": "3-7-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 1,
+      "guitar": 0,  
+      "bass": 0,
+      "drums": 4,
+      "vocals": 3  
+    }
+    },
     {
     "title": "NEVER ENOUGH",
     "artist": "Turnstile",
