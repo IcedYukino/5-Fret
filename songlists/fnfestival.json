@@ -2243,7 +2243,61 @@
       "drums": 3,
       "vocals": 5  
     }
-    },         
+    },
+    {
+    "title": "Everlong",
+    "artist": "Foo Fighters",
+    "album": "The Colour and the Shape",  
+    "cover": "covers/foofightersthecolourandtheshape.png",
+    "year": 1997,
+    "genre": "Alternative",
+    "category": "fnfestival",
+    "release": "4-4-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 3,
+      "guitar": 4,  
+      "bass": 3,
+      "drums": 6,
+      "vocals": 2  
+    }
+    },
+    {
+    "title": "Kids",
+    "artist": "MGMT",
+    "album": "Oracular Spectacular",  
+    "cover": "covers/mgmtoracularspectacular.png",
+    "year": 2007,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "4-4-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 4,  
+      "bass": 2,
+      "drums": 3,
+      "vocals": 2  
+    }
+    },
+    {
+    "title": "I Wish",
+    "artist": "Skee-Lo",
+    "album": "I Wish",  
+    "cover": "covers/skeeloiwish.png",
+    "year": 1995,
+    "genre": "Hip-Hop/Rap",
+    "category": "fnfestival",
+    "release": "4-4-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 4,  
+      "bass": 2,
+      "drums": 0,
+      "vocals": 0  
+    }
+    },        
     {
     "title": "NEVER ENOUGH",
     "artist": "Turnstile",
