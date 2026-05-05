@@ -2099,7 +2099,151 @@
       "drums": 4,
       "vocals": 2  
     }
-    },        
+    },
+    {
+    "title": "Mood (ft. iann dior)",
+    "artist": "24kGoldn",
+    "album": "El Dorado",  
+    "cover": "covers/24kgoldneldorado.png",
+    "year": 2021,
+    "genre": "Hip-Hop/Rap",
+    "category": "fnfestival",
+    "release": "3-28-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 1,  
+      "bass": 2,
+      "drums": 2,
+      "vocals": 3  
+    }
+    },
+    {
+    "title": "Scenario (ft. Leaders of the New School)",
+    "artist": "A Tribe Called Quest",
+    "album": "The Low End Theory",  
+    "cover": "covers/atribecalledquestthelowendtheory.png",
+    "year": 1991,
+    "genre": "Hip-Hop/Rap",
+    "category": "fnfestival",
+    "release": "3-28-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 1,
+      "guitar": 0,  
+      "bass": 0,
+      "drums": 2,
+      "vocals": 0  
+    }
+    },
+    {
+    "title": "Sucker",
+    "artist": "Jonas Brothers",
+    "album": "Happiness Begins",  
+    "cover": "covers/jonasbrothershappinessbegins.png",
+    "year": 2019,
+    "genre": "Pop-Rock",
+    "category": "fnfestival",
+    "release": "3-28-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 1,  
+      "bass": 1,
+      "drums": 3,
+      "vocals": 3  
+    }
+    },
+    {
+    "title": "Moves Like Jagger (ft. Christina Aguilera)",
+    "artist": "Maroon 5",
+    "album": "Hands All Over",  
+    "cover": "covers/maroon5handsallover.png",
+    "year": 2011,
+    "genre": "Pop-Rock",
+    "category": "fnfestival",
+    "release": "3-28-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 3,
+      "guitar": 3,  
+      "bass": 3,
+      "drums": 3,
+      "vocals": 6  
+    }
+    },
+    {
+    "title": "Super Freak",
+    "artist": "Rick James",
+    "album": "Street Songs",  
+    "cover": "covers/rickjamesstreetsongs.png",
+    "year": 1981,
+    "genre": "R&B/Soul/Funk",
+    "category": "fnfestival",
+    "release": "3-28-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 3,  
+      "bass": 2,
+      "drums": 1,
+      "vocals": 4  
+    }
+    },
+    {
+    "title": "t r a n s p a r e n t s o u l (ft. Travis Barker)",
+    "artist": "WILLOW",
+    "album": "lately I feel EVERYTHING",  
+    "cover": "covers/willowlatelyifeeleverything.png",
+    "year": 2021,
+    "genre": "Alternative",
+    "category": "fnfestival",
+    "release": "3-28-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 3,
+      "guitar": 2,  
+      "bass": 2,
+      "drums": 4,
+      "vocals": 4  
+    }
+    },
+    {
+    "title": "Bust a Move",
+    "artist": "Young MC",
+    "album": "Stone Cold Rhymin'",  
+    "cover": "covers/youngmcstonecoldrhymin.png",
+    "year": 1989,
+    "genre": "Hip-Hop/Rap",
+    "category": "fnfestival",
+    "release": "3-28-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 2,  
+      "bass": 4,
+      "drums": 3,
+      "vocals": 1  
+    }
+    },
+    {
+    "title": "The Middle (ft. Maren Morris & Grey)",
+    "artist": "Zedd",
+    "album": "The Middle (Single)",  
+    "cover": "covers/zeddthemiddle.png",
+    "year": 2018,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "3-28-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 1,  
+      "bass": 1,
+      "drums": 3,
+      "vocals": 5  
+    }
+    },         
     {
     "title": "NEVER ENOUGH",
     "artist": "Turnstile",
