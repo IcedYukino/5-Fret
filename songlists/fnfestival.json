@@ -1955,7 +1955,151 @@
       "drums": 1,
       "vocals": 4  
     }
-    },         
+    },      
+    {
+    "title": "Your Love (9PM) (ft. Topic & A7S)",
+    "artist": "ATB",
+    "album": "Your Love (9PM) (Single)",  
+    "cover": "covers/atbyourlove9pm.png",
+    "year": 2021,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "3-21-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 1,
+      "guitar": 1,  
+      "bass": 1,
+      "drums": 1,
+      "vocals": 2  
+    }
+    },
+    {
+    "title": "(Don't Fear) The Reaper",
+    "artist": "Blue Öyster Cult",
+    "album": "Agents of Fortune",  
+    "cover": "covers/blueöystercult.png",
+    "year": 1975,
+    "genre": "Classic Rock",
+    "category": "fnfestival",
+    "release": "3-21-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 3,
+      "guitar": 4,  
+      "bass": 2,
+      "drums": 5,
+      "vocals": 2  
+    }
+    },
+    {
+    "title": "Call Me Maybe",
+    "artist": "Carly Rae Jepsen",
+    "album": "Curiosity",  
+    "cover": "covers/carlyraejepsencuriosity.png",
+    "year": 2012,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "3-21-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 3,  
+      "bass": 0,
+      "drums": 2,
+      "vocals": 3  
+    }
+    },
+    {
+    "title": "Like a G6 (ft. The Cataracs & Dev)",
+    "artist": "Far East Movement",
+    "album": "Free Wired",  
+    "cover": "covers/fareastmovementfreewired.png",
+    "year": 2010,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "3-21-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 1,
+      "guitar": 1,  
+      "bass": 0,
+      "drums": 3,
+      "vocals": 1  
+    }
+    },
+    {
+    "title": "Carry On Wayward Son",
+    "artist": "Kansas",
+    "album": "Leftoverture",  
+    "cover": "covers/kansasleftoverture.png",
+    "year": 1976,
+    "genre": "Prog",
+    "category": "fnfestival",
+    "release": "3-21-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 3,
+      "guitar": 6,  
+      "bass": 4,
+      "drums": 2,
+      "vocals": 3  
+    }
+    }, 
+    {
+    "title": "Astronaut in the Ocean",
+    "artist": "Masked Wolf",
+    "album": "Astronomical",  
+    "cover": "covers/maskedwolfastronomical.png",
+    "year": 2021,
+    "genre": "Hip-Hop/Rap",
+    "category": "fnfestival",
+    "release": "3-21-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 0,  
+      "bass": 0,
+      "drums": 5,
+      "vocals": 5  
+    }
+    },
+    {
+    "title": "I Think I'm OKAY (ft. YUNGBLUD & Travis Barker)",
+    "artist": "mgk",
+    "album": "Hotel Diablo",  
+    "cover": "covers/mgkhoteldiablo.png",
+    "year": 2019,
+    "genre": "Alternative",
+    "category": "fnfestival",
+    "release": "3-21-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 2,  
+      "bass": 1,
+      "drums": 2,
+      "vocals": 3  
+    }
+    },
+    {
+    "title": "Hysteria",
+    "artist": "Muse",
+    "album": "Absolution",  
+    "cover": "covers/museabsolution.png",
+    "year": 2003,
+    "genre": "Alternative",
+    "category": "fnfestival",
+    "release": "3-21-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 3,
+      "guitar": 4,  
+      "bass": 5,
+      "drums": 4,
+      "vocals": 2  
+    }
+    },        
     {
     "title": "NEVER ENOUGH",
     "artist": "Turnstile",
