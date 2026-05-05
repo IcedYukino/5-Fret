@@ -1758,7 +1758,222 @@
       "drums": 1,
       "vocals": 3  
     }
-    },        
+    },
+    {
+    "title": "Swim Free",
+    "artist": "Epic Games",
+    "album": "Swim Free (Single)",  
+    "cover": "covers/epicgamesswimfree.png",
+    "year": 2024,
+    "genre": "",
+    "category": "fnfestival",
+    "release": "3-8-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 4,
+      "guitar": 5,  
+      "bass": 3,
+      "drums": 6,
+      "vocals": 5  
+    }
+    },
+    {
+    "title": "You're All Mine",
+    "artist": "Epic Games",
+    "album": "You're All Mine (Single)",  
+    "cover": "covers/epicgamesyoureallmine.png",
+    "year": 2024,
+    "genre": "",
+    "category": "fnfestival",
+    "release": "3-8-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 4,
+      "guitar": 5,  
+      "bass": 4,
+      "drums": 6,
+      "vocals": 0  
+    }
+    },
+    {
+    "title": "The Hunting Ground",
+    "artist": "Epic Games",
+    "album": "The Hunting Ground (Single)",  
+    "cover": "covers/epicgamesthehuntingground.png",
+    "year": 2024,
+    "genre": "",
+    "category": "fnfestival",
+    "release": "3-8-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 3,
+      "guitar": 4,  
+      "bass": 2,
+      "drums": 4,
+      "vocals": 6  
+    }
+    },
+    {
+    "title": "Sandstorm",
+    "artist": "Darude",
+    "album": "Before the Storm",  
+    "cover": "covers/darudebeforethestorm.png",
+    "year": 2000,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "3-14-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 4,
+      "guitar": 3,  
+      "bass": 6,
+      "drums": 3  
+    }
+    },
+    {
+    "title": "X Gon' Give It to Ya",
+    "artist": "DMX",
+    "album": "Cradle 2 the Grave",  
+    "cover": "covers/dmxcradletothegrave.png",
+    "year": 2003,
+    "genre": "Hip-Hop/Rap",
+    "category": "fnfestival",
+    "release": "3-14-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 1,
+      "guitar": 1,  
+      "bass": 0,
+      "drums": 2,
+      "vocals": 0  
+    }
+    },
+    {
+    "title": "The Middle",
+    "artist": "Jimmy Eat World",
+    "album": "Bleed American",  
+    "cover": "covers/jimmyeatworldbleedamerican.png",
+    "year": 2001,
+    "genre": "Pop-Rock",
+    "category": "fnfestival",
+    "release": "3-14-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 3,  
+      "bass": 2,
+      "drums": 3,
+      "vocals": 2  
+    }
+    },
+    {
+    "title": "The Middle",
+    "artist": "Jimmy Eat World",
+    "album": "Bleed American",  
+    "cover": "covers/jimmyeatworldbleedamerican.png",
+    "year": 2001,
+    "genre": "Pop-Rock",
+    "category": "fnfestival",
+    "release": "3-14-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 3,  
+      "bass": 2,
+      "drums": 3,
+      "vocals": 2  
+    }
+    },
+    {
+    "title": "Lucid Dreams",
+    "artist": "Juice WRLD",
+    "album": "Goodbye & Good Riddance",  
+    "cover": "covers/juicewrldgoodbye&goodriddance.png",
+    "year": 2018,
+    "genre": "Hip-Hop/Rap",
+    "category": "fnfestival",
+    "release": "3-14-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 2,  
+      "bass": 1,
+      "drums": 3,
+      "vocals": 3  
+    }
+    },
+    {
+    "title": "Come & Go (ft. Marshmello)",
+    "artist": "Juice WRLD",
+    "album": "Legends Never Die",  
+    "cover": "covers/juicewrldlegendsneverdie.png",
+    "year": 2020,
+    "genre": "Hip-Hop/Rap",
+    "category": "fnfestival",
+    "release": "3-14-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 1,  
+      "bass": 0,
+      "drums": 2,
+      "vocals": 2  
+    }
+    },
+    {
+    "title": "Firework",
+    "artist": "Katy Perry",
+    "album": "Teenage Dream",  
+    "cover": "covers/katyperryteenagedream.png",
+    "year": 2010,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "3-14-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 1,
+      "guitar": 2,  
+      "bass": 1,
+      "drums": 2,
+      "vocals": 3  
+    }
+    },
+    {
+    "title": "So What",
+    "artist": "P!nk",
+    "album": "Funhouse",  
+    "cover": "covers/p!nkfunhouse.png",
+    "year": 2008,
+    "genre": "Pop-Rock",
+    "category": "fnfestival",
+    "release": "3-14-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 3,  
+      "bass": 1,
+      "drums": 2,
+      "vocals": 4  
+    }
+    },
+    {
+    "title": "Roses (Imanbek Remix)",
+    "artist": "SAINt JHN",
+    "album": "Roses (Imanbek Remix) (Single)",  
+    "cover": "covers/saintjhnrosesimanbekremixsingle.png",
+    "year": 2019,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "3-14-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 1,
+      "guitar": 0,  
+      "bass": 1,
+      "drums": 1,
+      "vocals": 4  
+    }
+    },         
     {
     "title": "NEVER ENOUGH",
     "artist": "Turnstile",
