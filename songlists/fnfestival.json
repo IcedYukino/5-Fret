@@ -1867,24 +1867,6 @@
     }
     },
     {
-    "title": "The Middle",
-    "artist": "Jimmy Eat World",
-    "album": "Bleed American",  
-    "cover": "covers/jimmyeatworldbleedamerican.png",
-    "year": 2001,
-    "genre": "Pop-Rock",
-    "category": "fnfestival",
-    "release": "3-14-2024",
-    "rating": "NR",    
-    "difficulty": {
-      "band": 2,
-      "guitar": 3,  
-      "bass": 2,
-      "drums": 3,
-      "vocals": 2  
-    }
-    },
-    {
     "title": "Lucid Dreams",
     "artist": "Juice WRLD",
     "album": "Goodbye & Good Riddance",  
