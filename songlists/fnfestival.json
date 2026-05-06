@@ -2351,6 +2351,60 @@
       "drums": 2,
       "vocals": 3  
     }
+    },
+    {    
+    "title": "I Wanna Get Better",
+    "artist": "Bleachers",
+    "album": "Strange Desire",  
+    "cover": "covers/bleachersstrangedesire.png",
+    "year": 2014,
+    "genre": "Alternative",
+    "category": "fnfestival",
+    "release": "4-11-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 3,
+      "guitar": 4,  
+      "bass": 2,
+      "drums": 4,
+      "vocals": 3  
+    }
+    },
+    {    
+    "title": "Song 2",
+    "artist": "Blur",
+    "album": "Blur",  
+    "cover": "covers/blurblur.png",
+    "year": 1997,
+    "genre": "Alternative",
+    "category": "fnfestival",
+    "release": "4-11-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 3,  
+      "bass": 2,
+      "drums": 3,
+      "vocals": 1  
+    }
+    },
+    {    
+    "title": "Paint the Town Red",
+    "artist": "Doja Cat",
+    "album": "Scarlet",  
+    "cover": "covers/blurblur.png",
+    "year": 2023,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "4-11-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 1,
+      "guitar": 2,  
+      "bass": 0,
+      "drums": 1,
+      "vocals": 2  
+    }
     },         
     {
     "title": "NEVER ENOUGH",
