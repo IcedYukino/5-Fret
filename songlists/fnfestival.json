@@ -2405,7 +2405,25 @@
       "drums": 1,
       "vocals": 2  
     }
-    },         
+    },
+    {    
+    "title": "Ella Baila Sola (ft. Peso Pluma)",
+    "artist": "Eslabon Armado",
+    "album": "DESVELADO",  
+    "cover": "covers/eslabonarmadodesvelado.png",
+    "year": 2023,
+    "genre": "Latin",
+    "category": "fnfestival",
+    "release": "4-11-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 3,
+      "guitar": 5,  
+      "bass": 5,
+      "drums": 3,
+      "vocals": 2  
+    }
+    },        
     {
     "title": "NEVER ENOUGH",
     "artist": "Turnstile",
