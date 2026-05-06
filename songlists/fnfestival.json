@@ -2297,7 +2297,61 @@
       "drums": 0,
       "vocals": 0  
     }
-    },        
+    },
+    {
+    "title": "Eyes Closed",
+    "artist": "Imagine Dragons",
+    "album": "LOOM",  
+    "cover": "covers/imaginedragonsloom.png",
+    "year": 2024,
+    "genre": "Alternative",
+    "category": "fnfestival",
+    "release": "4-4-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 2,  
+      "bass": 1,
+      "drums": 3,
+      "vocals": 4  
+    }
+    },
+    {    
+    "title": "Wolves (ft. Marshmello)",
+    "artist": "Selena Gomez",
+    "album": "",  
+    "cover": "covers/selenagomez.png",
+    "year": 2017,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "4-4-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 2,  
+      "bass": 1,
+      "drums": 3,
+      "vocals": 4  
+    }
+    },
+    {    
+    "title": "Don't You Worry Child (ft. John Martin)"",
+    "artist": "Swedish House Mafia",
+    "album": "Until Now",  
+    "cover": "covers/swedishhousemafiauntilnow.png",
+    "year": 2012,
+    "genre": "Pop/Dance/Electronic",
+    "category": "fnfestival",
+    "release": "4-4-2024",
+    "rating": "NR",    
+    "difficulty": {
+      "band": 2,
+      "guitar": 1,  
+      "bass": 2,
+      "drums": 2,
+      "vocals": 3  
+    }
+    },         
     {
     "title": "NEVER ENOUGH",
     "artist": "Turnstile",
