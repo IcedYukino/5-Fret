@@ -74,7 +74,7 @@ async function loadSongs(tab){
                             genre: ini.genre || "",
                             charter: ini.frets || ini.charter || "",
                             rating: rawRating,
-                            category: ini.category || "",
+                            category: ini.category || "rb4dlc",
                             master: ini.master !== "false",
                             file: ini.file || "#",
                             harm: parseInt(ini.multiplier_note || ini.harm) || 1,
