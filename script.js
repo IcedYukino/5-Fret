@@ -72,9 +72,11 @@ async function loadSongs(tab){
                                 const ini = parseIni(iniText);
 
                                 let rawRating = ini.rating;
-                                if(rawRating === undefined || rawRating === null || rawRating === "-1" || rawRating === -1 || rawRating === ""){
-                                    rawRating = "NR";
-                                }
+                                let ratingCode = "NR";
+                                if(rawRating == "1" || rawRating === 1) ratingCode = "FF";
+                                else if(rawRating == "2" || rawRating === 2) ratingCode = "SR";
+                                else if(rawRating == "3" || rawRating === 3) ratingCode = "M";
+                                else ratingCode = "NR";
 
                                 const songObj = {
                                     title: ini.name || folderName,
@@ -84,7 +86,7 @@ async function loadSongs(tab){
                                     release: ini.date_released || ini.release || "",
                                     genre: ini.genre || "",
                                     charter: ini.frets || ini.charter || "",
-                                    rating: rawRating,
+                                    rating: ratingCode,
                                     category: ini.icon || ini.category || "rb4dlc",
                                     master: ini.master !== "false",
                                     file: ini.file || "#",
@@ -304,10 +306,15 @@ document.getElementById("info-source").innerHTML = `
   <span>${sourceName}</span>
 </span>`;
 
-    let ratingText = rating;
-    if(rating === "FF") ratingText = "Family Friendly";
-    if(rating === "SR") ratingText = "Supervision Recommended";
-    if(rating === "NR") ratingText = "Not Rated";
+    const ratingNames = {
+        "NR": "Not Rated",
+        "FF": "Family Friendly",
+        "SR": "Supervision Recommended",
+        "M": "Mature"
+    };
+    
+    const ratingText = ratingNames[rating] || rating;
+
     document.getElementById("info-rating").innerHTML = `
 <span class="song-rating ${rating}">
 ${ratingText}
