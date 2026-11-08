@@ -22,34 +22,28 @@ function formatReleaseDate(date){
 }
 
 async function loadSongs(tab){
-    let files = [];
-    if(tab === "rb1") files = ["rb1"];
-    else if(tab === "rb1dlc") files = ["rb1dlc"];
-    else if(tab === "rbn1") files = ["rbn1"];    
-    else if(tab === "rb3dlc") files = ["rb3dlc"];
-    else if(tab === "rb4dlc") files = ["rb4dlc"];
-    else if(tab === "fnfestival") files = ["fnfestival"];        
-    else if(tab === "all") files = ["rb1","rb1dlc","rbn1","rb3dlc","rb4dlc","fnfestival"];
-
-    let loadedSongs = [];
-    for(const file of files){
-        try{
-            const res = await fetch(`./songlists/${file}.json`);
-            if(!res.ok){
-                console.warn(`Missing file: ${file}.json`);
-                continue;
-            }
-            const data = await res.json();
-            loadedSongs.push(...data);
-        }catch(err){
-            console.warn(`Error loading ${file}.json`, err);
+    try{
+        const res = await fetch('./songs.json');
+        if(!res.ok){
+            console.warn(`Missing songs.json manifest.`);
+            return;
         }
+        const allData = await res.json();
+        
+        // Filter by selected game tab if not "all"
+        if(tab === "all"){
+            songs = allData;
+        } else {
+            songs = allData.filter(song => song.category && song.category.toLowerCase() === tab.toLowerCase());
+        }
+
+        songs.sort((a,b)=>a.title.localeCompare(b.title));
+        displaySongs(songs);
+        const counter = document.getElementById("song-count");
+        if(counter) counter.innerText = songs.length + " songs";
+    }catch(err){
+        console.warn(`Error loading songs.json`, err);
     }
-    songs = loadedSongs;
-    songs.sort((a,b)=>a.title.localeCompare(b.title));
-    displaySongs(songs);
-    const counter = document.getElementById("song-count");
-    if(counter) counter.innerText = songs.length + " songs";
 }
 
 function displaySongs(songList){
@@ -63,13 +57,13 @@ function displaySongs(songList){
 
         const rating = song.rating || "NR";
         const coverTag = song.master === false ? `<div class="cover-tag">COVER</div>` : "";
-        const file = song.file || "";
+        const file = song.file || "#";
 
         const vocalsImg = `./assets/vocals${song.harm && song.harm > 1 ? song.harm : ''}.png`;
 
         card.innerHTML = `
 <div class="cover-container">
-<img src="${song.cover}">
+<img src="${song.cover}" loading="lazy">
 ${coverTag}
 </div>
 
@@ -235,7 +229,6 @@ ${ratingText}
     document.getElementById("info-keys").innerHTML = createDifficulty(song.difficulty?.keys);
     document.getElementById("info-prokeys").innerHTML = createDifficulty(song.difficulty?.prokeys);
 
-// --- Vocals overlay update ---
 const vocalsImg = `./assets/vocals${song.harm && song.harm > 1 ? song.harm : ''}.png`;
 const vocalsIcon = document.getElementById("info-vocals-icon");
 if (vocalsIcon) vocalsIcon.src = vocalsImg;
