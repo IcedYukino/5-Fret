@@ -34,7 +34,7 @@ function formatReleaseDate(date){
 
 async function loadSongs(tab){
     try{
-        const repoAPI = 'https://api.github.com/repos/IcedYukino/5-Fret/contents/data/Rock%20Band%204';
+        const dataApiUrl = 'https://api.github.com/repos/IcedYukino/5-Fret/contents/data';
         
         const headers = {};
         const localToken = localStorage.getItem("gh_token");
@@ -42,60 +42,71 @@ async function loadSongs(tab){
             headers['Authorization'] = `token ${localToken}`;
         }
 
-        const res = await fetch(repoAPI, { headers });
-        if(!res.ok){
-            console.warn(`Failed to fetch song folders from GitHub API. Status: ${res.status}`);
+        const dataRes = await fetch(dataApiUrl, { headers });
+        if(!dataRes.ok){
+            console.warn(`Failed to fetch game directories from GitHub API. Status: ${dataRes.status}`);
             return;
         }
-        const folders = await res.json();
+        const gameFolders = await dataRes.json();
         const loadedSongs = [];
 
-        for(const folder of folders){
-            if(folder.type === "dir"){
-                const folderName = folder.name;
-                const iniUrl = `./data/Rock Band 4/${folderName}/song.ini`;
-                const coverUrl = `./data/Rock Band 4/${folderName}/album.png`;
+        for(const gameFolder of gameFolders){
+            if(gameFolder.type === "dir"){
+                const gameName = gameFolder.name;
+                const songsApiUrl = `https://api.github.com/repos/IcedYukino/5-Fret/contents/data/${encodeURIComponent(gameName)}`;
+                
+                const songsRes = await fetch(songsApiUrl, { headers });
+                if(!songsRes.ok) continue;
+                const songFolders = await songsRes.json();
 
-                try {
-                    const iniRes = await fetch(iniUrl);
-                    if(iniRes.ok){
-                        const iniText = await iniRes.text();
-                        const ini = parseIni(iniText);
+                for(const folder of songFolders){
+                    if(folder.type === "dir"){
+                        const folderName = folder.name;
+                        const iniUrl = `./data/${encodeURIComponent(gameName)}/${encodeURIComponent(folderName)}/song.ini`;
+                        const coverUrl = `./data/${encodeURIComponent(gameName)}/${encodeURIComponent(folderName)}/album.png`;
 
-                        let rawRating = ini.rating;
-                        if(rawRating === undefined || rawRating === null || rawRating === "-1" || rawRating === -1 || rawRating === ""){
-                            rawRating = "NR";
-                        }
+                        try {
+                            const iniRes = await fetch(iniUrl);
+                            if(iniRes.ok){
+                                const iniText = await iniRes.text();
+                                const ini = parseIni(iniText);
 
-                        const songObj = {
-                            title: ini.name || folderName,
-                            artist: ini.artist || "Unknown Artist",
-                            album: ini.album || "",
-                            year: ini.year || "",
-                            release: ini.date_released || ini.release || "",
-                            genre: ini.genre || "",
-                            charter: ini.frets || ini.charter || "",
-                            rating: rawRating,
-                            category: ini.icon || ini.category || "rb4dlc",
-                            master: ini.master !== "false",
-                            file: ini.file || "#",
-                            harm: parseInt(ini.harm) || 1,
-                            cover: coverUrl,
-                            difficulty: {
-                                guitar: ini.diff_guitar !== undefined ? parseInt(ini.diff_guitar) : undefined,
-                                bass: ini.diff_bass !== undefined ? parseInt(ini.diff_bass) : undefined,
-                                drums: ini.diff_drums !== undefined ? parseInt(ini.diff_drums) : undefined,
-                                proguitar: ini.diff_guitar_real !== undefined ? parseInt(ini.diff_guitar_real) : undefined,
-                                probass: ini.diff_bass_real !== undefined ? parseInt(ini.diff_bass_real) : undefined,
-                                keys: ini.diff_keys !== undefined ? parseInt(ini.diff_keys) : undefined,
-                                prokeys: ini.diff_keys_real !== undefined ? parseInt(ini.diff_keys_real) : undefined,
-                                vocals: ini.diff_vocals !== undefined ? parseInt(ini.diff_vocals) : undefined
+                                let rawRating = ini.rating;
+                                if(rawRating === undefined || rawRating === null || rawRating === "-1" || rawRating === -1 || rawRating === ""){
+                                    rawRating = "NR";
+                                }
+
+                                const songObj = {
+                                    title: ini.name || folderName,
+                                    artist: ini.artist || "Unknown Artist",
+                                    album: ini.album || "",
+                                    year: ini.year || "",
+                                    release: ini.date_released || ini.release || "",
+                                    genre: ini.genre || "",
+                                    charter: ini.frets || ini.charter || "",
+                                    rating: rawRating,
+                                    category: ini.icon || ini.category || "rb4dlc",
+                                    master: ini.master !== "false",
+                                    file: ini.file || "#",
+                                    harm: parseInt(ini.harm) || 1,
+                                    cover: coverUrl,
+                                    difficulty: {
+                                        guitar: ini.diff_guitar !== undefined ? parseInt(ini.diff_guitar) : undefined,
+                                        bass: ini.diff_bass !== undefined ? parseInt(ini.diff_bass) : undefined,
+                                        drums: ini.diff_drums !== undefined ? parseInt(ini.diff_drums) : undefined,
+                                        proguitar: ini.diff_guitar_real !== undefined ? parseInt(ini.diff_guitar_real) : undefined,
+                                        probass: ini.diff_bass_real !== undefined ? parseInt(ini.diff_bass_real) : undefined,
+                                        keys: ini.diff_keys !== undefined ? parseInt(ini.diff_keys) : undefined,
+                                        prokeys: ini.diff_keys_real !== undefined ? parseInt(ini.diff_keys_real) : undefined,
+                                        vocals: ini.diff_vocals !== undefined ? parseInt(ini.diff_vocals) : undefined
+                                    }
+                                };
+                                loadedSongs.push(songObj);
                             }
-                        };
-                        loadedSongs.push(songObj);
+                        } catch(err) {
+                            console.warn(`Could not load song.ini for folder: ${folderName}`, err);
+                        }
                     }
-                } catch(err) {
-                    console.warn(`Could not load song.ini for folder: ${folderName}`, err);
                 }
             }
         }
