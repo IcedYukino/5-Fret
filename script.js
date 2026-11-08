@@ -13,7 +13,6 @@ function formatReleaseDate(date){
     const parts = date.split(separator);
     if(parts.length !== 3) return date;
 
-    // Standardize parsing for YYYY-MM-DD or YYYY/MM/DD
     let year = parts[0];
     let monthIdx = parseInt(parts[1]) - 1;
     let dayNum = parseInt(parts[2]);
@@ -25,7 +24,6 @@ function formatReleaseDate(date){
     const month = months[monthIdx];
     if(!month) return date;
 
-    // Add ordinal suffix (st, nd, rd, th)
     let suffix = "th";
     if (dayNum % 10 === 1 && dayNum !== 11) suffix = "st";
     else if (dayNum % 10 === 2 && dayNum !== 12) suffix = "nd";
@@ -36,17 +34,22 @@ function formatReleaseDate(date){
 
 async function loadSongs(tab){
     try{
-        // Query GitHub API for the list of folders in data/Rock Band 4
         const repoAPI = 'https://api.github.com/repos/IcedYukino/5-Fret/contents/data/Rock%20Band%204';
-        const res = await fetch(repoAPI);
+        
+        const headers = {};
+        const localToken = localStorage.getItem("gh_token");
+        if(localToken){
+            headers['Authorization'] = `token ${localToken}`;
+        }
+
+        const res = await fetch(repoAPI, { headers });
         if(!res.ok){
-            console.warn(`Failed to fetch song folders from GitHub API.`);
+            console.warn(`Failed to fetch song folders from GitHub API. Status: ${res.status}`);
             return;
         }
         const folders = await res.json();
         const loadedSongs = [];
 
-        // Loop through each folder and fetch its individual song.ini and album art
         for(const folder of folders){
             if(folder.type === "dir"){
                 const folderName = folder.name;
@@ -59,7 +62,6 @@ async function loadSongs(tab){
                         const iniText = await iniRes.text();
                         const ini = parseIni(iniText);
 
-                        // Handle rating: default to "NR" if -1, missing, or empty
                         let rawRating = ini.rating;
                         if(rawRating === undefined || rawRating === null || rawRating === "-1" || rawRating === -1 || rawRating === ""){
                             rawRating = "NR";
@@ -98,7 +100,6 @@ async function loadSongs(tab){
             }
         }
         
-        // Filter by selected game tab if not "all"
         if(tab === "all"){
             songs = loadedSongs;
         } else {
