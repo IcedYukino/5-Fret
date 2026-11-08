@@ -77,7 +77,7 @@ async function loadSongs(tab){
                             category: ini.icon || ini.category || "rb4dlc",
                             master: ini.master !== "false",
                             file: ini.file || "#",
-                            harm: parseInt(ini.multiplier_note || ini.harm) || 1,
+                            harm: parseInt(ini.harm) || 1,
                             cover: coverUrl,
                             difficulty: {
                                 guitar: ini.diff_guitar !== undefined ? parseInt(ini.diff_guitar) : undefined,
