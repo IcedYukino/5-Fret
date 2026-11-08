@@ -13,18 +13,10 @@ function formatReleaseDate(date){
     const parts = date.split(separator);
     if(parts.length !== 3) return date;
 
-    let year, monthIdx, day;
-    if (separator === '/') {
-        // Format: YYYY/MM/DD
-        year = parts[0];
-        monthIdx = parseInt(parts[1]) - 1;
-        day = parseInt(parts[2]);
-    } else {
-        // Format: MM-DD-YYYY fallback
-        monthIdx = parseInt(parts[0]) - 1;
-        day = parseInt(parts[1]);
-        year = parts[2];
-    }
+    // Standardize parsing for YYYY-MM-DD or YYYY/MM/DD
+    let year = parts[0];
+    let monthIdx = parseInt(parts[1]) - 1;
+    let dayNum = parseInt(parts[2]);
 
     const months = [
         "January","February","March","April","May","June",
@@ -32,7 +24,14 @@ function formatReleaseDate(date){
     ];
     const month = months[monthIdx];
     if(!month) return date;
-    return month + " " + day + ", " + year;
+
+    // Add ordinal suffix (st, nd, rd, th)
+    let suffix = "th";
+    if (dayNum % 10 === 1 && dayNum !== 11) suffix = "st";
+    else if (dayNum % 10 === 2 && dayNum !== 12) suffix = "nd";
+    else if (dayNum % 10 === 3 && dayNum !== 13) suffix = "rd";
+
+    return month + " " + dayNum + suffix + ", " + year;
 }
 
 async function loadSongs(tab){
