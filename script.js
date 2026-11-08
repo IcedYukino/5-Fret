@@ -9,15 +9,29 @@ window.addEventListener("DOMContentLoaded", async () => {
 
 function formatReleaseDate(date){
     if(!date) return "";
-    const parts = date.split("-");
+    let separator = date.includes('/') ? '/' : '-';
+    const parts = date.split(separator);
     if(parts.length !== 3) return date;
+
+    let year, monthIdx, day;
+    if (separator === '/') {
+        // Format: YYYY/MM/DD
+        year = parts[0];
+        monthIdx = parseInt(parts[1]) - 1;
+        day = parseInt(parts[2]);
+    } else {
+        // Format: MM-DD-YYYY fallback
+        monthIdx = parseInt(parts[0]) - 1;
+        day = parseInt(parts[1]);
+        year = parts[2];
+    }
+
     const months = [
         "January","February","March","April","May","June",
         "July","August","September","October","November","December"
     ];
-    const month = months[parseInt(parts[0]) - 1];
-    const day = parseInt(parts[1]);
-    const year = parts[2];
+    const month = months[monthIdx];
+    if(!month) return date;
     return month + " " + day + ", " + year;
 }
 
@@ -57,6 +71,7 @@ async function loadSongs(tab){
                             artist: ini.artist || "Unknown Artist",
                             album: ini.album || "",
                             year: ini.year || "",
+                            release: ini.date_released || ini.release || "",
                             genre: ini.genre || "",
                             charter: ini.frets || ini.charter || "",
                             rating: rawRating,
@@ -260,7 +275,7 @@ function openSongInfo(song){
 ${song.genre || ""}
 </span>`;
 
- const sourceNames = {
+const sourceNames = {
     "rb1": "Rock Band",
     "rb1dlc": "Rock Band DLC",
     "rbn1": "Rock Band Network 1.0",
@@ -286,7 +301,7 @@ document.getElementById("info-source").innerHTML = `
 ${ratingText}
 </span>`;
 
- document.getElementById("info-charter").innerHTML = song.charter 
+document.getElementById("info-charter").innerHTML = song.charter 
     ? song.charter 
     : `<span style="color:#0aa3ff">Harmonix</span>`;
 
