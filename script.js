@@ -23,18 +23,66 @@ function formatReleaseDate(date){
 
 async function loadSongs(tab){
     try{
-        const res = await fetch('./songs.json');
+        // Query GitHub API for the list of folders in data/Rock Band 4
+        const repoAPI = 'https://api.github.com/repos/IcedYukino/5-Fret/contents/data/Rock%20Band%204';
+        const res = await fetch(repoAPI);
         if(!res.ok){
-            console.warn(`Missing songs.json manifest.`);
+            console.warn(`Failed to fetch song folders from GitHub API.`);
             return;
         }
-        const allData = await res.json();
+        const folders = await res.json();
+        const loadedSongs = [];
+
+        // Loop through each folder and fetch its individual song.ini and album art
+        for(const folder of folders){
+            if(folder.type === "dir"){
+                const folderName = folder.name;
+                const iniUrl = `./data/Rock Band 4/${folderName}/song.ini`;
+                const coverUrl = `./data/Rock Band 4/${folderName}/album.png`;
+
+                try {
+                    const iniRes = await fetch(iniUrl);
+                    if(iniRes.ok){
+                        const iniText = await iniRes.text();
+                        const ini = parseIni(iniText);
+
+                        const songObj = {
+                            title: ini.name || folderName,
+                            artist: ini.artist || "Unknown Artist",
+                            album: ini.album || "",
+                            year: ini.year || "",
+                            genre: ini.genre || "",
+                            charter: ini.frets || ini.charter || "",
+                            rating: ini.rating || "NR",
+                            category: ini.category || "rb4dlc",
+                            master: ini.master !== "false",
+                            file: ini.file || "#",
+                            harm: parseInt(ini.multiplier_note || ini.harm) || 1,
+                            cover: coverUrl,
+                            difficulty: {
+                                guitar: ini.diff_guitar !== undefined ? parseInt(ini.diff_guitar) : undefined,
+                                bass: ini.diff_bass !== undefined ? parseInt(ini.diff_bass) : undefined,
+                                drums: ini.diff_drums !== undefined ? parseInt(ini.diff_drums) : undefined,
+                                proguitar: ini.diff_guitar_real !== undefined ? parseInt(ini.diff_guitar_real) : undefined,
+                                probass: ini.diff_bass_real !== undefined ? parseInt(ini.diff_bass_real) : undefined,
+                                keys: ini.diff_keys !== undefined ? parseInt(ini.diff_keys) : undefined,
+                                prokeys: ini.diff_keys_real !== undefined ? parseInt(ini.diff_keys_real) : undefined,
+                                vocals: ini.diff_vocals !== undefined ? parseInt(ini.diff_vocals) : undefined
+                            }
+                        };
+                        loadedSongs.push(songObj);
+                    }
+                } catch(err) {
+                    console.warn(`Could not load song.ini for folder: ${folderName}`, err);
+                }
+            }
+        }
         
         // Filter by selected game tab if not "all"
         if(tab === "all"){
-            songs = allData;
+            songs = loadedSongs;
         } else {
-            songs = allData.filter(song => song.category && song.category.toLowerCase() === tab.toLowerCase());
+            songs = loadedSongs.filter(song => song.category && song.category.toLowerCase() === tab.toLowerCase());
         }
 
         songs.sort((a,b)=>a.title.localeCompare(b.title));
@@ -42,8 +90,23 @@ async function loadSongs(tab){
         const counter = document.getElementById("song-count");
         if(counter) counter.innerText = songs.length + " songs";
     }catch(err){
-        console.warn(`Error loading songs.json`, err);
+        console.warn(`Error loading songs from directory`, err);
     }
+}
+
+function parseIni(text){
+    const result = {};
+    text.split('\n').forEach(line => {
+        line = line.trim();
+        if(!line || line.startsWith(';') || line.startsWith('#') || (line.startsWith('[') && line.endsWith(']'))) return;
+        const eqIndex = line.indexOf('=');
+        if(eqIndex !== -1){
+            const key = line.substring(0, eqIndex).trim().toLowerCase();
+            const value = line.substring(eqIndex + 1).trim();
+            result[key] = value;
+        }
+    });
+    return result;
 }
 
 function displaySongs(songList){
