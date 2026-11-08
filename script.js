@@ -46,6 +46,12 @@ async function loadSongs(tab){
                         const iniText = await iniRes.text();
                         const ini = parseIni(iniText);
 
+                        // Handle rating: default to "NR" if -1, missing, or empty
+                        let rawRating = ini.rating;
+                        if(rawRating === undefined || rawRating === null || rawRating === "-1" || rawRating === -1 || rawRating === ""){
+                            rawRating = "NR";
+                        }
+
                         const songObj = {
                             title: ini.name || folderName,
                             artist: ini.artist || "Unknown Artist",
@@ -53,7 +59,7 @@ async function loadSongs(tab){
                             year: ini.year || "",
                             genre: ini.genre || "",
                             charter: ini.frets || ini.charter || "",
-                            rating: ini.rating || "NR",
+                            rating: rawRating,
                             category: ini.category || "rb4dlc",
                             master: ini.master !== "false",
                             file: ini.file || "#",
@@ -231,17 +237,7 @@ function createDifficulty(level){
             bars += `<div class="diff"></div>`;
         }
     }
-    return `<div class="diff-row">${bars}</div>`;
-}
-
-function openSongInfo(song){
-    const overlay = document.getElementById("song-info-overlay");
-    const rating = song.rating || "NR";
-
-    document.getElementById("info-cover").src = song.cover;
-
-    const bg = document.querySelector(".overlay-bg");
-    if(bg) bg.style.backgroundImage = `url(${song.cover})`;
+    return `<div class="diff-row">${bars}</div>`; }  function openSongInfo(song){ const overlay = document.getElementById("song-info-overlay"); const rating = song.rating \vert{}\vert{} "NR";  document.getElementById("info-cover").src = song.cover;  const bg = document.querySelector(".overlay-bg"); if(bg) bg.style.backgroundImage = `url(${song.cover})`;
 
     document.getElementById("info-title").innerText = song.title || "";
     document.getElementById("info-artist").innerText = song.artist || "";
@@ -250,130 +246,4 @@ function openSongInfo(song){
     document.getElementById("info-release").innerText = formatReleaseDate(song.release);
 
     document.getElementById("info-genre").innerHTML = `
-<span class="genre-tag ${song.genre?.toLowerCase().replace(/[^a-z]/g,'')}">
-${song.genre || ""}
-</span>`;
-
- const sourceNames = {
-    "rb1": "Rock Band",
-    "rb1dlc": "Rock Band DLC",
-    "rbn1": "Rock Band Network 1.0",
-    "rb3dlc": "Rock Band 3 DLC",
-    "rb4dlc": "Rock Band 4 DLC",
-    "fnfestival": "Fortnite Festival"
-};
-
-const sourceName = sourceNames[song.category] || song.category || "";
-
-document.getElementById("info-source").innerHTML = `
-<span class="source-row">
-  ${song.category ? `<img class="source-icon" src="./assets/${song.category}.png">` : ""}
-  <span>${sourceName}</span>
-</span>`;
-
-    let ratingText = rating;
-    if(rating === "FF") ratingText = "Family Friendly";
-    if(rating === "SR") ratingText = "Supervision Recommended";
-    if(rating === "NR") ratingText = "Not Rated";
-    document.getElementById("info-rating").innerHTML = `
-<span class="song-rating ${rating}">
-${ratingText}
-</span>`;
-
- document.getElementById("info-charter").innerHTML = song.charter 
-    ? song.charter 
-    : `<span style="color:#0aa3ff">Harmonix</span>`;
-
-    document.getElementById("info-guitar").innerHTML = createDifficulty(song.difficulty?.guitar);
-    document.getElementById("info-bass").innerHTML = createDifficulty(song.difficulty?.bass);
-    document.getElementById("info-drums").innerHTML = createDifficulty(song.difficulty?.drums);
-    document.getElementById("info-proguitar").innerHTML = createDifficulty(song.difficulty?.proguitar);
-    document.getElementById("info-probass").innerHTML = createDifficulty(song.difficulty?.probass);
-    document.getElementById("info-keys").innerHTML = createDifficulty(song.difficulty?.keys);
-    document.getElementById("info-prokeys").innerHTML = createDifficulty(song.difficulty?.prokeys);
-
-const vocalsImg = `./assets/vocals${song.harm && song.harm > 1 ? song.harm : ''}.png`;
-const vocalsIcon = document.getElementById("info-vocals-icon");
-if (vocalsIcon) vocalsIcon.src = vocalsImg;
-
-const vocalsBars = document.getElementById("info-vocals-bars");
-if (vocalsBars) vocalsBars.innerHTML = createDifficulty(song.difficulty?.vocals);
-
-    overlay.classList.add("open");
-}
-
-function closeSongInfo(){
-    document.getElementById("song-info-overlay").classList.remove("open");
-}
-
-function setupOverlayClose(){
-    const overlay = document.getElementById("song-info-overlay");
-    overlay.addEventListener("click", (e)=>{
-        if(e.target === overlay){
-            closeSongInfo();
-        }
-    });
-    document.addEventListener("keydown",(e)=>{
-        if(e.key === "Escape"){
-            closeSongInfo();
-        }
-    });
-}
-
-function searchSongs(){
-    const input = document.getElementById("search").value.toLowerCase();
-    const filtered = songs.filter(song =>
-        song.title.toLowerCase().includes(input) ||
-        song.artist.toLowerCase().includes(input)
-    );
-    displaySongs(filtered);
-    const counter = document.getElementById("song-count");
-    if(counter) counter.innerText = filtered.length + " songs";
-}
-
-function sortSongs(type){
-    songs.sort((a,b)=>{
-        const A = (a[type] || "").toLowerCase();
-        const B = (b[type] || "").toLowerCase();
-        if(A < B) return -1 * sortDirection;
-        if(A > B) return 1 * sortDirection;
-        return 0;
-    });
-    displaySongs(songs);
-    sortDirection *= -1;
-}
-
-async function switchTab(tab, button){
-    currentTab = tab;
-    document.querySelectorAll(".tab").forEach(btn=>{
-        btn.classList.remove("active");
-    });
-    button.classList.add("active");
-    await loadSongs(tab);
-}
-
-window.addEventListener("DOMContentLoaded", () => {
-    const randomBtn = document.getElementById("randomSong");
-    if(!randomBtn) return;
-
-    randomBtn.addEventListener("click", () => {
-        if(songs.length === 0) return;
-        const random = songs[Math.floor(Math.random() * songs.length)];
-        displaySongs(songs);
-
-        setTimeout(()=>{
-            const cards = document.querySelectorAll(".song");
-            cards.forEach(card=>{
-                if(card.querySelector("h3").innerText === random.title){
-                    card.scrollIntoView({
-                        behavior:"smooth",
-                        block:"center"
-                    });
-                    card.style.boxShadow = "0 0 25px #0aa3ff";
-                    const dropdown = card.querySelector(".difficulty-dropdown");
-                    dropdown.classList.add("open");
-                }
-            });
-        },100);
-    });
-});
+<span class="genre-
