@@ -28,7 +28,7 @@ function buildManifest() {
       const albumPngPath = path.join(songFolderPath, 'album.png');
       const albumJpgPath = path.join(songFolderPath, 'album.jpg');
       
-      let coverArt = null;
+      let coverArt = 'assets/default-cover.png';
       if (fs.existsSync(albumPngPath)) {
         coverArt = `data/${game}/${folder}/album.png`;
       } else if (fs.existsSync(albumJpgPath)) {
@@ -42,26 +42,26 @@ function buildManifest() {
           const songData = parsedIni.song || parsedIni;
 
           allSongs.push({
-            id: folder,
-            game: game.toLowerCase(),
-            name: songData.name || 'Unknown Title',
+            title: songData.name || 'Unknown Title',
             artist: songData.artist || 'Unknown Artist',
             album: songData.album || 'Unknown Album',
             year: songData.year || '',
             genre: songData.genre || 'Unknown',
-            charter: songData.charter || songData.frets || 'Harmonix',
-            source: songData.source || game,
-            rating: songData.song_rating || '0',
+            category: game.toLowerCase(),
+            cover: coverArt,
+            rating: songData.song_rating || 'NR',
+            charter: songData.charter || songData.frets || '',
             release: songData.album_track || '',
-            guitar: songData.diff_guitar || '-',
-            bass: songData.diff_bass || '-',
-            drums: songData.diff_drums || '-',
-            keys: songData.diff_keys || '-',
-            vocals: songData.diff_vocals || '-',
-            proguitar: songData.diff_guitar_real || '-',
-            probass: songData.diff_bass_real || '-',
-            prokeys: songData.diff_keys_real || '-',
-            coverArt: coverArt || 'assets/default-cover.png'
+            difficulty: {
+              guitar: songData.diff_guitar !== undefined ? parseInt(songData.diff_guitar) : -1,
+              bass: songData.diff_bass !== undefined ? parseInt(songData.diff_bass) : -1,
+              drums: songData.diff_drums !== undefined ? parseInt(songData.diff_drums) : -1,
+              keys: songData.diff_keys !== undefined ? parseInt(songData.diff_keys) : -1,
+              vocals: songData.diff_vocals !== undefined ? parseInt(songData.diff_vocals) : -1,
+              proguitar: songData.diff_guitar_real !== undefined ? parseInt(songData.diff_guitar_real) : -1,
+              probass: songData.diff_bass_real !== undefined ? parseInt(songData.diff_bass_real) : -1,
+              prokeys: songData.diff_keys_real !== undefined ? parseInt(songData.diff_keys_real) : -1
+            }
           });
         } catch (err) {
           console.error(`Failed parsing INI for folder "${folder}":`, err.message);
